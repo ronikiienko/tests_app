@@ -4,15 +4,15 @@ import { nanoid } from 'nanoid';
 
 
 export default function Questions(props) {
-    const questionsInfo = props.testConfigs.questions;
-    const questions = questionsInfo.map(questionInfo => {
+    const questions = props.testConfigs.questions;
+    const questionElements = questions.map(question => {
         return (
-            <Question key={nanoid()} questionInfo={questionInfo} />
+            <Question key={nanoid()} questionData={question} />
         )
     })
     return (
         <div>
-            {questions}
+            {questionElements}
         </div>
 
     )
