@@ -45,7 +45,7 @@ const testConfigs =
                             },
                             {
                                 min: 41,
-                                max: 'inf',
+                                max: Infinity,
                                 mark: 3,
                             },
                         ],

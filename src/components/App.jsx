@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import testConfigs from './../testConfig.js';
 import Header from './Header.jsx';
 import Questions from './Questions.jsx';
@@ -7,20 +7,19 @@ import Questions from './Questions.jsx';
 export const MarksContext = React.createContext();
 
 export default function App() {
-    const emptyMarksForTestLength = new Array(testConfigs.questions.length);
 
-    const [marks, setMarks] = React.useState(emptyMarksForTestLength);
+    const [marks, setMarks] = React.useState(new Array(testConfigs.questions.length));
 
 
     console.log(marks);
-    function setMark(questionIndex, mark) {
-        console.log('hello')
+    const setMark = useCallback((questionIndex, mark) => {
+        console.log(questionIndex, mark);
         setMarks((prevMarks) => {
-            let newMarks = prevMarks;
+            let newMarks = [...prevMarks];
             newMarks[questionIndex] = questionIndex;
             return newMarks;
         });
-    }
+    }, [])
 
     return (
         <>

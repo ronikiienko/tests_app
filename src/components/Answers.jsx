@@ -8,57 +8,59 @@ export default function Answers({answersType, answers, inputsName, questionIndex
     array[2] = 'Hello'
     console.log(array);*/
 
-    const [userAnswerMark, setUserAnswerMark] = React.useState('')
-    const [userAnswer, setUserAnswer] = React.useState('')
-    const sendMarkToAppComp = React.useContext(MarksContext);
+    const [userAnswerMark, setUserAnswerMark] = React.useState('');
+    const [userAnswer, setUserAnswer] = React.useState('');
+    const setMark = React.useContext(MarksContext);
 
-
+    console.log('userAnswer', userAnswer);
     function handleChange(event) {
+        console.log(event.target.value);
         setUserAnswer(event.target.value);
         handleUserAnswer();
-        sendMarkToAppComp(questionIndex, userAnswer)
+        // setMark(questionIndex, userAnswer);
     }
-    function handleUserAnswer () {
+
+    function handleUserAnswer() {
 
     }
 
 
     if (answersType === 'number') {
-        return <input type={'number'} value={userAnswer} onChange={(event) => handleChange(event)}/>
+        return <input type={'number'} value={userAnswer} onChange={(event) => handleChange(event)}/>;
     } else if (answersType === 'text') {
-        return <input type={'text'} value={userAnswer} onChange={(event) => handleChange(event)} />;
+        return <input type={'text'} value={userAnswer} onChange={(event) => handleChange(event)}/>;
     } else if (answersType === 'radio' || answersType === 'checkbox') {
 
         return answers.map(answer => {
             let answerValue = answer.answer;
             const id = nanoid();
             if (answersType === 'radio') {
-                return  (
+                return (
                     <div key={id}>
                         <input
-                            type='radio'
+                            type="radio"
                             id={id}
                             name={inputsName}
                             value={answerValue}
                             checked={Number(userAnswer) === answerValue}
                             onChange={(e) => handleChange(e)}
                         />
-                        <label htmlFor={id} >{answerValue}</label>
+                        <label htmlFor={id}>{answerValue}</label>
                     </div>
 
-                )
+                );
             } else if (answersType === 'checkbox') {
-                return  (
+                return (
                     <div key={id}>
                         <input
-                            type='checkbox'
+                            type="checkbox"
                             id={id}
                             name={inputsName}
                         />
-                        <label htmlFor={id} >{answerValue}</label>
+                        <label htmlFor={id}>{answerValue}</label>
                     </div>
 
-                )
+                );
             }
         });
     }
