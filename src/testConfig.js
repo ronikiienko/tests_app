@@ -9,27 +9,25 @@ const testConfigs =
                         min: 0,
                         max: 10,
                         resultName: 'Shit',
-                        resultDescription: 'You are shit'
+                        resultDescription: 'You are shit',
                     },
                     {
                         min: 11,
                         max: 20,
                         resultName: 'Bad',
-                        resultDescription: 'You are bad'
+                        resultDescription: 'You are bad',
                     },
                     {
                         min: 21,
-                        max: 'inf',
+                        max: Infinity,
                         resultName: 'Godlike',
-                        resultDescription: 'You are godlike'
-                    }
+                        resultDescription: 'You are godlike',
+                    },
 
                 ],
         },
         questions:
             [
-
-
                 {
                     question: 'How old are you?',
                     answersType: 'number',
@@ -120,7 +118,3 @@ const testConfigs =
             ],
     };
 export default testConfigs;
-
-
-
-
