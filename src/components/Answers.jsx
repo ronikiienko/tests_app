@@ -68,7 +68,7 @@ export default function Answers({answersType, answersData, inputsName, questionI
             return
         }
         setMark((prevMarks) => {
-            let newMarks = [...prevMarksK];
+            let newMarks = [...prevMarks];
             newMarks[questionIndex] = userAnswerMark;
             return newMarks;
         })
