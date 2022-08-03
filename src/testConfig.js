@@ -90,6 +90,12 @@ const testConfigs =
                                 answer: 'Bottle',
                                 mark: 0,
                             },
+
+                            {
+                                answer: 'Suzuki',
+                                mark: 0,
+                            }
+
                         ],
                 },
 
