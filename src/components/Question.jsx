@@ -3,12 +3,12 @@ import React from 'react';
 import Answers from './Answers';
 
 
-export default function Question({questionData, inputsName, questionIndex}) {
+export default function Question({questionData, inputsName, questionIndex, setMarks, isInProcess}) {
 
     return (
         <div>
             <h2>{questionData.question}</h2>
-            <Answers answersType={questionData.answersType} answersData={questionData.answers} inputsName={inputsName} questionIndex={questionIndex} />
+            <Answers answersType={questionData.answersType} answersData={questionData.answers} inputsName={inputsName} questionIndex={questionIndex} setMarks={setMarks} isInProcess={isInProcess} />
         </div>
 
 
