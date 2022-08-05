@@ -7,18 +7,18 @@ const testConfigs =
                 [
                     {
                         min: 0,
-                        max: 10,
+                        max: 4,
                         resultName: 'Shit',
                         resultDescription: 'You are shit',
                     },
                     {
-                        min: 11,
-                        max: 20,
+                        min: 5,
+                        max: 9,
                         resultName: 'Bad',
                         resultDescription: 'You are bad',
                     },
                     {
-                        min: 21,
+                        min: 10,
                         max: Infinity,
                         resultName: 'Godlike',
                         resultDescription: 'You are godlike',

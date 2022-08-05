@@ -8,7 +8,7 @@ import Results from './Results.jsx';
 export const MarksContext = React.createContext();
 
 export default function App() {
-
+    console.log('  hello world  '.trim().replace(' ', ''));
     const [marks, setMarks] = React.useState(Array(testConfigs.questions.length).join('.').split('.'));
     const [isInProcess, setIsInProcess] = React.useState(true);
 
