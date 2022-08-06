@@ -1,6 +1,6 @@
 import React from 'react';
-import PassTest from './createTest/PassTest.jsx';
-import CreateTest from './createTest/CreateTest.jsx';
+import PassTest from './passTest/PassTest.jsx';
+import CreateTest from './createTest/Create-Test.jsx';
 import testConfigs from '../testConfigs.js';
 
 export default function App() {

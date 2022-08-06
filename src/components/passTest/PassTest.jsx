@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Header from '../passTest/Header.jsx';
-import Question from '../passTest/Question.jsx';
-import Results from '../passTest/Results.jsx';
+import Header from './Header.jsx';
+import Question from './Question.jsx';
+import Results from './Results.jsx';
 
 
 export default function PassTest({testConfigs, disabled}) {

@@ -1,13 +1,11 @@
 import React from 'react';
-import CreateQuestion from './CreateQuestion';
+import CreateQuestion from './Create-Question.jsx';
 
 
 export default function CreateTest() {
-    const [textArea, setTextArea] = React.useState('Initial value');
     const [configObjectGeneral, setConfigObjectGeneral] = React.useState({testName: '', testDescription: ''});
     const [configObjectQuestions, setConfigObjectQuestions] = React.useState([]);
     console.log(configObjectQuestions);
-
     function handleChange(event) {
         setConfigObjectGeneral(prevGeneral => {
             return {
@@ -18,10 +16,13 @@ export default function CreateTest() {
     }
 
     let questionElements = configObjectQuestions.map((createdQuestion, index) => {
-        console.log('hello');
         return (
-            <CreateQuestion key={index} questionIndex={index} answersType={createdQuestion.answersType}
-                            setQuestions={setConfigObjectQuestions}/>
+            <CreateQuestion
+                key={index}
+                questionIndex={index}
+                answersType={createdQuestion.answersType}
+                setQuestions={setConfigObjectQuestions}
+            />
         );
     });
 
@@ -30,10 +31,8 @@ export default function CreateTest() {
             answersType: questionType,
         };
         setConfigObjectQuestions((prevQuestions) => {
-            console.log('new');
             let newQuestions = [...prevQuestions];
             newQuestions.push(emptyQuestionObject);
-            console.log(newQuestions);
             return (
                 newQuestions
             );
@@ -42,7 +41,6 @@ export default function CreateTest() {
 
     return (
         <div>
-
             <span>Test name: </span>
             <input value={configObjectGeneral.testName} onChange={event => handleChange(event)} name="testName"/>
             <br/>
@@ -51,7 +49,10 @@ export default function CreateTest() {
             <textarea value={configObjectGeneral.testDescription} onChange={event => handleChange(event)}
                       name="testDescription"/>
             <br/>
-            <button onClick={() => createNewQuestion('radio')}>Create question</button>
+            <button onClick={() => createNewQuestion('radio')}>Create radio question</button>
+            <button onClick={() => createNewQuestion('checkbox')}>Create checkbox question</button>
+            <button onClick={() => createNewQuestion('text')}>Create text question</button>
+            <button onClick={() => createNewQuestion('number')}>Create number question</button>
             {questionElements}
         </div>
 
