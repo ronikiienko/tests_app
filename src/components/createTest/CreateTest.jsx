@@ -2,7 +2,6 @@ import React from 'react';
 import CreateQuestion from './CreateQuestion';
 
 
-
 export default function CreateTest() {
     const [textArea, setTextArea] = React.useState('Initial value');
     const [configObjectGeneral, setConfigObjectGeneral] = React.useState({testName: '', testDescription: ''});
@@ -17,26 +16,27 @@ export default function CreateTest() {
             };
         });
     }
+
     let questionElements = configObjectQuestions.map((createdQuestion, index) => {
         console.log('hello');
         return (
-            <>
-                <CreateQuestion key={index} questionIndex={index} answersType={createdQuestion.answersType} setQuestions={setConfigObjectQuestions}/>
-            </>
-        )
-    })
+            <CreateQuestion key={index} questionIndex={index} answersType={createdQuestion.answersType}
+                            setQuestions={setConfigObjectQuestions}/>
+        );
+    });
+
     function createNewQuestion(questionType) {
         const emptyQuestionObject = {
-            answersType: questionType
+            answersType: questionType,
         };
         setConfigObjectQuestions((prevQuestions) => {
             console.log('new');
-            let newQuestions = prevQuestions;
+            let newQuestions = [...prevQuestions];
             newQuestions.push(emptyQuestionObject);
             console.log(newQuestions);
             return (
                 newQuestions
-            )
+            );
         });
     }
 
@@ -57,7 +57,6 @@ export default function CreateTest() {
 
     );
 }
-
 
 
 // let emptyAnswers;
