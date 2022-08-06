@@ -1,38 +1,22 @@
 import React from 'react';
-import testConfigs from './../testConfig.js';
-import Header from './Header.jsx';
-import Question from './Question.jsx';
-import Results from './Results.jsx';
-
-
-export const MarksContext = React.createContext();
+import PassTest from './createTest/PassTest.jsx';
+import CreateTest from './createTest/CreateTest.jsx';
+import testConfigs from '../testConfigs.js';
 
 export default function App() {
-    console.log('  hello world  '.trim().replace(' ', ''));
-    const [marks, setMarks] = React.useState(Array(testConfigs.questions.length).join('.').split('.'));
-    const [isInProcess, setIsInProcess] = React.useState(true);
-
-    const questionElements = testConfigs.questions.map((question, index) => {
-        return (
-            <Question key={index} questionData={question} inputsName={index} questionIndex={index} setMarks={setMarks} isInProcess={isInProcess} />
-        );
-    });
-    function finishTest () {
-        setIsInProcess(false)
+    const [mode, setMode] = React.useState('create')
+    function setPassMode () {
+        setMode('passTest');
     }
-    function startTest () {
-        setIsInProcess(true)
+    function setCreateMode () {
+        setMode('create')
     }
-
     return (
         <>
-            <MarksContext.Provider value={setMarks}>
-                <Header testConfigs={testConfigs}/>
-                {questionElements}
-                {isInProcess === false && <Results marks={marks} testConfigs={testConfigs}/>}
-                <button onClick={isInProcess ? finishTest : startTest}>{isInProcess ? 'Finish test' : 'Restart test'}</button>
-            </MarksContext.Provider>
-
+            <button onClick={setPassMode}>Pass test</button>
+            <button onClick={setCreateMode}>Create test</button>
+            {mode === 'passTest' && <PassTest testConfigs={testConfigs} disabled={false}/>}
+            {mode === 'create' && <CreateTest/>}
         </>
-    );
+    )
 }

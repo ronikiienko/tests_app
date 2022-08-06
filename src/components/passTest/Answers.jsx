@@ -2,11 +2,12 @@ import {nanoid} from 'nanoid';
 import React from 'react';
 
 
-export default function Answers({answersType, answersData, inputsName, questionIndex, setMarks, isInProcess}) {
-
+export default function Answers({questionIndex, setMarks, isInProcess, questionData}) {
+    const answersType = questionData.answersType;
+    const answersData = questionData.answers;
 
     const [userAnswerMark, setUserAnswerMark] = React.useState('');
-    const [userAnswers, setUserAnswers] = React.useState(Array(answersData.length).join('.').split('.'));
+    const [userAnswers, setUserAnswers] = React.useState(['']);
 
     function handleChange(event, checkboxNumber) {
         setUserAnswers(prevAnswer => {
@@ -27,50 +28,31 @@ export default function Answers({answersType, answersData, inputsName, questionI
         });
     }
 
+    function checkIfAnswerChosen(answerData) {
+        switch (answersType) {
+            case 'checkbox':
+                return (userAnswers.includes(answerData.answer));
+            case 'radio':
+                return (answerData.answer.toString() === userAnswers[0]);
+            case 'number':
+                return (userAnswers[0] <= answerData.max && userAnswers[0] >= answerData.min);
+            case 'text':
+                return (answerData.answer.toLowerCase().replace(/\s+/g, '') === userAnswers[0].toLowerCase().replace(/\s+/g, ''));
+        }
+    }
+
     React.useEffect(() => {
         let mark = 0;
         answersData.map((answerData, index) => {
-            switch (answersType) {
-                case 'checkbox':
-                    if (answerData.answer === userAnswers[index]) {
-                        mark = mark + answerData.mark;
-                    }
-                    break;
-                case 'radio':
-                    if (answerData.answer.toString() === userAnswers[0]) {
-                        mark = mark + answerData.mark;
-                    }
-                    break;
-                case 'number':
-                    if (userAnswers[0] <= answerData.max && userAnswers[0] >= answerData.min) {
-                        mark = mark + answerData.mark;
-                    }
-                    break;
-                case 'text':
-                    if (answerData.answer.toLowerCase().replace(/\s+/g, '') === userAnswers[0].toLowerCase().replace(/\s+/g, '')) {
-                        mark = mark + answerData.mark;
-                    }
-
+            if (checkIfAnswerChosen(answerData)) {
+                mark = mark + answerData.mark
             }
         });
         setUserAnswerMark(mark);
     }, [userAnswers]);
 
     let revealedAnswers = answersData.map((answerData, index) => {
-        let isChosen;
-        switch (answersType) {
-            case 'number':
-                isChosen = userAnswers[0] <= answerData.max && userAnswers[0] >= answerData.min;
-                break;
-            case 'checkbox':
-                isChosen = userAnswers.includes(answerData.answer);
-                break;
-            case 'radio':
-                isChosen = Number(userAnswers[0]) === answerData.answer;
-                break;
-            case 'text':
-                isChosen = userAnswers[0].toLowerCase().replace(/\s+/g, '') === answerData.answer.toLowerCase().replace(/\s+/g , '');
-        }
+        let isChosen = checkIfAnswerChosen(answerData);
         return (
             <p key={index}>
                 {`${answerData.mark} ${answerData.mark === 1 ? 'point' : 'points'}:
@@ -92,12 +74,9 @@ export default function Answers({answersType, answersData, inputsName, questionI
 
     React.useEffect(() => {
         if (isInProcess) {
-            setUserAnswers(Array(answersData.length).join('.').split('.'));
+            setUserAnswers(['']);
         }
     }, [isInProcess]);
-
-
-
 
 
     if (answersType === 'number' || answersType === 'text') {
@@ -124,9 +103,9 @@ export default function Answers({answersType, answersData, inputsName, questionI
                             <input
                                 type={answersType}
                                 id={id}
-                                name={inputsName}
+                                name={questionIndex}
                                 value={answerText}
-                                checked={answersType === 'radio' ? userAnswers[0] === answerText.toString() : userAnswers.includes(answerText.toString())}
+                                checked={userAnswers.includes(answerText.toString())}
                                 onChange={(event) => handleChange(event, index)}
                                 disabled={!isInProcess}
                             />

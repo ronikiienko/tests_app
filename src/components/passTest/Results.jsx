@@ -9,7 +9,7 @@ export default function Results({marks, testConfigs}) {
         <>
             <h2>{result[0].resultName}</h2>
             <p>{result[0].resultDescription}</p>
-            <p>{marksSum} points</p>
+            <p>You've got: {marksSum} points</p>
         </>
 
     )
