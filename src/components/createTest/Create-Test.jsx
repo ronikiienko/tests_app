@@ -49,49 +49,9 @@ export default function CreateTest() {
             <textarea value={configObjectGeneral.testDescription} onChange={event => handleChange(event)}
                       name="testDescription"/>
             <br/>
-            <button onClick={() => createNewQuestion('radio')}>Create radio question</button>
-            <button onClick={() => createNewQuestion('checkbox')}>Create checkbox question</button>
-            <button onClick={() => createNewQuestion('text')}>Create text question</button>
-            <button onClick={() => createNewQuestion('number')}>Create number question</button>
+            <button onClick={createNewQuestion}>Create question</button>
             {questionElements}
         </div>
 
     );
 }
-
-
-// let emptyAnswers;
-/*switch (answersType) {
-    case 'radio':
-        emptyAnswers = [
-            {
-                answer: '',
-                mark: '',
-            },
-        ];
-        break;
-    case 'text':
-        emptyAnswers = [
-            {
-                answer: '',
-                mark: '',
-            },
-        ];
-        break;
-    case 'number':
-        emptyAnswers = [
-            {
-                min: '',
-                max: '',
-                answer: ''
-            }
-        ]
-        break;
-    case 'checkbox':
-        emptyAnswers = [
-            {
-                answer: '',
-                mark: ''
-            }
-        ]
-}*/
