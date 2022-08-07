@@ -21,7 +21,6 @@ export default function CreateTest() {
             <CreateQuestion
                 key={index}
                 questionIndex={index}
-                answersType={createdQuestion.answersType}
                 setQuestions={setConfigObjectQuestions}
             />
         );

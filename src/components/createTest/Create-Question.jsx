@@ -106,7 +106,7 @@ export default function CreateQuestion({questionIndex, setQuestions}) {
                 id={`setTypeNumber${questionIndex}`}
                 value='number'
                 onChange={(event) => handleChange(event)}
-                checked={questionGeneral.answersType === 'text'}
+                checked={questionGeneral.answersType === 'number'}
             />
             <label htmlFor={`setTypeNumber${questionIndex}`}>Number</label>
 

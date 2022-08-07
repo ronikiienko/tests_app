@@ -32,7 +32,6 @@ export default function CreateAnswers({answers, setAnswers, answersType}) {
         if (answersType === 'number') {
             fillAnswerInputs =
                 <>
-                    <p>{answersType}</p>
                     <span>Min:</span>
                     <input type="number" name="min" value={answer.min} onChange={(event) => handleChange(event, index)}/>
                     <span>Max:</span>
@@ -43,7 +42,6 @@ export default function CreateAnswers({answers, setAnswers, answersType}) {
         } else {
             fillAnswerInputs =
                 <>
-                    <p>{answersType}</p>
                     <span>Answer:</span>
                     <input type="text" name="answer" value={answer.answer} onChange={(event) => handleChange(event, index)}/>
                     <span>Mark:</span>
