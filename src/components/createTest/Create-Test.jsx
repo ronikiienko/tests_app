@@ -1,14 +1,15 @@
 import React from 'react';
 import CreateQuestion from './Create-Question.jsx';
+import CreateResults from './Create-Results';
 
 
 export default function CreateTest() {
-    const [configObjectGeneral, setConfigObjectGeneral] = React.useState({testName: '', testDescription: ''});
-    const [configObjectQuestions, setConfigObjectQuestions] = React.useState([]);
+    const [general, setGeneral] = React.useState({testName: '', testDescription: ''});
+    const [questions, setQuestions] = React.useState([]);
 
 
     function handleChange(event) {
-        setConfigObjectGeneral(prevGeneral => {
+        setGeneral(prevGeneral => {
             return {
                 ...prevGeneral,
                 [event.target.name]: event.target.value,
@@ -16,12 +17,12 @@ export default function CreateTest() {
         });
     }
 
-    let questionElements = configObjectQuestions.map((createdQuestion, index) => {
+    let questionElements = questions.map((createdQuestion, index) => {
         return (
             <CreateQuestion
                 key={index}
                 questionIndex={index}
-                setQuestions={setConfigObjectQuestions}
+                setQuestions={setQuestions}
             />
         );
     });
@@ -30,7 +31,7 @@ export default function CreateTest() {
         const emptyQuestionObject = {
             answersType: questionType,
         };
-        setConfigObjectQuestions((prevQuestions) => {
+        setQuestions((prevQuestions) => {
             let newQuestions = [...prevQuestions];
             newQuestions.push(emptyQuestionObject);
             return (
@@ -42,15 +43,16 @@ export default function CreateTest() {
     return (
         <div>
             <span>Test name: </span>
-            <input value={configObjectGeneral.testName} onChange={event => handleChange(event)} name="testName"/>
+            <input value={general.testName} onChange={event => handleChange(event)} name="testName"/>
             <br/>
             <span>Test description: </span>
             <br/>
-            <textarea value={configObjectGeneral.testDescription} onChange={event => handleChange(event)}
+            <textarea value={general.testDescription} onChange={event => handleChange(event)}
                       name="testDescription"/>
             <br/>
             <button onClick={createNewQuestion}>Create question</button>
             {questionElements}
+            <CreateResults setGeneral={setGeneral}/>
         </div>
 
     );
