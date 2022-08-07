@@ -5,7 +5,6 @@ import CreateAnswers from './Create-Answers.jsx';
 export default function CreateQuestion({questionIndex, setQuestions}) {
     const [answers, setAnswers] = React.useState([]);
     const [questionGeneral, setQuestionGeneral] = React.useState({question: '', answersType: ''});
-    console.log(questionGeneral);
     function deleteQuestion() {
         setQuestions((prevQuestions) => {
             let newQuestions = [...prevQuestions];
@@ -74,6 +73,7 @@ export default function CreateQuestion({questionIndex, setQuestions}) {
                 id={`setTypeRadio${questionIndex}`}
                 value='radio'
                 onChange={(event) => handleChange(event)}
+                checked={questionGeneral.answersType === 'radio'}
             />
             <label htmlFor={`setTypeRadio${questionIndex}`}>Radio</label>
 
@@ -84,6 +84,7 @@ export default function CreateQuestion({questionIndex, setQuestions}) {
                 id={`setTypeCheckbox${questionIndex}`}
                 value='checkbox'
                 onChange={(event) => handleChange(event)}
+                checked={questionGeneral.answersType === 'checkbox'}
             />
             <label htmlFor={`setTypeCheckbox${questionIndex}`}>Checkbox</label>
 
@@ -94,6 +95,7 @@ export default function CreateQuestion({questionIndex, setQuestions}) {
                 id={`setTypeText${questionIndex}`}
                 value='text'
                 onChange={(event) => handleChange(event)}
+                checked={questionGeneral.answersType === 'text'}
             />
             <label htmlFor={`setTypeText${questionIndex}`}>Text</label>
 
@@ -104,6 +106,7 @@ export default function CreateQuestion({questionIndex, setQuestions}) {
                 id={`setTypeNumber${questionIndex}`}
                 value='number'
                 onChange={(event) => handleChange(event)}
+                checked={questionGeneral.answersType === 'text'}
             />
             <label htmlFor={`setTypeNumber${questionIndex}`}>Number</label>
 

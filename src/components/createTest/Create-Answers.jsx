@@ -2,6 +2,7 @@ import React from 'react';
 
 
 export default function CreateAnswers({answers, setAnswers, answersType}) {
+    console.log(answers);
     function deleteAnswer(event) {
         setAnswers((prevAnswers) => {
             let newAnswers = [...prevAnswers];
@@ -11,6 +12,19 @@ export default function CreateAnswers({answers, setAnswers, answersType}) {
             );
         });
     }
+    function handleChange(event, index) {
+        setAnswers(prevAnswers => {
+            let newAnswer = prevAnswers[index];
+            newAnswer = {
+                ...newAnswer,
+                [event.target.name]: event.target.value
+            }
+            let newAnswers = [...prevAnswers];
+            newAnswers[index] = newAnswer;
+            return newAnswers;
+        })
+    }
+
 
 
     let answerElements = answers.map((answer, index) => {
@@ -20,20 +34,20 @@ export default function CreateAnswers({answers, setAnswers, answersType}) {
                 <>
                     <p>{answersType}</p>
                     <span>Min:</span>
-                    <input type="number" name="min"/>
+                    <input type="number" name="min" value={answer.min} onChange={(event) => handleChange(event, index)}/>
                     <span>Max:</span>
-                    <input type="number" name="max"/>
+                    <input type="number" name="max" value={answer.max} onChange={(event) => handleChange(event, index)}/>
                     <span>Mark:</span>
-                    <input type="number" name="mark"/>
+                    <input type="number" name="mark" value={answer.mark} onChange={(event) => handleChange(event, index)}/>
                 </>;
         } else {
             fillAnswerInputs =
                 <>
                     <p>{answersType}</p>
                     <span>Answer:</span>
-                    <input type="text" name="answer"/>
+                    <input type="text" name="answer" value={answer.answer} onChange={(event) => handleChange(event, index)}/>
                     <span>Mark:</span>
-                    <input type="number" name="mark"/>
+                    <input type="number" name="mark" value={answer.mark} onChange={(event) => handleChange(event, index)}/>
                 </>;
         }
         return (

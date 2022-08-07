@@ -5,7 +5,8 @@ import CreateQuestion from './Create-Question.jsx';
 export default function CreateTest() {
     const [configObjectGeneral, setConfigObjectGeneral] = React.useState({testName: '', testDescription: ''});
     const [configObjectQuestions, setConfigObjectQuestions] = React.useState([]);
-    console.log(configObjectQuestions);
+
+
     function handleChange(event) {
         setConfigObjectGeneral(prevGeneral => {
             return {
