@@ -45,7 +45,7 @@ export default function Answers({questionIndex, setMarks, isInProcess, questionD
         let mark = 0;
         answersData.map((answerData, index) => {
             if (checkIfAnswerChosen(answerData)) {
-                mark = mark + answerData.mark
+                mark = mark + Number(answerData.mark)
             }
         });
         setUserAnswerMark(mark);

@@ -8,7 +8,7 @@ export default function CreateTest() {
     const [questions, setQuestions] = React.useState([]);
     const [saveSignal, setSaveSignal] = React.useState(Date.now());
     const [testConfigObject, setTestConfigObject] = React.useState({});
-
+    // console.log(testConfigObject);
     // console.log(questions);
     function exportTest () {
         console.log();

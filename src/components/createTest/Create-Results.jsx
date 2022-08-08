@@ -30,9 +30,10 @@ export default function CreateResults({setGeneral, saveSignal}) {
     function handleChange(event, index) {
         setResultRanges(prevResultRanges => {
             let newResultRange = prevResultRanges[index]
+            let inputValue;
             newResultRange = {
                 ...newResultRange,
-                [event.target.name]: event.target.value
+                [event.target.name]: Number(event.target.value)
             }
             let newResultRanges = [...prevResultRanges]
             newResultRanges[index] = newResultRange;
