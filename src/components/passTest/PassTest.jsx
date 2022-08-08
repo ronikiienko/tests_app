@@ -10,7 +10,6 @@ export default function PassTest({ disabled }) {
     const [marks, setMarks] = React.useState(['']);
     const [isInProcess, setIsInProcess] = React.useState(!disabled);
     const [testConfigs, setTestConfigs] = React.useState({...defaultTestConfigs})
-    console.log(testConfigs);
     const questionElements = testConfigs.questions.map((question, index) => {
         return (
             <Question key={index} questionData={question} questionIndex={index} setMarks={setMarks}
