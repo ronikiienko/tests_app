@@ -1,4 +1,4 @@
-const testConfigs =
+const defaultTestConfigs =
     {
         general: {
             testName: 'Example test',
@@ -123,4 +123,4 @@ const testConfigs =
 
             ],
     };
-export default testConfigs;
+export default defaultTestConfigs;

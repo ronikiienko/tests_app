@@ -1,7 +1,7 @@
 import React from 'react';
 import CreateQuestion from './Create-Question.jsx';
 import CreateResults from './Create-Results';
-
+import { saveAs } from 'file-saver';
 
 export default function CreateTest() {
     const [general, setGeneral] = React.useState({testName: '', testDescription: ''});
@@ -10,6 +10,11 @@ export default function CreateTest() {
     const [testConfigObject, setTestConfigObject] = React.useState({});
 
     // console.log(questions);
+    function exportTest () {
+        console.log();
+        let blob = new Blob([JSON.stringify(testConfigObject)], {type: "text/plain;charset=utf-8"});
+        saveAs(blob, `${general.testName}.txt`);
+    }
     React.useEffect(() => {
         setTestConfigObject({general: {...general}, questions: [...questions]});
     }, [questions]);
@@ -65,7 +70,7 @@ export default function CreateTest() {
             <CreateResults setGeneral={setGeneral} saveSignal={saveSignal}/>
             <br/>
             <button onClick={sendSaveSignal}>Save test</button>
-            <button>Export test</button>
+            <button onClick={exportTest}>Export test</button>
         </div>
 
     );

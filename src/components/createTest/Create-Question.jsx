@@ -74,7 +74,7 @@ export default function CreateQuestion({questionIndex, setQuestions, saveSignal}
 
     return (
         <>
-            <h2>{questionIndex}.)</h2>
+            <h2>{questionIndex + 1}.)</h2>
             <p>Question:</p>
             <input onChange={(event) => handleChange(event)} name="question" type="text"
                    value={questionGeneral.question} style={{display: "block"}}/>
