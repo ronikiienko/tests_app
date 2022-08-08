@@ -1,9 +1,18 @@
 import React from 'react';
 
 
-export default function CreateResults({setGeneral}) {
+export default function CreateResults({setGeneral, saveSignal}) {
     const [resultRanges, setResultRanges] = React.useState([]);
-    console.log(resultRanges);
+
+    React.useEffect(() => {
+        setGeneral(prevGeneral => {
+            return {
+                ...prevGeneral,
+                results: resultRanges
+            }
+        })
+    }, [saveSignal])
+
     function addResultRange() {
         setResultRanges(prevResults => {
             let newResults = [...prevResults]
@@ -30,6 +39,7 @@ export default function CreateResults({setGeneral}) {
             return [...newResultRanges]
         })
     }
+
 
     let resultRangeElement = resultRanges.map((resultRange, index) => {
         return (

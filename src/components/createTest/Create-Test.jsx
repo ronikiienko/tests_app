@@ -6,7 +6,19 @@ import CreateResults from './Create-Results';
 export default function CreateTest() {
     const [general, setGeneral] = React.useState({testName: '', testDescription: ''});
     const [questions, setQuestions] = React.useState([]);
+    const [saveSignal, setSaveSignal] = React.useState(Date.now());
+    const [testConfigObject, setTestConfigObject] = React.useState({});
 
+    // console.log(questions);
+    React.useEffect(() => {
+        setTestConfigObject({general: {...general}, questions: [...questions]});
+    }, [questions]);
+    console.clear()
+    console.log(testConfigObject);
+    function sendSaveSignal() {
+        setSaveSignal(Date.now());
+
+    }
 
     function handleChange(event) {
         setGeneral(prevGeneral => {
@@ -23,17 +35,15 @@ export default function CreateTest() {
                 key={index}
                 questionIndex={index}
                 setQuestions={setQuestions}
+                saveSignal={saveSignal}
             />
         );
     });
 
     function createNewQuestion(questionType) {
-        const emptyQuestionObject = {
-            answersType: questionType,
-        };
         setQuestions((prevQuestions) => {
             let newQuestions = [...prevQuestions];
-            newQuestions.push(emptyQuestionObject);
+            newQuestions.push({});
             return (
                 newQuestions
             );
@@ -52,7 +62,10 @@ export default function CreateTest() {
             <br/>
             <button onClick={createNewQuestion}>Create question</button>
             {questionElements}
-            <CreateResults setGeneral={setGeneral}/>
+            <CreateResults setGeneral={setGeneral} saveSignal={saveSignal}/>
+            <br/>
+            <button onClick={sendSaveSignal}>Save test</button>
+            <button>Export test</button>
         </div>
 
     );

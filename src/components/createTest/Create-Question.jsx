@@ -2,9 +2,10 @@ import React from 'react';
 import CreateAnswers from './Create-Answers.jsx';
 
 
-export default function CreateQuestion({questionIndex, setQuestions}) {
+export default function CreateQuestion({questionIndex, setQuestions, saveSignal}) {
     const [answers, setAnswers] = React.useState([]);
     const [questionGeneral, setQuestionGeneral] = React.useState({question: '', answersType: ''});
+
     function deleteQuestion() {
         setQuestions((prevQuestions) => {
             let newQuestions = [...prevQuestions];
@@ -14,6 +15,17 @@ export default function CreateQuestion({questionIndex, setQuestions}) {
             );
         });
     }
+
+    React.useEffect(() => {
+        setQuestions(prevQuestions => {
+            let newQuestions = [...prevQuestions];
+            newQuestions[questionIndex] = {
+                ...questionGeneral,
+                answers: [...answers]
+            }
+            return newQuestions;
+        })
+    }, [saveSignal])
 
     function addNewAnswer() {
         setAnswers((prevAnswers) => {

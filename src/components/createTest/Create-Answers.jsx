@@ -2,7 +2,6 @@ import React from 'react';
 
 
 export default function CreateAnswers({answers, setAnswers, answersType}) {
-    console.log(answers);
     function deleteAnswer(event) {
         setAnswers((prevAnswers) => {
             let newAnswers = [...prevAnswers];
