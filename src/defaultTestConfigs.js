@@ -76,6 +76,7 @@ const defaultTestConfigs =
                 {
                     question: 'Which of these are animals?',
                     answersType: 'checkbox',
+                    maxChecked: 3,
                     answers:
                         [
                             {

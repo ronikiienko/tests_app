@@ -1,10 +1,11 @@
 import React from 'react';
+import {Plugin} from 'vite';
 import CreateAnswers from './Create-Answers.jsx';
 
 
 export default function CreateQuestion({questionIndex, setQuestions, saveSignal}) {
     const [answers, setAnswers] = React.useState([]);
-    const [questionGeneral, setQuestionGeneral] = React.useState({question: '', answersType: ''});
+    const [questionGeneral, setQuestionGeneral] = React.useState({question: '', answersType: '', maxChecked: ''});
 
     function deleteQuestion() {
         setQuestions((prevQuestions) => {
@@ -129,6 +130,8 @@ export default function CreateQuestion({questionIndex, setQuestions, saveSignal}
             <label htmlFor={`setTypeNumber${questionIndex}`}>Number</label>
 
             <br />
+            {questionGeneral.answersType &&
+                <input type="number" name="maxChecked" placeholder="Max checked" value={questionGeneral.maxChecked}/>}
             {questionGeneral.answersType && <button onClick={addNewAnswer}>Add new answer</button>}
             <button onClick={deleteQuestion}>Delete question</button>
             <CreateAnswers answers={answers} answersType={questionGeneral.answersType} setAnswers={setAnswers}/>

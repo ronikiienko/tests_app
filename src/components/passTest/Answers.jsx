@@ -8,19 +8,34 @@ export default function Answers({questionIndex, setMarks, isInProcess, questionD
 
     const [userAnswerMark, setUserAnswerMark] = React.useState('');
     const [userAnswers, setUserAnswers] = React.useState(['']);
+    React.useEffect(() => {
+        console.log(userAnswers);
+    }, [userAnswers]);
 
     function handleChange(event, checkboxNumber) {
         setUserAnswers(prevAnswer => {
+            let newAnswer = [...prevAnswer];
             if (answersType === 'checkbox') {
-                let newAnswer = [...prevAnswer];
                 if (newAnswer[checkboxNumber] === event.target.value) {
                     newAnswer[checkboxNumber] = '';
+                    return newAnswer;
                 } else {
-                    newAnswer[checkboxNumber] = event.target.value;
+                    let realAnswerLength = 0;
+                    for (let i = 0; i < newAnswer.length; i++) {
+                        if (newAnswer[i] !== '') {
+                            realAnswerLength++;
+                        }
+                    }
+
+                    if (realAnswerLength >= questionData.maxChecked) {
+                        newAnswer = [...newAnswer];
+                    } else {
+                        newAnswer[checkboxNumber] = event.target.value;
+                    }
+                    return newAnswer;
+
                 }
-                return newAnswer;
             } else {
-                let newAnswer = [...prevAnswer];
                 newAnswer[0] = event.target.value;
                 return newAnswer;
             }
@@ -45,7 +60,7 @@ export default function Answers({questionIndex, setMarks, isInProcess, questionD
         let mark = 0;
         answersData.map((answerData, index) => {
             if (checkIfAnswerChosen(answerData)) {
-                mark = mark + Number(answerData.mark)
+                mark = mark + Number(answerData.mark);
             }
         });
         setUserAnswerMark(mark);
@@ -95,6 +110,7 @@ export default function Answers({questionIndex, setMarks, isInProcess, questionD
     if (answersType === 'radio' || answersType === 'checkbox') {
         return (
             <>
+                {answersType === 'checkbox' && <p>Choose {questionData.maxChecked} answers</p>}
                 {answersData.map((answerData, index) => {
                     const id = nanoid();
                     let answerText = answerData.answer;
