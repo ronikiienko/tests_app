@@ -1,11 +1,10 @@
 import React from 'react';
-import {Plugin} from 'vite';
 import CreateAnswers from './Create-Answers.jsx';
 
 
 export default function CreateQuestion({questionIndex, setQuestions, saveSignal}) {
     const [answers, setAnswers] = React.useState([]);
-    const [questionGeneral, setQuestionGeneral] = React.useState({question: '', answersType: '', maxChecked: ''});
+    const [questionGeneral, setQuestionGeneral] = React.useState({question: '', answersType: '', maxChecked: 3});
 
     function deleteQuestion() {
         setQuestions((prevQuestions) => {
@@ -123,15 +122,16 @@ export default function CreateQuestion({questionIndex, setQuestions, saveSignal}
                 type="radio"
                 name={`answersType${questionIndex}`}
                 id={`setTypeNumber${questionIndex}`}
-                value='number'
+                value="number"
                 onChange={(event) => handleChange(event)}
                 checked={questionGeneral.answersType === 'number'}
             />
             <label htmlFor={`setTypeNumber${questionIndex}`}>Number</label>
 
-            <br />
-            {questionGeneral.answersType &&
-                <input type="number" name="maxChecked" placeholder="Max checked" value={questionGeneral.maxChecked}/>}
+            <br/>
+            {questionGeneral.answersType === 'checkbox' &&
+                <input type="number" name="maxChecked" placeholder="Max checked" value={questionGeneral.maxChecked}
+                       onChange={(event) => handleChange(event)}/>}
             {questionGeneral.answersType && <button onClick={addNewAnswer}>Add new answer</button>}
             <button onClick={deleteQuestion}>Delete question</button>
             <CreateAnswers answers={answers} answersType={questionGeneral.answersType} setAnswers={setAnswers}/>

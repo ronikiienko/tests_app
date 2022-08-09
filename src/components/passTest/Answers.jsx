@@ -5,6 +5,12 @@ import React from 'react';
 export default function Answers({questionIndex, setMarks, isInProcess, questionData}) {
     const answersType = questionData.answersType;
     const answersData = questionData.answers;
+    let maxChecked;
+    if (questionData.maxChecked === '') {
+        maxChecked = 3;
+    } else {
+        maxChecked = questionData.maxChecked;
+    }
 
     const [userAnswerMark, setUserAnswerMark] = React.useState('');
     const [userAnswers, setUserAnswers] = React.useState(['']);
@@ -12,22 +18,23 @@ export default function Answers({questionIndex, setMarks, isInProcess, questionD
         console.log(userAnswers);
     }, [userAnswers]);
 
+
     function handleChange(event, checkboxNumber) {
         setUserAnswers(prevAnswer => {
             let newAnswer = [...prevAnswer];
             if (answersType === 'checkbox') {
+
                 if (newAnswer[checkboxNumber] === event.target.value) {
                     newAnswer[checkboxNumber] = '';
                     return newAnswer;
                 } else {
                     let realAnswerLength = 0;
                     for (let i = 0; i < newAnswer.length; i++) {
-                        if (newAnswer[i] !== '') {
+                        if (newAnswer[i] && newAnswer[i] !== '') {
                             realAnswerLength++;
                         }
                     }
-
-                    if (realAnswerLength >= questionData.maxChecked) {
+                    if (realAnswerLength >= maxChecked) {
                         newAnswer = [...newAnswer];
                     } else {
                         newAnswer[checkboxNumber] = event.target.value;
@@ -110,7 +117,7 @@ export default function Answers({questionIndex, setMarks, isInProcess, questionD
     if (answersType === 'radio' || answersType === 'checkbox') {
         return (
             <>
-                {answersType === 'checkbox' && <p>Choose {questionData.maxChecked} answers</p>}
+                {answersType === 'checkbox' && <p>Choose {maxChecked} answers</p>}
                 {answersData.map((answerData, index) => {
                     const id = nanoid();
                     let answerText = answerData.answer;
