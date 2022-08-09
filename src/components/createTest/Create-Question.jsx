@@ -40,10 +40,16 @@ export default function CreateQuestion({questionIndex, setQuestions, saveSignal}
     }
 
     function handleChange(event) {
+        let keyToChange;
+        if (event.target.name.includes('answersType')) {
+            keyToChange = 'answersType';
+        } else {
+            keyToChange = event.target.name;
+        }
         setQuestionGeneral(prevQuestionData => {
             return {
                 ...prevQuestionData,
-                [event.target.name]: event.target.value,
+                [keyToChange]: event.target.value,
             };
         });
     }
@@ -80,8 +86,8 @@ export default function CreateQuestion({questionIndex, setQuestions, saveSignal}
                    value={questionGeneral.question} style={{display: "block"}}/>
             <p>Answers type:</p>
             <input
-                type='radio'
-                name='answersType'
+                type="radio"
+                name={`answersType${questionIndex}`}
                 id={`setTypeRadio${questionIndex}`}
                 value='radio'
                 onChange={(event) => handleChange(event)}
@@ -91,8 +97,8 @@ export default function CreateQuestion({questionIndex, setQuestions, saveSignal}
 
 
             <input
-                type='radio'
-                name='answersType'
+                type="radio"
+                name={`answersType${questionIndex}`}
                 id={`setTypeCheckbox${questionIndex}`}
                 value='checkbox'
                 onChange={(event) => handleChange(event)}
@@ -102,8 +108,8 @@ export default function CreateQuestion({questionIndex, setQuestions, saveSignal}
 
 
             <input
-                type='radio'
-                name='answersType'
+                type="radio"
+                name={`answersType${questionIndex}`}
                 id={`setTypeText${questionIndex}`}
                 value='text'
                 onChange={(event) => handleChange(event)}
@@ -113,8 +119,8 @@ export default function CreateQuestion({questionIndex, setQuestions, saveSignal}
 
 
             <input
-                type='radio'
-                name='answersType'
+                type="radio"
+                name={`answersType${questionIndex}`}
                 id={`setTypeNumber${questionIndex}`}
                 value='number'
                 onChange={(event) => handleChange(event)}
