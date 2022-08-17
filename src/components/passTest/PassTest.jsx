@@ -1,3 +1,4 @@
+import {Button} from '@mui/material';
 import React from 'react';
 import defaultTestConfigs from '../../defaultTestConfigs.js';
 
@@ -35,8 +36,13 @@ export default function PassTest({ disabled }) {
     }
     return (
         <>
-
-            <button onClick={handleUserFile}>Import test</button>
+            <Button
+                variant={'outlined'}
+                sx={{display: 'block', m: 'auto', width: 300}}
+                onClick={handleUserFile}
+            >
+                Import test
+            </Button>
             {!isInProcess && <Results marks={marks} testConfigs={testConfigs}/>}
             <Header testConfigs={testConfigs}/>
             {questionElements}

@@ -1,3 +1,4 @@
+import {Checkbox, FormControlLabel, FormGroup} from '@mui/material';
 import {nanoid} from 'nanoid';
 import React from 'react';
 
@@ -45,7 +46,7 @@ export default function Answers({questionIndex, setMarks, isInProcess, questionD
         let mark = 0;
         answersData.map((answerData, index) => {
             if (checkIfAnswerChosen(answerData)) {
-                mark = mark + Number(answerData.mark)
+                mark = mark + Number(answerData.mark);
             }
         });
         setUserAnswerMark(mark);
@@ -82,10 +83,16 @@ export default function Answers({questionIndex, setMarks, isInProcess, questionD
     if (answersType === 'number' || answersType === 'text') {
         return (
             <>
+                {/*<TextField
+                    type={answersType}
+                    onChange={(event) => handleChange(event)}
+                    value={userAnswers[0]}
+                    disabled={!isInProcess}
+                />*/}
                 <input
                     type={answersType}
-                    value={userAnswers[0]}
                     onChange={(event) => handleChange(event)}
+                    value={userAnswers[0]}
                     disabled={!isInProcess}
                 />
                 {!isInProcess && revealedAnswers}
@@ -94,6 +101,31 @@ export default function Answers({questionIndex, setMarks, isInProcess, questionD
     }
     if (answersType === 'radio' || answersType === 'checkbox') {
         return (
+            /*<FormGroup row>
+                {answersData.map((answerData, index) => {
+                    const id = nanoid();
+                    let answerText = answerData.answer;
+                    return (
+                        <FormControlLabel
+                            control={
+                                <Checkbox
+                                    checked={userAnswers.includes(answerText.toString())}
+                                    onChange={(event) => handleChange(event, index)}
+                                    disabled={!isInProcess}
+                                    value={answerText}
+                                    name={questionIndex}
+                                />
+                            }
+                            label={answerText}
+                            key={id}
+                        />
+                    );
+                })
+
+                }
+                {!isInProcess && revealedAnswers}
+
+            </FormGroup>*/
             <>
                 {answersData.map((answerData, index) => {
                     const id = nanoid();
