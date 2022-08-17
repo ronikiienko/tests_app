@@ -23,7 +23,7 @@ export default function Results({marks, testConfigs}) {
 
     return (
         <>
-            {marksSum / maximumMark >= 0.9 && <ReactConfetti wind={0.01} numberOfPieces={200} run={false}/>}
+            {marksSum / maximumMark >= 0.9 && <ReactConfetti wind={0.01} numberOfPieces={200}/>}
             <h2>{result[0].resultName}</h2>
             <p>{result[0].resultDescription}</p>
             <p>You've got: {marksSum} out of {maximumMark} points</p>
