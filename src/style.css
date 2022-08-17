@@ -6,3 +6,6 @@ html {
     color: white;*/
     font-family: Arial;
 }
+body {
+    overflow-x: hidden;
+}

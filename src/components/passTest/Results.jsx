@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactConfetti from 'react-confetti';
 
 
 export default function Results({marks, testConfigs}) {
@@ -21,6 +22,7 @@ export default function Results({marks, testConfigs}) {
 
     return (
         <>
+            {marksSum / maximumMark >= 0.9 && <ReactConfetti/>}
             <h2>{result[0].resultName}</h2>
             <p>{result[0].resultDescription}</p>
             <p>You've got: {marksSum} out of {maximumMark} points</p>
