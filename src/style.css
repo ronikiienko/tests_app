@@ -9,3 +9,6 @@ html {
 body {
     overflow-x: hidden;
 }
+.hidden {
+    display: none;
+}

@@ -3,6 +3,7 @@ import ReactConfetti from 'react-confetti';
 
 
 export default function Results({marks, testConfigs}) {
+    const [confettiOpacity, setConfettiOpacity] = React.useState(1)
     let maximumMark = 0;
     testConfigs.questions.map(question => {
         let questionMarks = [];
@@ -22,7 +23,7 @@ export default function Results({marks, testConfigs}) {
 
     return (
         <>
-            {marksSum / maximumMark >= 0.9 && <ReactConfetti/>}
+            {marksSum / maximumMark >= 0.9 && <ReactConfetti wind={0.01} numberOfPieces={200} run={false}/>}
             <h2>{result[0].resultName}</h2>
             <p>{result[0].resultDescription}</p>
             <p>You've got: {marksSum} out of {maximumMark} points</p>

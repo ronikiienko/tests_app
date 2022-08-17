@@ -1,4 +1,4 @@
-import {Checkbox, FormControlLabel, FormGroup, Radio, RadioGroup, TextField} from '@mui/material';
+import {Checkbox, FormControlLabel, FormGroup, Radio, RadioGroup, TextField, Typography} from '@mui/material';
 import {nanoid} from 'nanoid';
 import React from 'react';
 import {capitalizeFirstLetter} from '../../utils.js';
@@ -56,11 +56,11 @@ export default function Answers({questionIndex, setMarks, isInProcess, questionD
     let revealedAnswers = answersData.map((answerData, index) => {
         let isChosen = checkIfAnswerChosen(answerData);
         return (
-            <p key={index}>
+            <Typography variant='body1' key={index}>
                 {`${answerData.mark} ${answerData.mark === 1 ? 'point' : 'points'}:
                        ${answersType === 'number' ? `${answerData.min} - ${answerData.max}` : answerData.answer}
                        ${isChosen ? 'chosen' : ''}`}
-            </p>
+            </Typography>
         );
     });
 
@@ -162,6 +162,7 @@ export default function Answers({questionIndex, setMarks, isInProcess, questionD
                         let answerText = answerData.answer;
                         return (
                             <FormControlLabel
+                                key={id}
                                 control={
                                     <Radio
                                         value={answerText}
@@ -190,6 +191,7 @@ export default function Answers({questionIndex, setMarks, isInProcess, questionD
                         let answerText = answerData.answer;
                         return (
                             <FormControlLabel
+                                key={id}
                                 control={
                                     <Checkbox
                                         value={answerText}
