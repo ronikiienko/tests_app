@@ -3,7 +3,7 @@ import PassTest from './passTest/PassTest.jsx';
 import CreateTest from './createTest/Create-Test.jsx';
 
 export default function App() {
-    const [mode, setMode] = React.useState('passTest')
+    const [mode, setMode] = React.useState('create')
     function setPassMode () {
         setMode('passTest');
     }
