@@ -1,6 +1,7 @@
-import {Checkbox, FormControlLabel, FormGroup} from '@mui/material';
+import {Checkbox, FormControlLabel, FormGroup, Radio, RadioGroup, TextField} from '@mui/material';
 import {nanoid} from 'nanoid';
 import React from 'react';
+import {capitalizeFirstLetter} from '../../utils.js';
 
 
 export default function Answers({questionIndex, setMarks, isInProcess, questionData}) {
@@ -83,13 +84,13 @@ export default function Answers({questionIndex, setMarks, isInProcess, questionD
     if (answersType === 'number' || answersType === 'text') {
         return (
             <>
-                {/*<TextField
-                    type={answersType}
-                    onChange={(event) => handleChange(event)}
-                    value={userAnswers[0]}
-                    disabled={!isInProcess}
-                />*/}
-                <input
+                <TextField
+                    sx={{
+                        marginY: 2
+                    }}
+                    label='Answer'
+                    placeholder={capitalizeFirstLetter(answersType)}
+                    variant='filled'
                     type={answersType}
                     onChange={(event) => handleChange(event)}
                     value={userAnswers[0]}
@@ -99,9 +100,9 @@ export default function Answers({questionIndex, setMarks, isInProcess, questionD
             </>
         );
     }
-    if (answersType === 'radio' || answersType === 'checkbox') {
+    /*if (answersType === 'radio' || answersType === 'checkbox') {
         return (
-            /*<FormGroup row>
+            /!*<FormGroup row>
                 {answersData.map((answerData, index) => {
                     const id = nanoid();
                     let answerText = answerData.answer;
@@ -125,13 +126,14 @@ export default function Answers({questionIndex, setMarks, isInProcess, questionD
                 }
                 {!isInProcess && revealedAnswers}
 
-            </FormGroup>*/
+            </FormGroup>*!/
             <>
                 {answersData.map((answerData, index) => {
                     const id = nanoid();
                     let answerText = answerData.answer;
                     return (
                         <React.Fragment key={id}>
+                            <br />
                             <input
                                 type={answersType}
                                 id={id}
@@ -150,5 +152,61 @@ export default function Answers({questionIndex, setMarks, isInProcess, questionD
                 {!isInProcess && revealedAnswers}
             </>
         );
+    }*/
+    if (answersType === 'radio') {
+        return (
+            <>
+                <RadioGroup>
+                    {answersData.map((answerData, index) => {
+                        const id = nanoid();
+                        let answerText = answerData.answer;
+                        return (
+                            <FormControlLabel
+                                control={
+                                    <Radio
+                                        value={answerText}
+                                        checked={userAnswers.includes(answerText.toString())}
+                                        onChange={(event) => handleChange(event, index)}
+                                        disabled={!isInProcess}
+                                    />
+                                }
+                                label={answerText}
+                            />
+                        )
+                    })}
+                </RadioGroup>
+                {!isInProcess && revealedAnswers}
+            </>
+
+
+        )
+    }
+    if (answersType === 'checkbox') {
+        return (
+            <>
+                <FormGroup>
+                    {answersData.map((answerData, index) => {
+                        const id = nanoid();
+                        let answerText = answerData.answer;
+                        return (
+                            <FormControlLabel
+                                control={
+                                    <Checkbox
+                                        value={answerText}
+                                        checked={userAnswers.includes(answerText.toString())}
+                                        onChange={(event) => handleChange(event, index)}
+                                        disabled={!isInProcess}
+                                    />
+                                }
+                                label={answerText}
+                            />
+                        )
+                    })}
+                </FormGroup>
+                {!isInProcess && revealedAnswers}
+            </>
+
+
+        )
     }
 }
