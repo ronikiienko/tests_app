@@ -1,4 +1,5 @@
-import {FormControlLabel, Radio, RadioGroup, TextField} from '@mui/material';
+import {Delete} from '@mui/icons-material';
+import {Box, Button, FormControlLabel, Radio, RadioGroup, TextField} from '@mui/material';
 import React from 'react';
 import CreateAnswers from './Create-Answers.jsx';
 
@@ -10,9 +11,6 @@ export default function CreateQuestion({questionIndex, setQuestions, saveSignal,
     React.useEffect(() => {
         renderCount.current = renderCount.current + 1;
     });
-    console.log(renderCount.current);
-    console.log('answers', answers);
-    console.log('question general', questionGeneral);
 
     function deleteQuestion() {
         setQuestions((prevQuestions) => {
@@ -102,7 +100,13 @@ export default function CreateQuestion({questionIndex, setQuestions, saveSignal,
 
 
     return (
-        <>
+        <Box sx={{
+            py: 2,
+            mt: 2,
+            backgroundColor: 'rgba(96,96,96,0.2)',
+            padding: 2,
+            borderRadius: 2
+        }}>
             <h2>{questionIndex + 1}.)</h2>
             <TextField
                 label='Question'
@@ -110,7 +114,8 @@ export default function CreateQuestion({questionIndex, setQuestions, saveSignal,
                 onChange={(event) => handleChange(event)}
                 name="question"
                 type="text"
-                value={questionGeneral.question} style={{display: 'block'}}/>
+                fullWidth
+                value={questionGeneral.question} sx={{display: 'block'}}/>
             <p>Answers type:</p>
             <RadioGroup row>
                 <FormControlLabel control={
@@ -154,10 +159,10 @@ export default function CreateQuestion({questionIndex, setQuestions, saveSignal,
 
 
             <br/>
-            {questionGeneral.answersType && <button onClick={addNewAnswer}>Add new answer</button>}
-            <button onClick={deleteQuestion}>Delete question</button>
+            {questionGeneral.answersType && <Button variant='outlined' onClick={addNewAnswer} sx={{margin: 'auto', display: 'block', mb: 2}}>Add new answer</Button>}
             <CreateAnswers answers={answers} answersType={questionGeneral.answersType} setAnswers={setAnswers}/>
-        </>
+            <Button startIcon={<Delete />} color='error' fullWidth variant='contained' onClick={deleteQuestion}>Delete question</Button>
+        </Box>
 
     );
 }

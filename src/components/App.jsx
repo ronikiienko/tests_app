@@ -6,12 +6,11 @@ import PassTest from './passTest/PassTest.jsx';
 
 
 export default function App() {
-    const [chosenTabNum, setChosenTabNum] = React.useState(0);
+    const [chosenTabNum, setChosenTabNum] = React.useState(1);
     const [mode, setMode] = React.useState('passTest');
     const [theme, setTheme] = React.useState(false);
 
     function handleTabChange(event, newValue) {
-        console.log(newValue);
         setChosenTabNum(newValue);
     }
 

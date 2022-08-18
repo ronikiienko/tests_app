@@ -1,3 +1,4 @@
+import {Button} from '@mui/material';
 import React from 'react';
 
 
@@ -79,7 +80,7 @@ export default function CreateResults({setGeneral, saveSignal}) {
                     onChange={event => handleChange(event, index)}
                 />
 
-                <button name={index} onClick={(event) => deleteResultRange(event)}>Delete result range</button>
+                <Button variant='outlined' name={index} onClick={(event) => deleteResultRange(event)}>Delete result range</Button>
             </React.Fragment>
         )
     })
