@@ -20,10 +20,12 @@ export default function PassTest({disabled}) {
 
     function finishTest() {
         setIsInProcess(false);
+        scroll(0,0);
     }
 
     function startTest() {
         setIsInProcess(true);
+        scroll(0,0);
     }
 
     async function handleUserFile() {
@@ -45,13 +47,13 @@ export default function PassTest({disabled}) {
                     color='success'
                     variant={'outlined'}
                     onClick={isInProcess ? finishTest : startTest}
-                    sx={{display: 'block', m: 'auto', width: 300}}
+                    sx={{display: 'block', m: 'auto', width: 300, mb: 2}}
                 >
                     {isInProcess ? 'Finish test' : 'Restart test'}
                 </Button>}
             <Button
                 variant={'outlined'}
-                sx={{display: 'block', m: 'auto', width: 300}}
+                sx={{display: 'block', m: 'auto', width: 300, mb: 4}}
                 onClick={handleUserFile}
             >
                 Import test

@@ -3,7 +3,6 @@ import React from 'react';
 
 export default function CreateResults({setGeneral, saveSignal}) {
     const [resultRanges, setResultRanges] = React.useState([]);
-
     React.useEffect(() => {
         setGeneral(prevGeneral => {
             return {
@@ -29,11 +28,10 @@ export default function CreateResults({setGeneral, saveSignal}) {
     }
     function handleChange(event, index) {
         setResultRanges(prevResultRanges => {
-            let newResultRange = prevResultRanges[index]
-            let inputValue;
+            let newResultRange = prevResultRanges[index];
             newResultRange = {
                 ...newResultRange,
-                [event.target.name]: Number(event.target.value)
+                [event.target.name]: event.target.value
             }
             let newResultRanges = [...prevResultRanges]
             newResultRanges[index] = newResultRange;
@@ -43,6 +41,7 @@ export default function CreateResults({setGeneral, saveSignal}) {
 
 
     let resultRangeElement = resultRanges.map((resultRange, index) => {
+        console.log(resultRange);
         return (
             <React.Fragment key={index}>
                 <br />
@@ -80,7 +79,7 @@ export default function CreateResults({setGeneral, saveSignal}) {
                     onChange={event => handleChange(event, index)}
                 />
 
-                <button onClick={(event) => deleteResultRange(event)}>Delete result range</button>
+                <button name={index} onClick={(event) => deleteResultRange(event)}>Delete result range</button>
             </React.Fragment>
         )
     })

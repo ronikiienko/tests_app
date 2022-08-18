@@ -56,10 +56,18 @@ export default function Answers({questionIndex, setMarks, isInProcess, questionD
     let revealedAnswers = answersData.map((answerData, index) => {
         let isChosen = checkIfAnswerChosen(answerData);
         return (
-            <Typography variant='body1' key={index}>
+            <Typography paragraph key={index} sx={{
+                margin: 0.3,
+                padding: 0.3,
+                backgroundColor: isChosen ? 'rgba(255,213,0,0.18)' : '',
+                borderRadius: 1,
+                "&:hover": {
+                    backgroundColor: 'rgba(215,189,54,0.1)'
+                }
+            }}>
                 {`${answerData.mark} ${answerData.mark === 1 ? 'point' : 'points'}:
                        ${answersType === 'number' ? `${answerData.min} - ${answerData.max}` : answerData.answer}
-                       ${isChosen ? 'chosen' : ''}`}
+                       ${isChosen ? ' => chosen' : ''}`}
             </Typography>
         );
     });
@@ -100,59 +108,6 @@ export default function Answers({questionIndex, setMarks, isInProcess, questionD
             </>
         );
     }
-    /*if (answersType === 'radio' || answersType === 'checkbox') {
-        return (
-            /!*<FormGroup row>
-                {answersData.map((answerData, index) => {
-                    const id = nanoid();
-                    let answerText = answerData.answer;
-                    return (
-                        <FormControlLabel
-                            control={
-                                <Checkbox
-                                    checked={userAnswers.includes(answerText.toString())}
-                                    onChange={(event) => handleChange(event, index)}
-                                    disabled={!isInProcess}
-                                    value={answerText}
-                                    name={questionIndex}
-                                />
-                            }
-                            label={answerText}
-                            key={id}
-                        />
-                    );
-                })
-
-                }
-                {!isInProcess && revealedAnswers}
-
-            </FormGroup>*!/
-            <>
-                {answersData.map((answerData, index) => {
-                    const id = nanoid();
-                    let answerText = answerData.answer;
-                    return (
-                        <React.Fragment key={id}>
-                            <br />
-                            <input
-                                type={answersType}
-                                id={id}
-                                name={questionIndex}
-                                value={answerText}
-                                checked={userAnswers.includes(answerText.toString())}
-                                onChange={(event) => handleChange(event, index)}
-                                disabled={!isInProcess}
-                            />
-                            <label htmlFor={id}>{answerText}</label>
-                        </React.Fragment>
-                    );
-                })
-
-                }
-                {!isInProcess && revealedAnswers}
-            </>
-        );
-    }*/
     if (answersType === 'radio') {
         return (
             <>
@@ -212,3 +167,58 @@ export default function Answers({questionIndex, setMarks, isInProcess, questionD
         )
     }
 }
+
+
+/*if (answersType === 'radio' || answersType === 'checkbox') {
+        return (
+            /!*<FormGroup row>
+                {answersData.map((answerData, index) => {
+                    const id = nanoid();
+                    let answerText = answerData.answer;
+                    return (
+                        <FormControlLabel
+                            control={
+                                <Checkbox
+                                    checked={userAnswers.includes(answerText.toString())}
+                                    onChange={(event) => handleChange(event, index)}
+                                    disabled={!isInProcess}
+                                    value={answerText}
+                                    name={questionIndex}
+                                />
+                            }
+                            label={answerText}
+                            key={id}
+                        />
+                    );
+                })
+
+                }
+                {!isInProcess && revealedAnswers}
+
+            </FormGroup>*!/
+            <>
+                {answersData.map((answerData, index) => {
+                    const id = nanoid();
+                    let answerText = answerData.answer;
+                    return (
+                        <React.Fragment key={id}>
+                            <br />
+                            <input
+                                type={answersType}
+                                id={id}
+                                name={questionIndex}
+                                value={answerText}
+                                checked={userAnswers.includes(answerText.toString())}
+                                onChange={(event) => handleChange(event, index)}
+                                disabled={!isInProcess}
+                            />
+                            <label htmlFor={id}>{answerText}</label>
+                        </React.Fragment>
+                    );
+                })
+
+                }
+                {!isInProcess && revealedAnswers}
+            </>
+        );
+    }*/
