@@ -1,3 +1,4 @@
+import {Button, TextField} from '@mui/material';
 import React from 'react';
 
 
@@ -31,26 +32,21 @@ export default function CreateAnswers({answers, setAnswers, answersType}) {
         if (answersType === 'number') {
             fillAnswerInputs =
                 <>
-                    <span>Min:</span>
-                    <input type="number" name="min" value={answer.min} onChange={(event) => handleChange(event, index)}/>
-                    <span>Max:</span>
-                    <input type="number" name="max" value={answer.max} onChange={(event) => handleChange(event, index)}/>
-                    <span>Mark:</span>
-                    <input type="number" name="mark" value={answer.mark} onChange={(event) => handleChange(event, index)}/>
+                    <TextField name="min" type='number' label='Min' placeholder='Number' value={answer.min} onChange={(event) => handleChange(event, index)}/>
+                    <TextField name="max" type='number' label='Max' placeholder='Number' value={answer.max} onChange={(event) => handleChange(event, index)}/>
+                    <TextField name="mark" type='number' label='Mark' placeholder='Number' value={answer.mark} onChange={(event) => handleChange(event, index)}/>
                 </>;
         } else {
             fillAnswerInputs =
                 <>
-                    <span>Answer:</span>
-                    <input type="text" name="answer" value={answer.answer} onChange={(event) => handleChange(event, index)}/>
-                    <span>Mark:</span>
-                    <input type="number" name="mark" value={answer.mark} onChange={(event) => handleChange(event, index)}/>
+                    <TextField type='text' name="answer" value={answer.answer} onChange={(event) => handleChange(event, index)} label='Answer' placeholder='Text'/>
+                    <TextField type='number' name="mark" value={answer.mark} onChange={(event) => handleChange(event, index)} label='Mark' placeholder='Number'/>
                 </>;
         }
         return (
             <div key={index}>
                 {fillAnswerInputs}
-                <button name={index} onClick={(event) => deleteAnswer(event)}>Delete answer</button>
+                <Button variant='outlined' name={index} onClick={(event) => deleteAnswer(event)}>Delete answer</Button>
             </div>
         );
     });

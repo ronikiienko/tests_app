@@ -1,3 +1,4 @@
+import {Button} from '@mui/material';
 import React, {useEffect} from 'react';
 import CreateQuestion from './Create-Question.jsx';
 import CreateResults from './Create-Results';
@@ -73,7 +74,7 @@ export default function CreateTest() {
 
     return (
         <div>
-            <button onClick={openExistingTest}>Edit test</button>
+
             <span>Test name: </span>
             <input value={general.testName} onChange={event => handleChange(event)} name="testName"/>
             <br/>
@@ -82,12 +83,13 @@ export default function CreateTest() {
             <textarea value={general.testDescription} onChange={event => handleChange(event)}
                       name="testDescription"/>
             <br/>
-            <button onClick={createNewQuestion}>Create question</button>
+            <Button variant='outlined' onClick={createNewQuestion}>Create question</Button>
             {questionElements}
             <CreateResults setGeneral={setGeneral} saveSignal={saveSignal} configObject={testConfigObject}/>
             <br/>
-            <button onClick={sendSaveSignal}>Save test</button>
-            <button onClick={exportTest}>Export test</button>
+            <Button variant='outlined' onClick={sendSaveSignal}>Save test</Button>
+            <Button variant='outlined' onClick={exportTest}>Export test</Button>
+            <Button variant='outlined' onClick={openExistingTest}>Edit test</Button>
         </div>
 
     );

@@ -1,10 +1,11 @@
+import {FormControlLabel, Radio, RadioGroup, TextField} from '@mui/material';
 import React from 'react';
 import CreateAnswers from './Create-Answers.jsx';
 
 
 export default function CreateQuestion({questionIndex, setQuestions, saveSignal, configObject}) {
     const [answers, setAnswers] = React.useState([]);
-    const [questionGeneral, setQuestionGeneral] = React.useState({question: 'a', answersType: ''});
+    const [questionGeneral, setQuestionGeneral] = React.useState({question: '', answersType: ''});
     const renderCount = React.useRef(0);
     React.useEffect(() => {
         renderCount.current = renderCount.current + 1;
@@ -103,52 +104,54 @@ export default function CreateQuestion({questionIndex, setQuestions, saveSignal,
     return (
         <>
             <h2>{questionIndex + 1}.)</h2>
-            <p>Question:</p>
-            <input onChange={(event) => handleChange(event)} name="question" type="text"
-                   value={questionGeneral.question} style={{display: 'block'}}/>
+            <TextField
+                label='Question'
+                placeholder='Text'
+                onChange={(event) => handleChange(event)}
+                name="question"
+                type="text"
+                value={questionGeneral.question} style={{display: 'block'}}/>
             <p>Answers type:</p>
-            <input
-                type="radio"
-                name="answersType"
-                id={`setTypeRadio${questionIndex}`}
-                value="radio"
-                onChange={(event) => handleChange(event)}
-                checked={questionGeneral.answersType === 'radio'}
-            />
-            <label htmlFor={`setTypeRadio${questionIndex}`}>Radio</label>
+            <RadioGroup row>
+                <FormControlLabel control={
+                    <Radio
+                        type="radio"
+                        name="answersType"
+                        value="radio"
+                        onChange={(event) => handleChange(event)}
+                        checked={questionGeneral.answersType === 'radio'}
+                    />
+                } label='Radio' />
+                <FormControlLabel control={
+                    <Radio
+                        type="radio"
+                        name="answersType"
+                        value="checkbox"
+                        onChange={(event) => handleChange(event)}
+                        checked={questionGeneral.answersType === 'checkbox'}
+                    />
+                } label='Checkbox' />
+                <FormControlLabel control={
+                    <Radio
+                        type="radio"
+                        name="answersType"
+                        value="text"
+                        onChange={(event) => handleChange(event)}
+                        checked={questionGeneral.answersType === 'text'}
+                    />
+                } label='Text' />
+                <FormControlLabel control={
+                    <Radio
+                        type="radio"
+                        name="answersType"
+                        value="number"
+                        onChange={(event) => handleChange(event)}
+                        checked={questionGeneral.answersType === 'number'}
+                    />
+                } label='Number' />
 
+            </RadioGroup>
 
-            <input
-                type="radio"
-                name="answersType"
-                id={`setTypeCheckbox${questionIndex}`}
-                value="checkbox"
-                onChange={(event) => handleChange(event)}
-                checked={questionGeneral.answersType === 'checkbox'}
-            />
-            <label htmlFor={`setTypeCheckbox${questionIndex}`}>Checkbox</label>
-
-
-            <input
-                type="radio"
-                name="answersType"
-                id={`setTypeText${questionIndex}`}
-                value="text"
-                onChange={(event) => handleChange(event)}
-                checked={questionGeneral.answersType === 'text'}
-            />
-            <label htmlFor={`setTypeText${questionIndex}`}>Text</label>
-
-
-            <input
-                type="radio"
-                name="answersType"
-                id={`setTypeNumber${questionIndex}`}
-                value="number"
-                onChange={(event) => handleChange(event)}
-                checked={questionGeneral.answersType === 'number'}
-            />
-            <label htmlFor={`setTypeNumber${questionIndex}`}>Number</label>
 
             <br/>
             {questionGeneral.answersType && <button onClick={addNewAnswer}>Add new answer</button>}
