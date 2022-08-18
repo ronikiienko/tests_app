@@ -59,7 +59,7 @@ export default function App() {
                     }
                     label="Theme"
                 />
-                <Box width="fit-content" maxWidth='70%' m="auto">
+                <Box width="fit-content" maxWidth='90%' m="auto">
                     {chosenTabNum === 0 && <PassTest disabled={false}/>}
                     {chosenTabNum === 1 && <CreateTest/>}
                 </Box>
