@@ -2,7 +2,7 @@ import React from 'react';
 import CreateAnswers from './Create-Answers.jsx';
 
 
-export default function CreateQuestion({questionIndex, setQuestions, saveSignal}) {
+export default function CreateQuestion({questionIndex, setQuestions, saveSignal, editSignal, testConfigObject}) {
     const [answers, setAnswers] = React.useState([]);
     const [questionGeneral, setQuestionGeneral] = React.useState({question: '', answersType: '', maxChecked: 3});
 
@@ -21,11 +21,18 @@ export default function CreateQuestion({questionIndex, setQuestions, saveSignal}
             let newQuestions = [...prevQuestions];
             newQuestions[questionIndex] = {
                 ...questionGeneral,
-                answers: [...answers]
-            }
+                answers: [...answers],
+            };
             return newQuestions;
-        })
-    }, [saveSignal])
+        });
+    }, [saveSignal]);
+
+    /*React.useEffect(() => {
+        if (testConfigObject.general) {
+            setAnswers(testConfigObject.questions[questionIndex].answers)
+            setQuestionGeneral(testConfigObject.general.results)
+        }
+    }, [editSignal])*/
 
     function addNewAnswer() {
         setAnswers((prevAnswers) => {
@@ -33,7 +40,7 @@ export default function CreateQuestion({questionIndex, setQuestions, saveSignal}
             if (questionGeneral.answersType === 'number') {
                 newAnswers.push({min: '', max: '', mark: ''});
             } else {
-                newAnswers.push({answer: '', mark: ''})
+                newAnswers.push({answer: '', mark: ''});
             }
             return newAnswers;
         });

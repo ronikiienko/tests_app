@@ -3,16 +3,16 @@ import defaultTestConfigs from '../../defaultTestConfigs.js';
 
 import Header from './Header.jsx';
 import Question from './Question.jsx';
-import Results from './Results.jsx';
 
 
-export default function PassTest({ disabled }) {
-    const [marks, setMarks] = React.useState(['']);
+export default function PassTest({disabled}) {
+    const [answers, setAnswers] = React.useState([]);
     const [isInProcess, setIsInProcess] = React.useState(!disabled);
-    const [testConfigs, setTestConfigs] = React.useState({...defaultTestConfigs})
+    const [testConfigs, setTestConfigs] = React.useState({...defaultTestConfigs});
     const questionElements = testConfigs.questions.map((question, index) => {
         return (
-            <Question key={index} questionData={question} questionIndex={index} setMarks={setMarks}
+            <Question key={index} questionData={question} questionIndex={index} answers={answers}
+                      setAnswers={setAnswers}
                       isInProcess={isInProcess}/>
         );
     });
@@ -26,18 +26,22 @@ export default function PassTest({ disabled }) {
     }
 
     async function handleUserFile() {
-        let [fileHandle] = await window.showOpenFilePicker();
-        let fileData = await fileHandle.getFile();
-        let text = await fileData.text();
-        let testConfigObject = JSON.parse(text)
-        console.log(testConfigObject);
-        setTestConfigs(testConfigObject)
+        try {
+            let [fileHandle] = await window.showOpenFilePicker();
+            let fileData = await fileHandle.getFile();
+            let text = await fileData.text();
+            let testConfigObject = JSON.parse(text);
+            console.log(testConfigObject);
+            setTestConfigs(testConfigObject);
+        } catch (e) {
+            console.log(e);
+        }
     }
+
     return (
         <>
-
             <button onClick={handleUserFile}>Import test</button>
-            {!isInProcess && <Results marks={marks} testConfigs={testConfigs}/>}
+            {/*{!isInProcess && <Results marks={marks} testConfigs={testConfigs}/>}*/}
             <Header testConfigs={testConfigs}/>
             {questionElements}
             {!disabled && <button

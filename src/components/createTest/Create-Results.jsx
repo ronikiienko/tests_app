@@ -1,17 +1,23 @@
 import React from 'react';
 
 
-export default function CreateResults({setGeneral, saveSignal}) {
+export default function CreateResults({setGeneral, saveSignal, editSignal, testConfigObject}) {
     const [resultRanges, setResultRanges] = React.useState([]);
 
+    React.useEffect(() => {
+        if (testConfigObject.general) {
+            setResultRanges(testConfigObject.general.results);
+        }
+
+    }, [editSignal]);
     React.useEffect(() => {
         setGeneral(prevGeneral => {
             return {
                 ...prevGeneral,
-                results: resultRanges
-            }
-        })
-    }, [saveSignal])
+                results: resultRanges,
+            };
+        });
+    }, [saveSignal]);
 
     function addResultRange() {
         setResultRanges(prevResults => {

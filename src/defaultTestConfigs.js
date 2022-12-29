@@ -1,122 +1,132 @@
+import {
+    TEST_GENERAL_KEYS,
+    TEST_GENERAL_RESULT_RANGE_KEYS,
+    TEST_KEYS,
+    TEST_QUESTION_ANSWER_KEYS,
+    TEST_QUESTION_ANSWER_TYPE_MAP,
+    TEST_QUESTION_KEYS,
+} from './consts.js';
+
+
 const defaultTestConfigs =
     {
-        general: {
-            testName: 'Example test',
-            testDescription: 'It is my example test',
-            results:
+        [TEST_KEYS.general]: {
+            [TEST_GENERAL_KEYS.testName]: 'Example test',
+            [TEST_GENERAL_KEYS.testDescription]: 'It is my example test',
+            [TEST_GENERAL_KEYS.results]:
                 [
                     {
-                        min: 0,
-                        max: 4,
-                        resultName: 'Shit',
-                        resultDescription: 'You are shit',
+                        [TEST_GENERAL_RESULT_RANGE_KEYS.min]: 0,
+                        [TEST_GENERAL_RESULT_RANGE_KEYS.max]: 4,
+                        [TEST_GENERAL_RESULT_RANGE_KEYS.resultName]: 'Shit',
+                        [TEST_GENERAL_RESULT_RANGE_KEYS.resultDescription]: 'You are shit',
                     },
                     {
-                        min: 5,
-                        max: 9,
-                        resultName: 'Bad',
-                        resultDescription: 'You are bad',
+                        [TEST_GENERAL_RESULT_RANGE_KEYS.min]: 5,
+                        [TEST_GENERAL_RESULT_RANGE_KEYS.max]: 9,
+                        [TEST_GENERAL_RESULT_RANGE_KEYS.resultName]: 'Bad',
+                        [TEST_GENERAL_RESULT_RANGE_KEYS.resultDescription]: 'You are bad',
                     },
                     {
-                        min: 10,
-                        max: Infinity,
-                        resultName: 'Godlike',
-                        resultDescription: 'You are godlike',
+                        [TEST_GENERAL_RESULT_RANGE_KEYS.min]: 10,
+                        [TEST_GENERAL_RESULT_RANGE_KEYS.max]: Infinity,
+                        [TEST_GENERAL_RESULT_RANGE_KEYS.resultName]: 'Godlike',
+                        [TEST_GENERAL_RESULT_RANGE_KEYS.resultDescription]: 'You are godlike',
                     },
 
                 ],
         },
-        questions:
+        [TEST_KEYS.questions]:
             [
                 {
-                    question: 'How old are you?',
-                    answersType: 'number',
-                    answers:
+                    [TEST_QUESTION_KEYS.question]: 'How old are you?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.number,
+                    [TEST_QUESTION_KEYS.answers]:
                         [
                             {
-                                min: 10,
-                                max: 20,
-                                mark: 2,
+                                [TEST_QUESTION_ANSWER_KEYS.min]: 10,
+                                [TEST_QUESTION_ANSWER_KEYS.max]: 20,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 2,
                             },
                             {
-                                min: 21,
-                                max: 40,
-                                mark: 1,
+                                [TEST_QUESTION_ANSWER_KEYS.min]: 21,
+                                [TEST_QUESTION_ANSWER_KEYS.max]: 40,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
                             },
                             {
-                                min: 41,
-                                max: Infinity,
-                                mark: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.min]: 41,
+                                [TEST_QUESTION_ANSWER_KEYS.max]: Infinity,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
                             },
                         ],
                 },
 
 
                 {
-                    question: '2+4',
-                    answersType: 'radio',
-                    answers:
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
                         [
                             {
-                                answer: 5,
-                                mark: 0,
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
                             },
                             {
-                                answer: 6,
-                                mark: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
                             },
                             {
-                                answer: 3,
-                                mark: 0,
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
                             },
                         ],
                 },
 
 
                 {
-                    question: 'Which of these are animals?',
-                    answersType: 'checkbox',
-                    maxChecked: 3,
-                    answers:
+                    [TEST_QUESTION_KEYS.question]: 'Which of these are animals?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
                         [
                             {
-                                answer: 'Racoon',
-                                mark: 1,
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Racoon',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
                             },
                             {
-                                answer: 'Squirell',
-                                mark: 1,
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Squirell',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
                             },
                             {
-                                answer: 'Bottle',
-                                mark: 0,
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bottle',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
                             },
 
                             {
-                                answer: 'Suzuki',
-                                mark: 0,
-                            }
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Suzuki',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
 
                         ],
                 },
 
 
                 {
-                    question: 'Best game ever?',
-                    answersType: 'text',
-                    answers:
+                    [TEST_QUESTION_KEYS.question]: 'Best game ever?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.text,
+                    [TEST_QUESTION_KEYS.answers]:
                         [
                             {
-                                answer: 'Fallout4',
-                                mark: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Fallout4',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 5,
                             },
                             {
-                                answer: 'Terraria',
-                                mark: 1,
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Terraria',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
                             },
                             {
-                                answer: 'Minecraft',
-                                mark: 0,
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Minecraft',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
                             },
                         ],
                 },

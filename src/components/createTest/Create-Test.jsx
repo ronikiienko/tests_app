@@ -1,28 +1,40 @@
+import {saveAs} from 'file-saver';
 import React from 'react';
 import CreateQuestion from './Create-Question.jsx';
 import CreateResults from './Create-Results';
-import { saveAs } from 'file-saver';
+
 
 export default function CreateTest() {
     const [general, setGeneral] = React.useState({testName: '', testDescription: ''});
     const [questions, setQuestions] = React.useState([]);
     const [saveSignal, setSaveSignal] = React.useState(Date.now());
+    const [editSignal, setEditSignal] = React.useState(Date.now());
     const [testConfigObject, setTestConfigObject] = React.useState({});
     // console.log(testConfigObject);
     // console.log(questions);
-    function exportTest () {
-        console.log();
-        let blob = new Blob([JSON.stringify(testConfigObject)], {type: "text/plain;charset=utf-8"});
-        saveAs(blob, `${general.testName}.txt`);
-    }
+
     React.useEffect(() => {
         setTestConfigObject({general: {...general}, questions: [...questions]});
     }, [questions]);
-    console.clear()
+    console.clear();
     console.log(testConfigObject);
+    React.useEffect(() => {
+        setGeneral({testName: testConfigObject.testName, testDescription: testConfigObject.testDescription});
+    }, [editSignal]);
+
     function sendSaveSignal() {
         setSaveSignal(Date.now());
 
+    }
+
+    function sendEditSignal() {
+        setEditSignal(Date.now());
+    }
+
+    function exportTest() {
+        console.log();
+        let blob = new Blob([JSON.stringify(testConfigObject)], {type: 'text/plain;charset=utf-8'});
+        saveAs(blob, `${general.testName}.txt`);
     }
 
     function handleChange(event) {
@@ -41,6 +53,8 @@ export default function CreateTest() {
                 questionIndex={index}
                 setQuestions={setQuestions}
                 saveSignal={saveSignal}
+                editSignal={editSignal}
+                testConfigObject={testConfigObject}
             />
         );
     });
@@ -55,6 +69,21 @@ export default function CreateTest() {
         });
     }
 
+    function openTestConfigObject() {
+        sendEditSignal();
+    }
+
+    async function openTestToEdit() {
+        let [fileHandle] = await window.showOpenFilePicker();
+        let fileData = await fileHandle.getFile();
+        let text = await fileData.text();
+        let testConfigObject = JSON.parse(text);
+        setTestConfigObject(testConfigObject);
+        openTestConfigObject(testConfigObject);
+        /*console.log(testConfigObject);
+        setTestConfigs(testConfigObject)*/
+    }
+
     return (
         <div>
             <span>Test name: </span>
@@ -67,10 +96,12 @@ export default function CreateTest() {
             <br/>
             <button onClick={createNewQuestion}>Create question</button>
             {questionElements}
-            <CreateResults setGeneral={setGeneral} saveSignal={saveSignal}/>
+            <CreateResults setGeneral={setGeneral} saveSignal={saveSignal} editSignal={editSignal}
+                           testConfigObject={testConfigObject}/>
             <br/>
             <button onClick={sendSaveSignal}>Save test</button>
             <button onClick={exportTest}>Export test</button>
+            <button onClick={openTestToEdit}>Edit test</button>
         </div>
 
     );
