@@ -1,15 +1,17 @@
 import React from 'react';
 import {TEST_IN_PROCESS_ANSWERS_KEY, TEST_IN_PROCESS_CONFIGS_KEY} from '../../consts.js';
 import defaultTestConfigs from '../../defaultTestConfigs.js';
+import {JSONParseCatch} from '../../utils.js';
 
 import Header from './Header.jsx';
 import {QuestionMemoized} from './Question.jsx';
+import {Results} from './Results.jsx';
 
 
-export default function PassTest({disabled}) {
+export default function PassTest() {
     const [answers, setAnswers] = React.useState([]);
-    const [isInProcess, setIsInProcess] = React.useState(!disabled);
-    const [testConfigs, setTestConfigs] = React.useState({...defaultTestConfigs});
+    const [isInProcess, setIsInProcess] = React.useState(true);
+    const [testConfigs, setTestConfigs] = React.useState(JSONParseCatch(window.localStorage.getItem(TEST_IN_PROCESS_CONFIGS_KEY)) || {...defaultTestConfigs});
     const questionElements = testConfigs.questions.map((question, index) => {
         return (
             <QuestionMemoized key={index} questionData={question} questionIndex={index} answers={answers}
@@ -22,7 +24,6 @@ export default function PassTest({disabled}) {
     }, [testConfigs]);
 
     React.useEffect(() => {
-        console.log(answers);
         window.localStorage.setItem(TEST_IN_PROCESS_ANSWERS_KEY, JSON.stringify(answers));
     }, [answers]);
 
@@ -40,7 +41,6 @@ export default function PassTest({disabled}) {
             let fileData = await fileHandle.getFile();
             let text = await fileData.text();
             let testConfigObject = JSON.parse(text);
-            console.log(testConfigObject);
             setTestConfigs(testConfigObject);
         } catch (e) {
             console.log(e);
@@ -50,12 +50,12 @@ export default function PassTest({disabled}) {
     return (
         <>
             <button onClick={handleUserFile}>Import test</button>
-            {/*{!isInProcess && <Results marks={marks} testConfigs={testConfigs}/>}*/}
+            {!isInProcess && <Results answers={answers} testConfigs={testConfigs}/>}
             <Header testConfigs={testConfigs}/>
             {questionElements}
-            {!disabled && <button
+            <button
                 onClick={isInProcess ? finishTest : startTest}>{isInProcess ? 'Finish test' : 'Restart test'}
-            </button>}
+            </button>
         </>
     );
 }

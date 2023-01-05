@@ -35,11 +35,11 @@ function Question({questionData, questionIndex, answers, setAnswers}) {
                     newAnswer.forEach(element => {
                         if (element) answeredCount++;
                     });
-                    if (answeredCount < maxChecked) newAnswer[checkboxNumber] = event.target.value.toString();
+                    if (answeredCount < maxChecked) newAnswer[checkboxNumber] = event.target.value;
                 }
             }
             if (answersType === 'radio' || answersType === 'number' || answersType === 'text') {
-                newAnswer[0] = event.target.value.toString();
+                newAnswer[0] = event.target.value;
             }
             newAnswers[questionIndex] = newAnswer;
             return newAnswers;

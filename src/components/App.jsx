@@ -20,7 +20,7 @@ export default function App() {
             </div>*/}
             <button onClick={setPassMode}>Pass test</button>
             <button onClick={setCreateMode}>Create test</button>
-            {mode === 'passTest' && <PassTest disabled={false}/>}
+            {mode === 'passTest' && <PassTest/>}
             {/*{mode === 'create' && <CreateTest/>}*/}
         </>
     )
