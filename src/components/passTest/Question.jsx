@@ -3,7 +3,7 @@ import React from 'react';
 import {TEST_QUESTION_ANSWER_TYPE_MAP, TEST_QUESTION_KEYS} from '../../consts.js';
 
 
-function areThisQuestionAnswersChanged(prevProps, newProps) {
+function areQuestionAnswersChanged(prevProps, newProps) {
     const prevAnswers = prevProps.answers?.[prevProps.questionIndex] || [];
     const newAnswers = newProps.answers?.[prevProps.questionIndex] || [];
     if (prevAnswers.length !== newAnswers.length) return false;
@@ -13,7 +13,7 @@ function areThisQuestionAnswersChanged(prevProps, newProps) {
     return true;
 }
 
-function Question({questionData, questionIndex, answers, setAnswers, isInProcess}) {
+function Question({questionData, questionIndex, answers, setAnswers}) {
     const answersType = questionData[TEST_QUESTION_KEYS.answersType];
     const answersData = questionData[TEST_QUESTION_KEYS.answers];
     let maxChecked;
@@ -105,4 +105,4 @@ function Question({questionData, questionIndex, answers, setAnswers, isInProcess
     );
 }
 
-export const QuestionMemoized = React.memo(Question, areThisQuestionAnswersChanged);
+export const QuestionMemoized = React.memo(Question, areQuestionAnswersChanged);

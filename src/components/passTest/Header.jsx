@@ -1,12 +1,12 @@
 import React from 'react';
 
 
-export default function Header(props) {
+export default function Header({testConfigs}) {
     return (
         <header>
-            <h1>{props.testConfigs.general.testName}</h1>
-            <p>{props.testConfigs.general.testDescription}</p>
+            <h1>{testConfigs.general.testName}</h1>
+            <p>{testConfigs.general.testDescription}</p>
         </header>
 
-    )
+    );
 }

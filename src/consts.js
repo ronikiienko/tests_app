@@ -31,3 +31,6 @@ export const TEST_QUESTION_ANSWER_TYPE_MAP = {
     checkbox: 'checkbox',
     text: 'text',
 };
+
+export const TEST_IN_PROCESS_ANSWERS_KEY = 'testInProcessAnswers';
+export const TEST_IN_PROCESS_CONFIGS_KEY = 'testInProcessConfigs';
