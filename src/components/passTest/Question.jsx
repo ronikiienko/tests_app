@@ -3,8 +3,18 @@ import React from 'react';
 import {TEST_QUESTION_KEYS} from '../../consts.js';
 
 
-export function Answers({questionIndex, answers, setAnswers, isInProcess, questionData}) {
-    console.log(answers);
+function areThisQuestionAnswersChanged(prevProps, newProps) {
+    const prevAnswers = prevProps.answers?.[prevProps.questionIndex] || [];
+    const newAnswers = newProps.answers?.[prevProps.questionIndex] || [];
+    if (prevAnswers.length !== newAnswers.length) return false;
+    for (let i = 0; i < newAnswers.length; i++) {
+        if (prevAnswers[i] !== newAnswers[i]) return false;
+    }
+    return true;
+}
+
+function Answers({questionIndex, answers, setAnswers, isInProcess, questionData}) {
+    console.log('a', questionData[TEST_QUESTION_KEYS.answersType]);
     const answersType = questionData[TEST_QUESTION_KEYS.answersType];
     const answersData = questionData[TEST_QUESTION_KEYS.answers];
     let maxChecked;
@@ -22,7 +32,13 @@ export function Answers({questionIndex, answers, setAnswers, isInProcess, questi
                 if (!event.target.checked) {
                     newAnswer[checkboxNumber] = undefined;
                 } else {
-                    newAnswer[checkboxNumber] = event.target.value.toString();
+                    let answeredCount = 0;
+                    console.log(newAnswer);
+                    newAnswer.forEach(element => {
+                        if (element) answeredCount++;
+                    });
+                    console.log(answeredCount);
+                    if (answeredCount < maxChecked) newAnswer[checkboxNumber] = event.target.value.toString();
                 }
             }
             if (answersType === 'radio' || answersType === 'number' || answersType === 'text') {
@@ -51,6 +67,7 @@ export function Answers({questionIndex, answers, setAnswers, isInProcess, questi
     if (answersType === 'checkbox') {
         return (
             <>
+                {answersType === 'checkbox' && <p>Choose maximum {maxChecked} answers</p>}
                 {answersData.map((answerData, index) => {
                     const id = nanoid();
                     return (
@@ -73,7 +90,6 @@ export function Answers({questionIndex, answers, setAnswers, isInProcess, questi
     if (answersType === 'radio') {
         return (
             <>
-                {answersType === 'checkbox' && <p>Choose {maxChecked} answers</p>}
                 {answersData.map((answerData, index) => {
                     const id = nanoid();
                     return (
@@ -95,12 +111,16 @@ export function Answers({questionIndex, answers, setAnswers, isInProcess, questi
     }
 }
 
+const AnswersMemoized = React.memo(Answers, areThisQuestionAnswersChanged);
+
+
 export default function Question({questionData, questionIndex, answers, setAnswers, isInProcess}) {
     return (
         <div>
             <h2>{questionIndex + 1}.) {questionData.question}</h2>
-            <Answers questionData={questionData} questionIndex={questionIndex} answers={answers} setAnswers={setAnswers}
-                     isInProcess={isInProcess}/>
+            <AnswersMemoized questionData={questionData} questionIndex={questionIndex} answers={answers}
+                             setAnswers={setAnswers}
+                             isInProcess={isInProcess}/>
         </div>
     );
 }
