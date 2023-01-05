@@ -1,6 +1,6 @@
 import {nanoid} from 'nanoid';
 import React from 'react';
-import {TEST_QUESTION_KEYS} from '../../consts.js';
+import {TEST_QUESTION_ANSWER_TYPE_MAP, TEST_QUESTION_KEYS} from '../../consts.js';
 
 
 function areThisQuestionAnswersChanged(prevProps, newProps) {
@@ -13,8 +13,7 @@ function areThisQuestionAnswersChanged(prevProps, newProps) {
     return true;
 }
 
-function Answers({questionIndex, answers, setAnswers, isInProcess, questionData}) {
-    console.log('a', questionData[TEST_QUESTION_KEYS.answersType]);
+function Question({questionData, questionIndex, answers, setAnswers, isInProcess}) {
     const answersType = questionData[TEST_QUESTION_KEYS.answersType];
     const answersData = questionData[TEST_QUESTION_KEYS.answers];
     let maxChecked;
@@ -33,11 +32,9 @@ function Answers({questionIndex, answers, setAnswers, isInProcess, questionData}
                     newAnswer[checkboxNumber] = undefined;
                 } else {
                     let answeredCount = 0;
-                    console.log(newAnswer);
                     newAnswer.forEach(element => {
                         if (element) answeredCount++;
                     });
-                    console.log(answeredCount);
                     if (answeredCount < maxChecked) newAnswer[checkboxNumber] = event.target.value.toString();
                 }
             }
@@ -48,79 +45,64 @@ function Answers({questionIndex, answers, setAnswers, isInProcess, questionData}
             return newAnswers;
         });
     }
-
-
-    if (answersType === 'number' || answersType === 'text') {
-        return (
-            <>
-                <label>
-                    {answersData.answer}
-                </label>
-                <input
-                    type={answersType}
-                    value={answers[questionIndex]?.[0] || ''}
-                    onChange={(event) => handleChange(event, 0)}
-                />
-            </>
-        );
-    }
-    if (answersType === 'checkbox') {
-        return (
-            <>
-                {answersType === 'checkbox' && <p>Choose maximum {maxChecked} answers</p>}
-                {answersData.map((answerData, index) => {
-                    const id = nanoid();
-                    return (
-                        <label key={id}>
-                            {answerData.answer}
-                            <input
-                                type={answersType}
-                                name={questionIndex}
-                                value={answerData.answer}
-                                checked={answers[questionIndex]?.[index] === answerData.answer.toString()}
-                                onChange={(event) => handleChange(event, index)}
-                            />
-                        </label>
-                    );
-                })
-                }
-            </>
-        );
-    }
-    if (answersType === 'radio') {
-        return (
-            <>
-                {answersData.map((answerData, index) => {
-                    const id = nanoid();
-                    return (
-                        <label key={id}>
-                            {answerData.answer}
-                            <input
-                                type={answersType}
-                                name={questionIndex}
-                                value={answerData.answer}
-                                checked={answers[questionIndex]?.[0] === answerData.answer.toString()}
-                                onChange={(event) => handleChange(event, index)}
-                            />
-                        </label>
-                    );
-                })
-                }
-            </>
-        );
-    }
-}
-
-const AnswersMemoized = React.memo(Answers, areThisQuestionAnswersChanged);
-
-
-export default function Question({questionData, questionIndex, answers, setAnswers, isInProcess}) {
     return (
         <div>
             <h2>{questionIndex + 1}.) {questionData.question}</h2>
-            <AnswersMemoized questionData={questionData} questionIndex={questionIndex} answers={answers}
-                             setAnswers={setAnswers}
-                             isInProcess={isInProcess}/>
+            {(answersType === TEST_QUESTION_ANSWER_TYPE_MAP.number || answersType === TEST_QUESTION_ANSWER_TYPE_MAP.text) && (
+                <>
+                    <label>
+                        {answersData.answer}
+                    </label>
+                    <input
+                        type={answersType}
+                        value={answers[questionIndex]?.[0] || ''}
+                        onChange={(event) => handleChange(event, 0)}
+                    />
+                </>
+            )}
+            {answersType === TEST_QUESTION_ANSWER_TYPE_MAP.checkbox && (
+                <>
+                    {answersType === 'checkbox' && <p>Choose maximum {maxChecked} answers</p>}
+                    {answersData.map((answerData, index) => {
+                        const id = nanoid();
+                        return (
+                            <label key={id}>
+                                {answerData.answer}
+                                <input
+                                    type={answersType}
+                                    name={questionIndex}
+                                    value={answerData.answer}
+                                    checked={answers[questionIndex]?.[index] === answerData.answer.toString()}
+                                    onChange={(event) => handleChange(event, index)}
+                                />
+                            </label>
+                        );
+                    })
+                    }
+                </>
+            )}
+            {answersType === TEST_QUESTION_ANSWER_TYPE_MAP.radio && (
+                <>
+                    {answersData.map((answerData, index) => {
+                        const id = nanoid();
+                        return (
+                            <label key={id}>
+                                {answerData.answer}
+                                <input
+                                    type={answersType}
+                                    name={questionIndex}
+                                    value={answerData.answer}
+                                    checked={answers[questionIndex]?.[0] === answerData.answer.toString()}
+                                    onChange={(event) => handleChange(event, index)}
+                                />
+                            </label>
+                        );
+                    })
+                    }
+                </>
+            )}
         </div>
     );
 }
+
+export const QuestionMemoized = React.memo(Question, areThisQuestionAnswersChanged);

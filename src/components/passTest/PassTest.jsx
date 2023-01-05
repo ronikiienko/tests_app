@@ -2,18 +2,19 @@ import React from 'react';
 import defaultTestConfigs from '../../defaultTestConfigs.js';
 
 import Header from './Header.jsx';
-import Question from './Question.jsx';
+import {QuestionMemoized} from './Question.jsx';
 
 
 export default function PassTest({disabled}) {
     const [answers, setAnswers] = React.useState([]);
+    console.log(answers);
     const [isInProcess, setIsInProcess] = React.useState(!disabled);
     const [testConfigs, setTestConfigs] = React.useState({...defaultTestConfigs});
     const questionElements = testConfigs.questions.map((question, index) => {
         return (
-            <Question key={index} questionData={question} questionIndex={index} answers={answers}
-                      setAnswers={setAnswers}
-                      isInProcess={isInProcess}/>
+            <QuestionMemoized key={index} questionData={question} questionIndex={index} answers={answers}
+                              setAnswers={setAnswers}
+                              isInProcess={isInProcess}/>
         );
     });
 
