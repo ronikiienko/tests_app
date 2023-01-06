@@ -32,6 +32,7 @@ export default function PassTest() {
     }
 
     function startTest() {
+        setAnswers([]);
         setIsInProcess(true);
     }
 
@@ -51,8 +52,13 @@ export default function PassTest() {
         <>
             <button onClick={handleUserFile}>Import test</button>
             {!isInProcess && <Results answers={answers} testConfigs={testConfigs}/>}
-            <Header testConfigs={testConfigs}/>
-            {questionElements}
+            {isInProcess && (
+                <>
+                    <Header testConfigs={testConfigs}/>
+                    <>{questionElements}</>
+                </>
+            )
+            }
             <button
                 onClick={isInProcess ? finishTest : startTest}>{isInProcess ? 'Finish test' : 'Restart test'}
             </button>

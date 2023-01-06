@@ -51,16 +51,6 @@ export const JSONParseCatch = (data) => {
 };
 export const checkTest = (answers, testConfigs) => {
     let overallMark = 0;
-    // const resultTestConfigs = {
-    //     [TEST_KEYS.general]: {
-    //         [TEST_GENERAL_KEYS.testName]: testConfigs[TEST_KEYS.general][TEST_GENERAL_KEYS.testName],
-    //         [TEST_GENERAL_KEYS.testDescription]: testConfigs[TEST_KEYS.general][TEST_GENERAL_KEYS.testDescription],
-    //         [TEST_GENERAL_KEYS.results]: null,
-    //     },
-    //     [TEST_KEYS.questions]: [
-    //
-    //     ],
-    // };
     testConfigs[TEST_KEYS.questions].forEach((question, index) => {
         const questionAnswerType = question[TEST_QUESTION_KEYS.answersType];
         const questionAnswers = question[TEST_QUESTION_KEYS.answers];
@@ -110,7 +100,6 @@ export const checkTest = (answers, testConfigs) => {
     let resultDescription;
     testConfigs[TEST_KEYS.general][TEST_GENERAL_KEYS.results].forEach(result => {
         if (result[TEST_GENERAL_RESULT_RANGE_KEYS.min] <= overallMark && result[TEST_GENERAL_RESULT_RANGE_KEYS.max] >= overallMark) {
-            console.log(result, 'res');
             resultName = result[TEST_GENERAL_RESULT_RANGE_KEYS.resultName];
             resultDescription = result[TEST_GENERAL_RESULT_RANGE_KEYS.resultDescription];
         }

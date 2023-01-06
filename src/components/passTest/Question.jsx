@@ -1,6 +1,6 @@
 import {nanoid} from 'nanoid';
 import React from 'react';
-import {TEST_QUESTION_ANSWER_TYPE_MAP, TEST_QUESTION_KEYS} from '../../consts.js';
+import {TEST_QUESTION_ANSWER_KEYS, TEST_QUESTION_ANSWER_TYPE_MAP, TEST_QUESTION_KEYS} from '../../consts.js';
 
 
 function areQuestionAnswersChanged(prevProps, newProps) {
@@ -47,12 +47,9 @@ function Question({questionData, questionIndex, answers, setAnswers}) {
     }
     return (
         <div>
-            <h2>{questionIndex + 1}.) {questionData.question}</h2>
+            <h2>{questionIndex + 1}.) {questionData[TEST_QUESTION_KEYS.question]}</h2>
             {(answersType === TEST_QUESTION_ANSWER_TYPE_MAP.number || answersType === TEST_QUESTION_ANSWER_TYPE_MAP.text) && (
                 <>
-                    <label>
-                        {answersData.answer}
-                    </label>
                     <input
                         type={answersType}
                         value={answers[questionIndex]?.[0] || ''}
@@ -62,12 +59,12 @@ function Question({questionData, questionIndex, answers, setAnswers}) {
             )}
             {answersType === TEST_QUESTION_ANSWER_TYPE_MAP.checkbox && (
                 <>
-                    {answersType === 'checkbox' && <p>Choose maximum {maxChecked} answers</p>}
+                    <p>Choose maximum {maxChecked} answers</p>
                     {answersData.map((answerData, index) => {
                         const id = nanoid();
                         return (
                             <label key={id}>
-                                {answerData.answer}
+                                {answerData[TEST_QUESTION_ANSWER_KEYS.answer]}
                                 <input
                                     type={answersType}
                                     name={questionIndex}
@@ -87,7 +84,7 @@ function Question({questionData, questionIndex, answers, setAnswers}) {
                         const id = nanoid();
                         return (
                             <label key={id}>
-                                {answerData.answer}
+                                {answerData[TEST_QUESTION_ANSWER_KEYS.answer]}
                                 <input
                                     type={answersType}
                                     name={questionIndex}
