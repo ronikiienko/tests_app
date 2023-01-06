@@ -1,4 +1,5 @@
 import React from 'react';
+import {Button} from '../StyledElements/Button/Button.jsx';
 import PassTest from './passTest/PassTest.jsx';
 
 
@@ -18,8 +19,8 @@ export default function App() {
             {/*<div>
                 <button onClick={saveAsd}>Save as</button>
             </div>*/}
-            <button onClick={setPassMode}>Pass test</button>
-            <button onClick={setCreateMode}>Create test</button>
+            <Button onClick={setPassMode}>Pass test</Button>
+            <Button onClick={setCreateMode}>Create test</Button>
             {mode === 'passTest' && <PassTest/>}
             {/*{mode === 'create' && <CreateTest/>}*/}
         </>
