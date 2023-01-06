@@ -3,6 +3,7 @@ import React from 'react';
 import {TEST_QUESTION_ANSWER_KEYS, TEST_QUESTION_ANSWER_TYPE_MAP, TEST_QUESTION_KEYS} from '../../consts.js';
 import {Checkbox} from '../../StyledElements/Checkbox/Checkbox.jsx';
 import {Input} from '../../StyledElements/Input/Input.jsx';
+import {Radio} from '../../StyledElements/Radio/Radio.jsx';
 
 
 function areQuestionAnswersChanged(prevProps, newProps) {
@@ -26,7 +27,7 @@ function Question({questionData, questionIndex, answers, setAnswers}) {
     }
 
     function handleChange(event, checkboxNumber) {
-        console.log(event);
+        console.log(event.target.value, event.target.checked);
         setAnswers(prevAnswers => {
             const newAnswers = [...prevAnswers];
             const newAnswer = newAnswers[questionIndex]?.length ? [...newAnswers[questionIndex]] : [];
@@ -75,16 +76,6 @@ function Question({questionData, questionIndex, answers, setAnswers}) {
                                     label={answerData[TEST_QUESTION_ANSWER_KEYS.answer]}
                                 />
                             </span>
-                            // <label key={id}>
-                            //     {answerData[TEST_QUESTION_ANSWER_KEYS.answer]}
-                            //     <input
-                            //         type={answersType}
-                            //         name={questionIndex}
-                            //         value={answerData.answer}
-                            //         checked={answers[questionIndex]?.[index] === answerData.answer.toString()}
-                            //         onChange={(event) => handleChange(event, index)}
-                            //     />
-                            // </label>
                         );
                     })
                     }
@@ -95,16 +86,26 @@ function Question({questionData, questionIndex, answers, setAnswers}) {
                     {answersData.map((answerData, index) => {
                         const id = nanoid();
                         return (
-                            <label key={id}>
-                                {answerData[TEST_QUESTION_ANSWER_KEYS.answer]}
-                                <input
-                                    type={answersType}
-                                    name={questionIndex}
-                                    value={answerData.answer}
+                            // <label key={id}>
+                            //     {answerData[TEST_QUESTION_ANSWER_KEYS.answer]}
+                            //     <input
+                            //         type={answersType}
+                            //         name={questionIndex}
+                            //         value={answerData.answer}
+                            //         checked={answers[questionIndex]?.[0] === answerData.answer.toString()}
+                            //         onChange={(event) => handleChange(event, index)}
+                            //     />
+                            // </label>
+                            <span key={id}>
+                                <Radio
+                                    id={id}
+                                    name={questionIndex.toString()}
+                                    label={answerData[TEST_QUESTION_ANSWER_KEYS.answer]}
                                     checked={answers[questionIndex]?.[0] === answerData.answer.toString()}
                                     onChange={(event) => handleChange(event, index)}
+                                    value={answerData.answer}
                                 />
-                            </label>
+                            </span>
                         );
                     })
                     }
