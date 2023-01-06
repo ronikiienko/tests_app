@@ -1,6 +1,7 @@
 import {nanoid} from 'nanoid';
 import React from 'react';
 import {TEST_QUESTION_ANSWER_KEYS, TEST_QUESTION_ANSWER_TYPE_MAP, TEST_QUESTION_KEYS} from '../../consts.js';
+import {Input} from '../../StyledElements/Input/Input.jsx';
 
 
 function areQuestionAnswersChanged(prevProps, newProps) {
@@ -50,7 +51,7 @@ function Question({questionData, questionIndex, answers, setAnswers}) {
             <h2>{questionIndex + 1}.) {questionData[TEST_QUESTION_KEYS.question]}</h2>
             {(answersType === TEST_QUESTION_ANSWER_TYPE_MAP.number || answersType === TEST_QUESTION_ANSWER_TYPE_MAP.text) && (
                 <>
-                    <input
+                    <Input
                         type={answersType}
                         value={answers[questionIndex]?.[0] || ''}
                         onChange={(event) => handleChange(event, 0)}

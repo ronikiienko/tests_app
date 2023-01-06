@@ -73,8 +73,8 @@ export const ResultsQuestion = ({questionIndex, answers, questionData}) => {
                                 <input
                                     type={answersType}
                                     name={questionIndex}
+                                    value={answerData.answer}
                                     checked={answers[questionIndex]?.[0] === answerData.answer.toString()}
-                                    readOnly
                                     disabled={true}
                                 />
                             </label>

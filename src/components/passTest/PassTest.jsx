@@ -1,6 +1,7 @@
 import React from 'react';
 import {TEST_IN_PROCESS_ANSWERS_KEY, TEST_IN_PROCESS_CONFIGS_KEY} from '../../consts.js';
 import defaultTestConfigs from '../../defaultTestConfigs.js';
+import {Button} from '../../StyledElements/Button/Button.jsx';
 import {JSONParseCatch} from '../../utils.js';
 
 import Header from './Header.jsx';
@@ -59,9 +60,9 @@ export default function PassTest() {
                 </>
             )
             }
-            <button
+            <Button
                 onClick={isInProcess ? finishTest : startTest}>{isInProcess ? 'Finish test' : 'Restart test'}
-            </button>
+            </Button>
         </>
     );
 }
