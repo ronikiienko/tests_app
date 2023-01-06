@@ -29,7 +29,7 @@ const defaultTestConfigs =
                     },
                     {
                         [TEST_GENERAL_RESULT_RANGE_KEYS.min]: 10,
-                        [TEST_GENERAL_RESULT_RANGE_KEYS.max]: Infinity,
+                        [TEST_GENERAL_RESULT_RANGE_KEYS.max]: 10000000000,
                         [TEST_GENERAL_RESULT_RANGE_KEYS.resultName]: 'Godlike',
                         [TEST_GENERAL_RESULT_RANGE_KEYS.resultDescription]: 'You are godlike',
                     },
@@ -55,7 +55,7 @@ const defaultTestConfigs =
                             },
                             {
                                 [TEST_QUESTION_ANSWER_KEYS.min]: 41,
-                                [TEST_QUESTION_ANSWER_KEYS.max]: Infinity,
+                                [TEST_QUESTION_ANSWER_KEYS.max]: 10000000000000,
                                 [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
                             },
                         ],
