@@ -4,7 +4,6 @@ import './Input.css';
 
 
 export const Input = ({value, onChange, label, type}) => {
-    console.log(type);
     return (
         <label className="text-input-label">
             {label}

@@ -6,8 +6,13 @@ import './Checkbox.css';
 export const Checkbox = ({onChange, id, checked, label, disabled}) => {
     return (
         <div className="checkbox-container">
-            <input disabled={disabled} id={id} className="checkbox-input" type="checkbox" checked={checked}
-                   onChange={onChange}/>
+            <input
+                disabled={disabled}
+                id={id} className="checkbox-input"
+                type="checkbox"
+                checked={checked}
+                onChange={onChange}
+            />
             <label className="checkbox-label" htmlFor={id}>{label}</label>
         </div>
     );

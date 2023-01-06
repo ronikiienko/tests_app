@@ -1,6 +1,7 @@
 import {nanoid} from 'nanoid';
 import React from 'react';
 import {TEST_QUESTION_ANSWER_KEYS, TEST_QUESTION_ANSWER_TYPE_MAP, TEST_QUESTION_KEYS} from '../../consts.js';
+import {Checkbox} from '../../StyledElements/Checkbox/Checkbox.jsx';
 import {Input} from '../../StyledElements/Input/Input.jsx';
 
 
@@ -25,19 +26,19 @@ function Question({questionData, questionIndex, answers, setAnswers}) {
     }
 
     function handleChange(event, checkboxNumber) {
+        console.log(event);
         setAnswers(prevAnswers => {
             const newAnswers = [...prevAnswers];
             const newAnswer = newAnswers[questionIndex]?.length ? [...newAnswers[questionIndex]] : [];
             if (answersType === 'checkbox') {
                 if (!event.target.checked) {
-                    newAnswer[checkboxNumber] = undefined;
-                } else {
-                    let answeredCount = 0;
-                    newAnswer.forEach(element => {
-                        if (element) answeredCount++;
-                    });
-                    if (answeredCount < maxChecked) newAnswer[checkboxNumber] = event.target.value;
+                    newAnswer[checkboxNumber] = event.target.checked;
                 }
+                let answeredCount = 0;
+                newAnswer.forEach(element => {
+                    if (element) answeredCount++;
+                });
+                if (answeredCount < maxChecked && event.target.checked) newAnswer[checkboxNumber] = true;
             }
             if (answersType === 'radio' || answersType === 'number' || answersType === 'text') {
                 newAnswer[0] = event.target.value;
@@ -63,17 +64,27 @@ function Question({questionData, questionIndex, answers, setAnswers}) {
                     <p>Choose maximum {maxChecked} answers</p>
                     {answersData.map((answerData, index) => {
                         const id = nanoid();
+                        console.log(answers[questionIndex]?.[index] === answerData.answer.toString());
                         return (
-                            <label key={id}>
-                                {answerData[TEST_QUESTION_ANSWER_KEYS.answer]}
-                                <input
-                                    type={answersType}
-                                    name={questionIndex}
+                            <span key={id}>
+                                <Checkbox
+                                    id={id}
+                                    checked={answers[questionIndex]?.[index]}
                                     value={answerData.answer}
-                                    checked={answers[questionIndex]?.[index] === answerData.answer.toString()}
                                     onChange={(event) => handleChange(event, index)}
+                                    label={answerData[TEST_QUESTION_ANSWER_KEYS.answer]}
                                 />
-                            </label>
+                            </span>
+                            // <label key={id}>
+                            //     {answerData[TEST_QUESTION_ANSWER_KEYS.answer]}
+                            //     <input
+                            //         type={answersType}
+                            //         name={questionIndex}
+                            //         value={answerData.answer}
+                            //         checked={answers[questionIndex]?.[index] === answerData.answer.toString()}
+                            //         onChange={(event) => handleChange(event, index)}
+                            //     />
+                            // </label>
                         );
                     })
                     }

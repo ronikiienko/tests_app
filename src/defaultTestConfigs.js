@@ -81,8 +81,6 @@ const defaultTestConfigs =
                             },
                         ],
                 },
-
-
                 {
                     [TEST_QUESTION_KEYS.question]: 'Which of these are animals?',
                     [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
@@ -109,7 +107,32 @@ const defaultTestConfigs =
 
                         ],
                 },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Suzuki?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
 
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
 
                 {
                     [TEST_QUESTION_KEYS.question]: 'Best game ever?',

@@ -88,7 +88,7 @@ export const checkTest = (answers, testConfigs) => {
                 const userAnswers = userQuestionAnswers;
                 questionAnswers.forEach((answer, index) => {
                     if (!answer || !userAnswers[index]) return;
-                    if (answer[TEST_QUESTION_ANSWER_KEYS.answer].toString().toLowerCase() === userAnswers[index].toString().toLowerCase()) {
+                    if (userAnswers[index]) {
                         overallMark = overallMark + answer[TEST_QUESTION_ANSWER_KEYS.mark];
                     }
                 });
