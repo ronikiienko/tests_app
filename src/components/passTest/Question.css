@@ -1,0 +1,13 @@
+.question-header {
+    margin-block: 12px;
+}
+
+.question-description {
+    margin: 5px;
+}
+
+.question-container {
+    border-block: 1px solid var(--splitters-gray);
+    display: block;
+    padding-block: 5px;
+}

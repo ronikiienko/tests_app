@@ -4,6 +4,7 @@ import {TEST_QUESTION_ANSWER_KEYS, TEST_QUESTION_ANSWER_TYPE_MAP, TEST_QUESTION_
 import {Checkbox} from '../../StyledElements/Checkbox/Checkbox.jsx';
 import {Input} from '../../StyledElements/Input/Input.jsx';
 import {Radio} from '../../StyledElements/Radio/Radio.jsx';
+import './Question.css';
 
 
 function areQuestionAnswersChanged(prevProps, newProps) {
@@ -49,8 +50,8 @@ function Question({questionData, questionIndex, answers, setAnswers}) {
         });
     }
     return (
-        <div>
-            <h2>{questionIndex + 1}.) {questionData[TEST_QUESTION_KEYS.question]}</h2>
+        <div className="question-container">
+            <h2 className="question-header">{questionIndex + 1}.) {questionData[TEST_QUESTION_KEYS.question]}</h2>
             {(answersType === TEST_QUESTION_ANSWER_TYPE_MAP.number || answersType === TEST_QUESTION_ANSWER_TYPE_MAP.text) && (
                 <>
                     <Input
@@ -62,7 +63,7 @@ function Question({questionData, questionIndex, answers, setAnswers}) {
             )}
             {answersType === TEST_QUESTION_ANSWER_TYPE_MAP.checkbox && (
                 <>
-                    <p>Choose maximum {maxChecked} answers</p>
+                    <p className="question-description">Choose maximum {maxChecked} answers</p>
                     {answersData.map((answerData, index) => {
                         const id = nanoid();
                         console.log(answers[questionIndex]?.[index] === answerData.answer.toString());
@@ -86,16 +87,6 @@ function Question({questionData, questionIndex, answers, setAnswers}) {
                     {answersData.map((answerData, index) => {
                         const id = nanoid();
                         return (
-                            // <label key={id}>
-                            //     {answerData[TEST_QUESTION_ANSWER_KEYS.answer]}
-                            //     <input
-                            //         type={answersType}
-                            //         name={questionIndex}
-                            //         value={answerData.answer}
-                            //         checked={answers[questionIndex]?.[0] === answerData.answer.toString()}
-                            //         onChange={(event) => handleChange(event, index)}
-                            //     />
-                            // </label>
                             <span key={id}>
                                 <Radio
                                     id={id}

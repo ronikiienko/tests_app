@@ -5,6 +5,8 @@ import {Button} from '../../StyledElements/Button/Button.jsx';
 import {JSONParseCatch} from '../../utils.js';
 
 import Header from './Header.jsx';
+
+import './PassTest.css';
 import {QuestionMemoized} from './Question.jsx';
 import {Results} from './Results.jsx';
 
@@ -50,8 +52,8 @@ export default function PassTest() {
     }
 
     return (
-        <>
-            <button onClick={handleUserFile}>Import test</button>
+        <div className="pass-test-container">
+            <Button style={{display: 'block', margin: 'auto'}} onClick={handleUserFile}>Import test</Button>
             {!isInProcess && <Results answers={answers} testConfigs={testConfigs}/>}
             {isInProcess && (
                 <>
@@ -61,8 +63,9 @@ export default function PassTest() {
             )
             }
             <Button
+                style={{width: '100%'}}
                 onClick={isInProcess ? finishTest : startTest}>{isInProcess ? 'Finish test' : 'Restart test'}
             </Button>
-        </>
+        </div>
     );
 }

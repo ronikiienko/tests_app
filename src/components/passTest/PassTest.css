@@ -1,0 +1,6 @@
+.pass-test-container {
+    max-width: fit-content;
+    margin: auto;
+    min-width: 600px;
+    /*text-align: center;*/
+}
