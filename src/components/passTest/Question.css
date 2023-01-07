@@ -7,7 +7,7 @@
 }
 
 .question-container {
-    border-block: 1px solid var(--splitters-gray);
+    border-block: 1px solid var(--bg-color);
     display: block;
     padding-block: 5px;
 }

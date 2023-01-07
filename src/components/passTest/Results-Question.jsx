@@ -1,6 +1,9 @@
 import {nanoid} from 'nanoid';
 import React from 'react';
 import {TEST_QUESTION_ANSWER_KEYS, TEST_QUESTION_ANSWER_TYPE_MAP, TEST_QUESTION_KEYS} from '../../consts.js';
+import {Checkbox} from '../../StyledElements/Checkbox/Checkbox.jsx';
+import {Input} from '../../StyledElements/Input/Input.jsx';
+import {Radio} from '../../StyledElements/Radio/Radio.jsx';
 
 
 export const ResultsQuestion = ({questionIndex, answers, questionData}) => {
@@ -32,11 +35,10 @@ export const ResultsQuestion = ({questionIndex, answers, questionData}) => {
             <h2>{questionIndex + 1}.) {questionData[TEST_QUESTION_KEYS.question]}</h2>
             {(answersType === TEST_QUESTION_ANSWER_TYPE_MAP.number || answersType === TEST_QUESTION_ANSWER_TYPE_MAP.text) && (
                 <>
-                    <input
+                    <Input
                         type={answersType}
                         value={answers[questionIndex]?.[0] || ''}
                         readOnly
-                        disabled={true}
                     />
                     {answersNodes}
                 </>
@@ -47,16 +49,14 @@ export const ResultsQuestion = ({questionIndex, answers, questionData}) => {
                     {answersData.map((answerData, index) => {
                         const id = nanoid();
                         return (
-                            <label key={id}>
-                                {answerData[TEST_QUESTION_ANSWER_KEYS.answer]}
-                                <input
-                                    type={answersType}
-                                    name={questionIndex}
-                                    checked={answers[questionIndex]?.[index] === answerData.answer.toString()}
+                            <React.Fragment key={id}>
+                                <Checkbox
+                                    checked={answers[questionIndex]?.[index]}
                                     readOnly
-                                    disabled={true}
+                                    name={questionIndex}
+                                    label={answerData[TEST_QUESTION_ANSWER_KEYS.answer]}
                                 />
-                            </label>
+                            </React.Fragment>
                         );
                     })
                     }
@@ -68,16 +68,14 @@ export const ResultsQuestion = ({questionIndex, answers, questionData}) => {
                     {answersData.map((answerData, index) => {
                         const id = nanoid();
                         return (
-                            <label key={id}>
-                                {answerData[TEST_QUESTION_ANSWER_KEYS.answer]}
-                                <input
-                                    type={answersType}
-                                    name={questionIndex}
-                                    value={answerData.answer}
+                            <React.Fragment key={id}>
+                                <Radio
                                     checked={answers[questionIndex]?.[0] === answerData.answer.toString()}
-                                    disabled={true}
+                                    name={questionIndex.toString()}
+                                    readOnly
+                                    label={answerData[TEST_QUESTION_ANSWER_KEYS.answer]}
                                 />
-                            </label>
+                            </React.Fragment>
                         );
                     })
                     }

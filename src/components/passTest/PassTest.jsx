@@ -4,8 +4,6 @@ import defaultTestConfigs from '../../defaultTestConfigs.js';
 import {Button} from '../../StyledElements/Button/Button.jsx';
 import {JSONParseCatch} from '../../utils.js';
 
-import Header from './Header.jsx';
-
 import './PassTest.css';
 import {QuestionMemoized} from './Question.jsx';
 import {Results} from './Results.jsx';
@@ -53,13 +51,15 @@ export default function PassTest() {
 
     return (
         <div className="pass-test-container">
-            <Button style={{display: 'block', margin: 'auto'}} onClick={handleUserFile}>Import test</Button>
+            <Button style={{display: 'block', margin: 'auto', width: '70%'}} onClick={handleUserFile}>Import new
+                test</Button>
+            <header className="test-header">
+                <h1 className="test-name">{testConfigs.general.testName}</h1>
+                <p>{testConfigs.general.testDescription}</p>
+            </header>
             {!isInProcess && <Results answers={answers} testConfigs={testConfigs}/>}
             {isInProcess && (
-                <>
-                    <Header testConfigs={testConfigs}/>
-                    <>{questionElements}</>
-                </>
+                <>{questionElements}</>
             )
             }
             <Button

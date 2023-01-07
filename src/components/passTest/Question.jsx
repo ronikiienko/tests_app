@@ -68,7 +68,7 @@ function Question({questionData, questionIndex, answers, setAnswers}) {
                         const id = nanoid();
                         console.log(answers[questionIndex]?.[index] === answerData.answer.toString());
                         return (
-                            <span key={id}>
+                            <React.Fragment key={id}>
                                 <Checkbox
                                     id={id}
                                     checked={answers[questionIndex]?.[index]}
@@ -76,7 +76,7 @@ function Question({questionData, questionIndex, answers, setAnswers}) {
                                     onChange={(event) => handleChange(event, index)}
                                     label={answerData[TEST_QUESTION_ANSWER_KEYS.answer]}
                                 />
-                            </span>
+                            </React.Fragment>
                         );
                     })
                     }
@@ -87,16 +87,16 @@ function Question({questionData, questionIndex, answers, setAnswers}) {
                     {answersData.map((answerData, index) => {
                         const id = nanoid();
                         return (
-                            <span key={id}>
+                            <React.Fragment key={id}>
                                 <Radio
                                     id={id}
-                                    name={questionIndex.toString()}
+                                    name={questionIndex}
                                     label={answerData[TEST_QUESTION_ANSWER_KEYS.answer]}
                                     checked={answers[questionIndex]?.[0] === answerData.answer.toString()}
                                     onChange={(event) => handleChange(event, index)}
                                     value={answerData.answer}
                                 />
-                            </span>
+                            </React.Fragment>
                         );
                     })
                     }

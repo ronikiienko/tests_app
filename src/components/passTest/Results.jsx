@@ -1,6 +1,5 @@
 import React from 'react';
 import {checkTest} from '../../utils.js';
-import Header from './Header.jsx';
 import {ResultsQuestion} from './Results-Question.jsx';
 
 
@@ -14,7 +13,6 @@ export function Results({answers, testConfigs}) {
     });
     return (
         <>
-            <Header testConfigs={testConfigs}/>
             <div>You get: {overallMark} points</div>
             <div>{resultName}</div>
             <div>{resultDescription}</div>

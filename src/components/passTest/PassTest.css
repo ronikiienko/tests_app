@@ -2,5 +2,16 @@
     max-width: fit-content;
     margin: auto;
     min-width: 600px;
+    background-color: var(--bg-secondary);
+    padding: 10px;
+    border-radius: 10px;
     /*text-align: center;*/
+}
+
+.test-name {
+    margin-block: 15px;
+}
+
+.test-header {
+    text-align: center;
 }

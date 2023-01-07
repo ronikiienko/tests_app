@@ -2,6 +2,7 @@ h1 {
     color: violet;
 }
 html {
+    box-sizing: border-box;
     background-color: black;
     color: white;
     font-family: Arial;

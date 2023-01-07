@@ -3,10 +3,11 @@ import React from 'react';
 import './Checkbox.css';
 
 
-export const Checkbox = ({onChange, id, checked, label, disabled}) => {
+export const Checkbox = ({onChange, id, checked, label, disabled, readOnly}) => {
     return (
         <div className="checkbox-container">
             <input
+                readOnly={Boolean(readOnly)}
                 disabled={disabled}
                 id={id} className="checkbox-input"
                 type="checkbox"
@@ -19,6 +20,7 @@ export const Checkbox = ({onChange, id, checked, label, disabled}) => {
 };
 
 Checkbox.propTypes = {
+    readOnly: PropTypes.bool,
     onChange: PropTypes.func,
     id: PropTypes.string,
     checked: PropTypes.bool,
