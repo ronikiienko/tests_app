@@ -42,20 +42,63 @@ import {
 } from './consts.js';
 
 
-export const getItemFromStorage = (itemName) => {
+export const parseJSON = (jsonString, decode = false) => {
     try {
-        return JSON.parse(window.localStorage.getItem(itemName));
+        if (decode) {
+            return JSON.parse(decodeString(jsonString));
+        } else {
+            return JSON.parse(jsonString);
+        }
+    } catch (e) {
+        console.log(e);
+        return undefined;
+    }
+};
+export const getItemFromStorage = (itemName, decode) => {
+    try {
+        if (decode) {
+            return parseJSON(window.localStorage.getItem(itemName), true);
+        } else {
+            return parseJSON(window.localStorage.getItem(itemName));
+        }
+    } catch (e) {
+        console.log(e, 'b');
+        return undefined;
+    }
+};
+
+export const setItemToStorage = (itemName, itemData, encode = false) => {
+    try {
+        let stringToSave = JSON.stringify(itemData);
+        if (encode) {
+            stringToSave = encodeString(stringToSave);
+        }
+        return window.localStorage.setItem(itemName, stringToSave);
     } catch (e) {
         return undefined;
     }
 };
 
-export const setItemToStorage = (itemName, itemData) => {
-    try {
-        return window.localStorage.setItem(itemName, JSON.stringify(itemData));
-    } catch (e) {
-        return undefined;
+const encodeString = (string) => {
+    if (!string) return;
+
+    let result = '';
+    for (let i = 0; i < string.length; i++) {
+        const charcode = string.charCodeAt(i) - 2;
+        result += String.fromCharCode(charcode);
     }
+    return result;
+};
+
+const decodeString = (string) => {
+    if (!string) return;
+
+    let result = '';
+    for (let i = 0; i < string.length; i++) {
+        const charcode = string.charCodeAt(i) + 2;
+        result += String.fromCharCode(charcode);
+    }
+    return result;
 };
 
 export const checkQuestion = (userQuestionAnswers, question) => {

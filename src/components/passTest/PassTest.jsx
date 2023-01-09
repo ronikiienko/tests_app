@@ -2,25 +2,25 @@ import React from 'react';
 import {PASS_TAB_KEY, PASS_TABS_MAP, TEST_IN_PROCESS_ANSWERS_KEY, TEST_IN_PROCESS_CONFIGS_KEY} from '../../consts.js';
 import defaultTestConfigs from '../../defaultTestConfigs.js';
 import {Button} from '../../StyledElements/Button/Button.jsx';
-import {getItemFromStorage, setItemToStorage} from '../../utils.js';
+import {getItemFromStorage, parseJSON, setItemToStorage} from '../../utils.js';
 
 import './PassTest.css';
-import {QuestionMemoized} from './Question.jsx';
+import {Question} from './Question.jsx';
 import {Results} from './Results.jsx';
 
 
 export default function PassTest() {
     const [answers, setAnswers] = React.useState(getItemFromStorage(TEST_IN_PROCESS_ANSWERS_KEY) || []);
     const [passTab, setPassTab] = React.useState(getItemFromStorage(PASS_TAB_KEY) || PASS_TABS_MAP.passInProcess);
-    const [testConfigs, setTestConfigs] = React.useState(getItemFromStorage(TEST_IN_PROCESS_CONFIGS_KEY) || {...defaultTestConfigs});
+    const [testConfigs, setTestConfigs] = React.useState(getItemFromStorage(TEST_IN_PROCESS_CONFIGS_KEY, true) || {...defaultTestConfigs});
     const questionElements = testConfigs.questions.map((question, index) => {
         return (
-            <QuestionMemoized key={index} questionData={question} questionIndex={index} answers={answers}
-                              setAnswers={setAnswers}/>
+            <Question key={index} questionData={question} questionIndex={index} answers={answers}
+                      setAnswers={setAnswers}/>
         );
     });
     React.useEffect(() => {
-        setItemToStorage(TEST_IN_PROCESS_CONFIGS_KEY, testConfigs);
+        setItemToStorage(TEST_IN_PROCESS_CONFIGS_KEY, testConfigs, true);
     }, [testConfigs]);
 
     React.useEffect(() => {
@@ -45,7 +45,8 @@ export default function PassTest() {
             let [fileHandle] = await window.showOpenFilePicker();
             let fileData = await fileHandle.getFile();
             let text = await fileData.text();
-            let testConfigObject = JSON.parse(text);
+            let testConfigObject = parseJSON(text);
+            console.log(testConfigObject);
             setTestConfigs(testConfigObject);
             setAnswers([]);
             setPassTab(PASS_TABS_MAP.passInProcess);

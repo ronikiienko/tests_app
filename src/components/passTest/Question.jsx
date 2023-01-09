@@ -11,14 +11,13 @@ function areQuestionAnswersChanged(prevProps, newProps) {
     const prevAnswers = prevProps.answers?.[prevProps.questionIndex] || [];
     const newAnswers = newProps.answers?.[prevProps.questionIndex] || [];
     if (prevAnswers.length !== newAnswers.length) return false;
-    // TODO answers are arrays
     for (let i = 0; i < newAnswers.length; i++) {
         if (prevAnswers[i] !== newAnswers[i]) return false;
     }
     return true;
 }
 
-function Question({questionData, questionIndex, answers, setAnswers}) {
+export function Question({questionData, questionIndex, answers, setAnswers}) {
     const answersType = questionData[TEST_QUESTION_KEYS.answersType];
     const answersData = questionData[TEST_QUESTION_KEYS.answers];
     let maxChecked;

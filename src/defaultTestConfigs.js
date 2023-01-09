@@ -108,7 +108,7 @@ const defaultTestConfigs =
                         ],
                 },
                 {
-                    [TEST_QUESTION_KEYS.question]: 'Їжа?',
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
                     [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
                     [TEST_QUESTION_KEYS.maxChecked]: 3,
                     [TEST_QUESTION_KEYS.answers]:
