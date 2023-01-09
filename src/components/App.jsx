@@ -19,19 +19,13 @@ export default function App() {
     return (
         <>
             <Tabs
-                tabsArray={[{id: MAIN_TABS_MAP.pass, label: MAIN_TABS_MAP.pass}, {
-                    id: MAIN_TABS_MAP.create,
-                    label: MAIN_TABS_MAP.create,
-                }]}
+                tabsArray={[
+                    {id: MAIN_TABS_MAP.pass, label: 'Pass test'},
+                    {id: MAIN_TABS_MAP.create, label: 'Create test'},
+                ]}
                 openedTab={mainTab}
                 setOpenedTab={setMainTab}
             />
-            {/*<Button onClick={() => {*/}
-            {/*    setTab(MAIN_TABS_MAP.pass);*/}
-            {/*}}>Pass test</Button>*/}
-            {/*<Button onClick={() => {*/}
-            {/*    setTab(MAIN_TABS_MAP.create);*/}
-            {/*}}>Create test</Button>*/}
             {mainTab === MAIN_TABS_MAP.pass && <PassTest/>}
             {/*{mainTab === 'create' && <CreateTest/>}*/}
         </>

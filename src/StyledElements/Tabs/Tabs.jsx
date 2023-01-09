@@ -8,10 +8,10 @@ export const Tabs = ({openedTab, setOpenedTab, tabsArray}) => {
         setOpenedTab(event.target.id);
     };
     return (
-        <div onClick={handleClick}>
+        <div className="tabs-buttons-container" onClick={handleClick}>
             {tabsArray.map(tab => {
                 return (
-                    <div className={openedTab === tab.id ? 'selected-tab' : ''} id={tab.id}>{tab.label}</div>
+                    <span className={`tab-button ${openedTab === tab.id && 'selected'}`} id={tab.id}>{tab.label}</span>
                 );
             })}
         </div>

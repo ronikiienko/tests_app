@@ -8,6 +8,10 @@ html {
     font-family: Arial;
 }
 
+body {
+    margin: 0;
+}
+
 input[type="radio"], input[type="checkbox"], label {
     user-select: none;
 }
