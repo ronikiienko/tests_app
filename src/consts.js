@@ -32,5 +32,17 @@ export const TEST_QUESTION_ANSWER_TYPE_MAP = {
     text: 'text',
 };
 
+export const MAIN_TABS_MAP = {
+    pass: 'pass',
+    create: 'create',
+};
+export const PASS_TABS_MAP = {
+    passInProcess: 'passInProcess',
+    passFinished: 'passFinished',
+};
 export const TEST_IN_PROCESS_ANSWERS_KEY = 'testInProcessAnswers';
 export const TEST_IN_PROCESS_CONFIGS_KEY = 'testInProcessConfigs';
+
+export const MAIN_TAB_KEY = 'mainTab';
+
+export const PASS_TAB_KEY = 'passTab';

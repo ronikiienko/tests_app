@@ -1,0 +1,9 @@
+.results-description {
+    margin-block: 10px;
+    border-bottom: 1px solid var(--bg-color);
+}
+
+.results-description * {
+    margin-block: 10px;
+    margin-left: 5px;
+}

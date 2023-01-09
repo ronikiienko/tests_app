@@ -4,10 +4,14 @@ import {TEST_QUESTION_ANSWER_KEYS, TEST_QUESTION_ANSWER_TYPE_MAP, TEST_QUESTION_
 import {Checkbox} from '../../StyledElements/Checkbox/Checkbox.jsx';
 import {Input} from '../../StyledElements/Input/Input.jsx';
 import {Radio} from '../../StyledElements/Radio/Radio.jsx';
+import {checkQuestion} from '../../utils.js';
+import './Results-Question.css';
 
 
 export const ResultsQuestion = ({questionIndex, answers, questionData}) => {
+    const {checkedArray} = checkQuestion(answers[questionIndex], questionData);
     const answersType = questionData[TEST_QUESTION_KEYS.answersType];
+    if (answersType === TEST_QUESTION_ANSWER_TYPE_MAP.checkbox) console.log(checkedArray);
     const answersData = questionData[TEST_QUESTION_KEYS.answers];
     let maxChecked;
     if (!questionData.maxChecked) {
@@ -16,23 +20,22 @@ export const ResultsQuestion = ({questionIndex, answers, questionData}) => {
         maxChecked = questionData.maxChecked;
     }
     const answersNodes = questionData[TEST_QUESTION_KEYS.answers].map((answer, index) => {
-        const isChecked = answers[questionIndex]?.[index];
         if (answersType === TEST_QUESTION_ANSWER_TYPE_MAP.number) {
             return (
-                <p className={'results-answer-checked'}
+                <p className={`results-answer ${checkedArray?.[index] && 'checked'}`}
                    key={index}>{answer[TEST_QUESTION_ANSWER_KEYS.min]} - {answer[TEST_QUESTION_ANSWER_KEYS.max]}: {answer[TEST_QUESTION_ANSWER_KEYS.mark]}</p>
             );
         } else {
             return (
-                <p className={isChecked && 'answer-checked'}
-                   key={index}>{answer[TEST_QUESTION_ANSWER_KEYS.answer]}: {answer[TEST_QUESTION_ANSWER_KEYS.mark]} {isChecked && 'checked'}</p>
+                <p className={`results-answer ${checkedArray?.[index] && 'checked'}`}
+                   key={index}>{answer[TEST_QUESTION_ANSWER_KEYS.answer]}: {answer[TEST_QUESTION_ANSWER_KEYS.mark]}</p>
             );
         }
 
     });
     return (
-        <div>
-            <h2>{questionIndex + 1}.) {questionData[TEST_QUESTION_KEYS.question]}</h2>
+        <div className="results-question-container">
+            <h2 className="results-question-header">{questionIndex + 1}.) {questionData[TEST_QUESTION_KEYS.question]}</h2>
             {(answersType === TEST_QUESTION_ANSWER_TYPE_MAP.number || answersType === TEST_QUESTION_ANSWER_TYPE_MAP.text) && (
                 <>
                     <Input

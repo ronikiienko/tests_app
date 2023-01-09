@@ -1,8 +1,8 @@
 import React from 'react';
-import {TEST_IN_PROCESS_ANSWERS_KEY, TEST_IN_PROCESS_CONFIGS_KEY} from '../../consts.js';
+import {PASS_TAB_KEY, PASS_TABS_MAP, TEST_IN_PROCESS_ANSWERS_KEY, TEST_IN_PROCESS_CONFIGS_KEY} from '../../consts.js';
 import defaultTestConfigs from '../../defaultTestConfigs.js';
 import {Button} from '../../StyledElements/Button/Button.jsx';
-import {JSONParseCatch} from '../../utils.js';
+import {getItemFromStorage, setItemToStorage} from '../../utils.js';
 
 import './PassTest.css';
 import {QuestionMemoized} from './Question.jsx';
@@ -10,9 +10,9 @@ import {Results} from './Results.jsx';
 
 
 export default function PassTest() {
-    const [answers, setAnswers] = React.useState([]);
-    const [isInProcess, setIsInProcess] = React.useState(true);
-    const [testConfigs, setTestConfigs] = React.useState(JSONParseCatch(window.localStorage.getItem(TEST_IN_PROCESS_CONFIGS_KEY)) || {...defaultTestConfigs});
+    const [answers, setAnswers] = React.useState(getItemFromStorage(TEST_IN_PROCESS_ANSWERS_KEY) || []);
+    const [passTab, setPassTab] = React.useState(getItemFromStorage(PASS_TAB_KEY) || PASS_TABS_MAP.passInProcess);
+    const [testConfigs, setTestConfigs] = React.useState(getItemFromStorage(TEST_IN_PROCESS_CONFIGS_KEY) || {...defaultTestConfigs});
     const questionElements = testConfigs.questions.map((question, index) => {
         return (
             <QuestionMemoized key={index} questionData={question} questionIndex={index} answers={answers}
@@ -20,21 +20,24 @@ export default function PassTest() {
         );
     });
     React.useEffect(() => {
-        setAnswers(JSON.parse(window.localStorage.getItem(TEST_IN_PROCESS_ANSWERS_KEY)) || []);
-        window.localStorage.setItem(TEST_IN_PROCESS_CONFIGS_KEY, JSON.stringify(testConfigs));
+        setItemToStorage(TEST_IN_PROCESS_CONFIGS_KEY, testConfigs);
     }, [testConfigs]);
 
     React.useEffect(() => {
-        window.localStorage.setItem(TEST_IN_PROCESS_ANSWERS_KEY, JSON.stringify(answers));
+        setItemToStorage(TEST_IN_PROCESS_ANSWERS_KEY, answers);
     }, [answers]);
 
+    React.useEffect(() => {
+        setItemToStorage(PASS_TAB_KEY, passTab);
+    }, [passTab]);
+
     function finishTest() {
-        setIsInProcess(false);
+        setPassTab(PASS_TABS_MAP.passFinished);
     }
 
     function startTest() {
         setAnswers([]);
-        setIsInProcess(true);
+        setPassTab(PASS_TABS_MAP.passInProcess);
     }
 
     async function handleUserFile() {
@@ -44,6 +47,8 @@ export default function PassTest() {
             let text = await fileData.text();
             let testConfigObject = JSON.parse(text);
             setTestConfigs(testConfigObject);
+            setAnswers([]);
+            setPassTab(PASS_TABS_MAP.passInProcess);
         } catch (e) {
             console.log(e);
         }
@@ -57,14 +62,14 @@ export default function PassTest() {
                 <h1 className="test-name">{testConfigs.general.testName}</h1>
                 <p>{testConfigs.general.testDescription}</p>
             </header>
-            {!isInProcess && <Results answers={answers} testConfigs={testConfigs}/>}
-            {isInProcess && (
+            {passTab === PASS_TABS_MAP.passFinished && <Results answers={answers} testConfigs={testConfigs}/>}
+            {passTab === PASS_TABS_MAP.passInProcess && (
                 <>{questionElements}</>
             )
             }
             <Button
                 style={{width: '100%'}}
-                onClick={isInProcess ? finishTest : startTest}>{isInProcess ? 'Finish test' : 'Restart test'}
+                onClick={passTab === PASS_TABS_MAP.passInProcess ? finishTest : startTest}>{passTab === PASS_TABS_MAP.passInProcess ? 'Finish test' : 'Restart test'}
             </Button>
         </div>
     );

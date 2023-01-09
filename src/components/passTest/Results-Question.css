@@ -1,0 +1,20 @@
+.results-answer {
+    border-radius: 5px;
+    padding: 5px;
+    margin-block: 2px;
+}
+
+.results-answer.checked {
+    background-color: var(--checked-answer-result);
+}
+
+.results-question-container {
+    border-bottom: 1px solid var(--bg-color);
+    display: block;
+    padding-block: 3px;
+    margin-block: 3px;
+}
+
+.results-question-header {
+    margin-block: 12px;
+}

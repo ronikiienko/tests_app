@@ -28,5 +28,7 @@
     --button-background-hover: rgb(6, 35, 75);
     --button-background-active: rgb(20, 45, 82);
     --link-visited: rgb(204, 81, 177);
-    --link-visited-hover: rgb(217, 124, 197)
+    --link-visited-hover: rgb(217, 124, 197);
+    --checked-answer-result: #494902;
+    --bg3: #2a2a2a
 }

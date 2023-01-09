@@ -42,59 +42,87 @@ import {
 } from './consts.js';
 
 
-export const JSONParseCatch = (data) => {
+export const getItemFromStorage = (itemName) => {
     try {
-        return JSON.parse(data);
+        return JSON.parse(window.localStorage.getItem(itemName));
     } catch (e) {
         return undefined;
     }
 };
+
+export const setItemToStorage = (itemName, itemData) => {
+    try {
+        return window.localStorage.setItem(itemName, JSON.stringify(itemData));
+    } catch (e) {
+        return undefined;
+    }
+};
+
+export const checkQuestion = (userQuestionAnswers, question) => {
+    const questionAnswerType = question[TEST_QUESTION_KEYS.answersType];
+    const questionAnswers = question?.[TEST_QUESTION_KEYS.answers];
+    let questionMark = 0;
+    let checkedArray = [];
+    if (!questionAnswers?.length || !userQuestionAnswers?.length) return {mark: 0, checkedArray};
+    switch (questionAnswerType) {
+        case TEST_QUESTION_ANSWER_TYPE_MAP.number: {
+            const userAnswer = userQuestionAnswers[0];
+            for (const answer of questionAnswers) {
+                if (answer[TEST_QUESTION_ANSWER_KEYS.min] <= userAnswer && answer[TEST_QUESTION_ANSWER_KEYS.max] >= userAnswer) {
+                    checkedArray.push(true);
+                    questionMark = questionMark + answer[TEST_QUESTION_ANSWER_KEYS.mark];
+                    break;
+                }
+                checkedArray.push(false);
+            }
+        }
+            break;
+        case TEST_QUESTION_ANSWER_TYPE_MAP.text: {
+            const userAnswer = userQuestionAnswers[0];
+            for (const answer of questionAnswers) {
+                if (answer[TEST_QUESTION_ANSWER_KEYS.answer].toLowerCase().replace(/\s/g, '') === userAnswer.toLowerCase().replace(/\s/g, '')) {
+                    checkedArray.push(true);
+                    questionMark = questionMark + answer[TEST_QUESTION_ANSWER_KEYS.mark];
+                    break;
+                }
+                checkedArray.push(false);
+            }
+        }
+            break;
+        case TEST_QUESTION_ANSWER_TYPE_MAP.radio: {
+            const userAnswer = userQuestionAnswers[0];
+            for (const answer of questionAnswers) {
+                if (answer[TEST_QUESTION_ANSWER_KEYS.answer].toString() === userAnswer.toString()) {
+                    checkedArray.push(true);
+                    questionMark = questionMark + answer[TEST_QUESTION_ANSWER_KEYS.mark];
+                    break;
+                }
+                checkedArray.push(false);
+            }
+        }
+            break;
+        case TEST_QUESTION_ANSWER_TYPE_MAP.checkbox: {
+            const userAnswers = userQuestionAnswers;
+            questionAnswers.forEach((answer, index) => {
+                if (userAnswers[index]) {
+                    checkedArray.push(true);
+                    questionMark = questionMark + answer[TEST_QUESTION_ANSWER_KEYS.mark];
+                } else {
+                    checkedArray.push(false);
+                }
+            });
+        }
+            break;
+    }
+    return {mark: questionMark, checkedArray};
+};
 export const checkTest = (answers, testConfigs) => {
     let overallMark = 0;
     testConfigs[TEST_KEYS.questions].forEach((question, index) => {
-        const questionAnswerType = question[TEST_QUESTION_KEYS.answersType];
-        const questionAnswers = question[TEST_QUESTION_KEYS.answers];
         const userQuestionAnswers = answers[index];
         if (!userQuestionAnswers) return;
-        switch (questionAnswerType) {
-            case TEST_QUESTION_ANSWER_TYPE_MAP.number: {
-                const userAnswer = Number(userQuestionAnswers[0]);
-                questionAnswers.forEach(answer => {
-                    if (answer[TEST_QUESTION_ANSWER_KEYS.min] <= userAnswer && answer[TEST_QUESTION_ANSWER_KEYS.max] >= userAnswer) {
-                        overallMark = overallMark + answer[TEST_QUESTION_ANSWER_KEYS.mark];
-                    }
-                });
-            }
-                break;
-            case TEST_QUESTION_ANSWER_TYPE_MAP.text: {
-                const userAnswer = userQuestionAnswers[0];
-                questionAnswers.forEach(answer => {
-                    if (answer[TEST_QUESTION_ANSWER_KEYS.answer].toLowerCase().replace(/\s/g, '') === userAnswer.toLowerCase().replace(/\s/g, '')) {
-                        overallMark = overallMark + answer[TEST_QUESTION_ANSWER_KEYS.mark];
-                    }
-                });
-            }
-                break;
-            case TEST_QUESTION_ANSWER_TYPE_MAP.radio: {
-                const userAnswer = userQuestionAnswers[0];
-                questionAnswers.forEach(answer => {
-                    if (answer[TEST_QUESTION_ANSWER_KEYS.answer].toString() === userAnswer.toString()) {
-                        overallMark = overallMark + answer[TEST_QUESTION_ANSWER_KEYS.mark];
-                    }
-                });
-            }
-                break;
-            case TEST_QUESTION_ANSWER_TYPE_MAP.checkbox: {
-                const userAnswers = userQuestionAnswers;
-                questionAnswers.forEach((answer, index) => {
-                    if (!answer || !userAnswers[index]) return;
-                    if (userAnswers[index]) {
-                        overallMark = overallMark + answer[TEST_QUESTION_ANSWER_KEYS.mark];
-                    }
-                });
-            }
-                break;
-        }
+        const {mark} = checkQuestion(userQuestionAnswers, question);
+        overallMark = overallMark + mark || 0;
     });
     let resultName;
     let resultDescription;

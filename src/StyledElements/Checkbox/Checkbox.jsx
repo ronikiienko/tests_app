@@ -3,7 +3,7 @@ import React from 'react';
 import './Checkbox.css';
 
 
-export const Checkbox = ({onChange, id, checked, label, disabled, readOnly}) => {
+export const Checkbox = ({onChange, id, checked = false, label, disabled, readOnly}) => {
     return (
         <div className="checkbox-container">
             <input

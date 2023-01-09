@@ -127,7 +127,7 @@ const defaultTestConfigs =
                             },
 
                             {
-                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski',
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
                                 [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
                             },
 

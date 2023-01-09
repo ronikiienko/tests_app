@@ -11,6 +11,7 @@ function areQuestionAnswersChanged(prevProps, newProps) {
     const prevAnswers = prevProps.answers?.[prevProps.questionIndex] || [];
     const newAnswers = newProps.answers?.[prevProps.questionIndex] || [];
     if (prevAnswers.length !== newAnswers.length) return false;
+    // TODO answers are arrays
     for (let i = 0; i < newAnswers.length; i++) {
         if (prevAnswers[i] !== newAnswers[i]) return false;
     }
@@ -27,8 +28,11 @@ function Question({questionData, questionIndex, answers, setAnswers}) {
         maxChecked = questionData.maxChecked;
     }
 
+    React.useEffect(() => {
+        console.log(answers);
+    }, [answers]);
+
     function handleChange(event, checkboxNumber) {
-        console.log(event.target.value, event.target.checked);
         setAnswers(prevAnswers => {
             const newAnswers = [...prevAnswers];
             const newAnswer = newAnswers[questionIndex]?.length ? [...newAnswers[questionIndex]] : [];
@@ -66,7 +70,6 @@ function Question({questionData, questionIndex, answers, setAnswers}) {
                     <p className="question-description">Choose maximum {maxChecked} answers</p>
                     {answersData.map((answerData, index) => {
                         const id = nanoid();
-                        console.log(answers[questionIndex]?.[index] === answerData.answer.toString());
                         return (
                             <React.Fragment key={id}>
                                 <Checkbox
