@@ -53,7 +53,7 @@ export const parseJSON = (jsonString, decode = false) => {
         console.log(e);
         return undefined;
     }
-};
+}
 export const getItemFromStorage = (itemName, decode) => {
     try {
         if (decode) {

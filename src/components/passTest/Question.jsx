@@ -27,10 +27,6 @@ export function Question({questionData, questionIndex, answers, setAnswers}) {
         maxChecked = questionData.maxChecked;
     }
 
-    React.useEffect(() => {
-        console.log(answers);
-    }, [answers]);
-
     function handleChange(event, checkboxNumber) {
         setAnswers(prevAnswers => {
             const newAnswers = [...prevAnswers];
