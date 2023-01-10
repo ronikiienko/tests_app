@@ -2,7 +2,7 @@ import React from 'react';
 import {MAIN_TAB_KEY, MAIN_TABS_MAP} from '../consts.js';
 import {Tabs} from '../StyledElements/Tabs/Tabs.jsx';
 import {getItemFromStorage, setItemToStorage} from '../utils.js';
-import CreateTest from './createTest/Create-Test.jsx';
+import CreateTest from './createTest/CreateTest.jsx';
 import PassTest from './passTest/PassTest.jsx';
 
 
