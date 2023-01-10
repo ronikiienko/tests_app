@@ -14,12 +14,12 @@ export const ResultsQuestion = ({questionIndex, answers, questionData}) => {
     if (answersType === TEST_QUESTION_ANSWER_TYPE_MAP.checkbox) console.log(checkedArray);
     const answersData = questionData[TEST_QUESTION_KEYS.answers];
     let maxChecked;
-    if (!questionData.maxChecked) {
+    if (!questionData[TEST_QUESTION_KEYS.maxChecked]) {
         maxChecked = 3;
     } else {
-        maxChecked = questionData.maxChecked;
+        maxChecked = questionData[TEST_QUESTION_KEYS.maxChecked];
     }
-    const answersNodes = questionData[TEST_QUESTION_KEYS.answers].map((answer, index) => {
+    const answersNodes = questionData[TEST_QUESTION_KEYS.answers]?.map((answer, index) => {
         if (answersType === TEST_QUESTION_ANSWER_TYPE_MAP.number) {
             return (
                 <p className={`results-answer ${checkedArray?.[index] && 'checked'}`}

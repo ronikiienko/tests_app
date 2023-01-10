@@ -11,9 +11,10 @@
   "dependencies": {
     "file-saver": "^2.0.5",
     "nanoid": "^4.0.0",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "prop-types": "^15.8.1"
+    "react-viewport-list": "^6.3.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.15",

@@ -7,7 +7,7 @@ import {Radio} from '../../StyledElements/Radio/Radio.jsx';
 import './Question.css';
 
 // TODO check if question data is changing
-function areQuestionAnswersChanged(prevProps, newProps) {
+function areQuestionPropsChanged(prevProps, newProps) {
     const prevAnswers = prevProps.answers?.[prevProps.questionIndex] || [];
     const newAnswers = newProps.answers?.[prevProps.questionIndex] || [];
     if (prevAnswers.length !== newAnswers.length) return false;
@@ -21,10 +21,10 @@ export function Question({questionData, questionIndex, answers, setAnswers}) {
     const answersType = questionData[TEST_QUESTION_KEYS.answersType];
     const answersData = questionData[TEST_QUESTION_KEYS.answers];
     let maxChecked;
-    if (!questionData.maxChecked) {
+    if (!questionData[TEST_QUESTION_KEYS.maxChecked]) {
         maxChecked = 3;
     } else {
-        maxChecked = questionData.maxChecked;
+        maxChecked = questionData[TEST_QUESTION_KEYS.maxChecked];
     }
 
     function handleChange(event, checkboxNumber) {
@@ -104,4 +104,4 @@ export function Question({questionData, questionIndex, answers, setAnswers}) {
     );
 }
 
-export const QuestionMemoized = React.memo(Question, areQuestionAnswersChanged);
+export const QuestionMemoized = React.memo(Question, areQuestionPropsChanged);

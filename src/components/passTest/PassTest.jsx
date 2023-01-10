@@ -1,8 +1,15 @@
 import React from 'react';
-import {PASS_TAB_KEY, PASS_TABS_MAP, TEST_IN_PROCESS_ANSWERS_KEY, TEST_IN_PROCESS_CONFIGS_KEY} from '../../consts.js';
+import {
+    PASS_TAB_KEY,
+    PASS_TABS_MAP,
+    TEST_GENERAL_KEYS,
+    TEST_IN_PROCESS_ANSWERS_KEY,
+    TEST_IN_PROCESS_CONFIGS_KEY,
+    TEST_KEYS,
+} from '../../consts.js';
 import defaultTestConfigs from '../../defaultTestConfigs.js';
 import {Button} from '../../StyledElements/Button/Button.jsx';
-import {getItemFromStorage, parseJSON, setItemToStorage} from '../../utils.js';
+import {getItemFromStorage, parseJSON, setItemToStorage, validateTest} from '../../utils.js';
 
 import './PassTest.css';
 import {QuestionMemoized} from './Question.jsx';
@@ -13,7 +20,6 @@ export default function PassTest() {
     const [answers, setAnswers] = React.useState(getItemFromStorage(TEST_IN_PROCESS_ANSWERS_KEY) || []);
     const [passTab, setPassTab] = React.useState(getItemFromStorage(PASS_TAB_KEY) || PASS_TABS_MAP.passInProcess);
     const [testConfigs, setTestConfigs] = React.useState(getItemFromStorage(TEST_IN_PROCESS_CONFIGS_KEY, true) || {...defaultTestConfigs});
-    console.log(testConfigs);
     const questionElements = testConfigs.questions.map((question, index) => {
         return (
             <QuestionMemoized key={index} questionData={question} questionIndex={index} answers={answers}
@@ -41,13 +47,16 @@ export default function PassTest() {
         setPassTab(PASS_TABS_MAP.passInProcess);
     }
 
+    if (!testConfigs) return null;
     async function handleUserFile() {
         try {
             let [fileHandle] = await window.showOpenFilePicker();
             let fileData = await fileHandle.getFile();
             let text = await fileData.text();
-            let testConfigObject = parseJSON(text);
-            console.log(testConfigObject);
+            let testConfigObject = parseJSON(text, true);
+            if (!testConfigObject) return alert('Invalid test file :(');
+            const isTestValid = validateTest(testConfigObject);
+            if (!isTestValid) return alert('Invalid test file :(');
             setTestConfigs(testConfigObject);
             setAnswers([]);
             setPassTab(PASS_TABS_MAP.passInProcess);
@@ -61,8 +70,8 @@ export default function PassTest() {
             <Button style={{display: 'block', margin: 'auto', width: '70%'}} onClick={handleUserFile}>Import new
                 test</Button>
             <header className="test-header">
-                <h1 className="test-name">{testConfigs.general.testName}</h1>
-                <p>{testConfigs.general.testDescription}</p>
+                <h1 className="test-name">{testConfigs[TEST_KEYS.general]?.[TEST_GENERAL_KEYS.testName]}</h1>
+                <p className="test-description">{testConfigs[TEST_KEYS.general]?.[TEST_GENERAL_KEYS.testDescription]}</p>
             </header>
             {passTab === PASS_TABS_MAP.passFinished && <Results answers={answers} testConfigs={testConfigs}/>}
             {passTab === PASS_TABS_MAP.passInProcess && (

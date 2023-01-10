@@ -1,15 +1,12 @@
 .pass-test-container {
     max-width: fit-content;
-    margin: auto;
+    margin-inline: auto;
     min-width: 600px;
     background-color: var(--bg-secondary);
     padding: 10px;
     border-radius: 10px;
+    margin-bottom: 20px;
     /*text-align: center;*/
-}
-
-.test-name {
-    margin-block: 15px;
 }
 
 .test-header {
@@ -17,3 +14,14 @@
     text-align: center;
     border-block: 2px solid var(--bg-color);
 }
+
+.test-name {
+    margin-block: 15px;
+}
+
+.test-description {
+    margin: auto;
+    padding-bottom: 10px;
+    max-width: 500px;
+}
+
