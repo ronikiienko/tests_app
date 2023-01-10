@@ -2,6 +2,7 @@ import React from 'react';
 import {MAIN_TAB_KEY, MAIN_TABS_MAP} from '../consts.js';
 import {Tabs} from '../StyledElements/Tabs/Tabs.jsx';
 import {getItemFromStorage, setItemToStorage} from '../utils.js';
+import CreateTest from './createTest/Create-Test.jsx';
 import PassTest from './passTest/PassTest.jsx';
 
 
@@ -23,7 +24,7 @@ export default function App() {
                 setOpenedTab={setMainTab}
             />
             {mainTab === MAIN_TABS_MAP.pass && <PassTest/>}
-            {/*{mainTab === 'create' && <CreateTest/>}*/}
+            {mainTab === 'create' && <CreateTest/>}
         </>
     )
 }

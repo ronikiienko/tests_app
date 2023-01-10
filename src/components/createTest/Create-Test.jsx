@@ -1,5 +1,7 @@
 import {saveAs} from 'file-saver';
 import React from 'react';
+import {Button} from '../../StyledElements/Button/Button.jsx';
+import {stringifyJSON} from '../../utils.js';
 import CreateQuestion from './Create-Question.jsx';
 import CreateResults from './Create-Results';
 
@@ -24,7 +26,6 @@ export default function CreateTest() {
 
     function sendSaveSignal() {
         setSaveSignal(Date.now());
-
     }
 
     function sendEditSignal() {
@@ -33,7 +34,7 @@ export default function CreateTest() {
 
     function exportTest() {
         console.log();
-        let blob = new Blob([JSON.stringify(testConfigObject)], {type: 'text/plain;charset=utf-8'});
+        let blob = new Blob([stringifyJSON(testConfigObject, true)], {type: 'text/plain;charset=utf-8'});
         saveAs(blob, `${general.testName}.txt`);
     }
 
@@ -99,9 +100,9 @@ export default function CreateTest() {
             <CreateResults setGeneral={setGeneral} saveSignal={saveSignal} editSignal={editSignal}
                            testConfigObject={testConfigObject}/>
             <br/>
-            <button onClick={sendSaveSignal}>Save test</button>
-            <button onClick={exportTest}>Export test</button>
-            <button onClick={openTestToEdit}>Edit test</button>
+            <Button onClick={sendSaveSignal}>Save test</Button>
+            <Button onClick={exportTest}>Export test</Button>
+            <Button onClick={openTestToEdit}>Edit test</Button>
         </div>
 
     );

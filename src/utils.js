@@ -42,6 +42,18 @@ import {
 } from './consts.js';
 
 
+export const stringifyJSON = (jsonString, encode = false) => {
+    try {
+        let stringifiedJson = JSON.stringify(jsonString);
+        if (encode) {
+            stringifiedJson = encodeString(stringifiedJson);
+        }
+        return stringifiedJson;
+    } catch (e) {
+        console.log(e);
+        return undefined;
+    }
+};
 export const parseJSON = (jsonString, decode = false) => {
     try {
         if (decode) {
