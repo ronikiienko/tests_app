@@ -8,10 +8,6 @@ import PassTest from './passTest/PassTest.jsx';
 export default function App() {
     const [mainTab, setMainTab] = React.useState(getItemFromStorage(MAIN_TAB_KEY) || MAIN_TABS_MAP.pass);
 
-    function setTab(mainTab = MAIN_TABS_MAP.pass) {
-        setMainTab(mainTab);
-    }
-
     React.useEffect(() => {
         setItemToStorage(MAIN_TAB_KEY, mainTab);
     }, [mainTab]);

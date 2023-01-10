@@ -153,7 +153,2700 @@ const defaultTestConfigs =
                             },
                         ],
                 },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Best game ever?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.text,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Fallout4',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 5,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Terraria',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Minecraft',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
 
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: 'Їжа😢😢😢😢😢😢?',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.checkbox,
+                    [TEST_QUESTION_KEYS.maxChecked]: 3,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bakaka',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Sumatra',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 1,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'chyina',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 'Bronski beat',
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+
+                        ],
+                },
+
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
+                {
+                    [TEST_QUESTION_KEYS.question]: '2+4',
+                    [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.radio,
+                    [TEST_QUESTION_KEYS.answers]:
+                        [
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 5,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 6,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 3,
+                            },
+                            {
+                                [TEST_QUESTION_ANSWER_KEYS.answer]: 3,
+                                [TEST_QUESTION_ANSWER_KEYS.mark]: 0,
+                            },
+                        ],
+                },
 
             ],
     };

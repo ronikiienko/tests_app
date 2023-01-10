@@ -5,6 +5,7 @@
 }
 
 .tab-button {
+    user-select: none;
     letter-spacing: 2px;
     font-size: 16px;
     transition: 0.2s background-color;

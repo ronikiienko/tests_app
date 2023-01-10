@@ -6,7 +6,7 @@ import {Input} from '../../StyledElements/Input/Input.jsx';
 import {Radio} from '../../StyledElements/Radio/Radio.jsx';
 import './Question.css';
 
-
+// TODO check if question data is changing
 function areQuestionAnswersChanged(prevProps, newProps) {
     const prevAnswers = prevProps.answers?.[prevProps.questionIndex] || [];
     const newAnswers = newProps.answers?.[prevProps.questionIndex] || [];

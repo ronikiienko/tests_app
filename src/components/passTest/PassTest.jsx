@@ -5,7 +5,7 @@ import {Button} from '../../StyledElements/Button/Button.jsx';
 import {getItemFromStorage, parseJSON, setItemToStorage} from '../../utils.js';
 
 import './PassTest.css';
-import {Question} from './Question.jsx';
+import {QuestionMemoized} from './Question.jsx';
 import {Results} from './Results.jsx';
 
 
@@ -13,10 +13,11 @@ export default function PassTest() {
     const [answers, setAnswers] = React.useState(getItemFromStorage(TEST_IN_PROCESS_ANSWERS_KEY) || []);
     const [passTab, setPassTab] = React.useState(getItemFromStorage(PASS_TAB_KEY) || PASS_TABS_MAP.passInProcess);
     const [testConfigs, setTestConfigs] = React.useState(getItemFromStorage(TEST_IN_PROCESS_CONFIGS_KEY, true) || {...defaultTestConfigs});
+    console.log(testConfigs);
     const questionElements = testConfigs.questions.map((question, index) => {
         return (
-            <Question key={index} questionData={question} questionIndex={index} answers={answers}
-                      setAnswers={setAnswers}/>
+            <QuestionMemoized key={index} questionData={question} questionIndex={index} answers={answers}
+                              setAnswers={setAnswers}/>
         );
     });
     React.useEffect(() => {

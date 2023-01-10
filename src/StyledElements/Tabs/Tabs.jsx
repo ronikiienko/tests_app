@@ -3,7 +3,11 @@ import React from 'react';
 import './Tabs.css';
 
 
-export const Tabs = ({openedTab, setOpenedTab, tabsArray}) => {
+export const Tabs = ({
+                         openedTab = 'default',
+                         setOpenedTab = (tab) => console.log(tab),
+                         tabsArray = [{id: 'default', label: 'default tab'}],
+                     }) => {
     const handleClick = (event) => {
         setOpenedTab(event.target.id);
     };
@@ -11,7 +15,8 @@ export const Tabs = ({openedTab, setOpenedTab, tabsArray}) => {
         <div className="tabs-buttons-container" onClick={handleClick}>
             {tabsArray.map(tab => {
                 return (
-                    <span className={`tab-button ${openedTab === tab.id && 'selected'}`} id={tab.id}>{tab.label}</span>
+                    <span key={tab.id} className={`tab-button ${openedTab === tab.id && 'selected'}`}
+                          id={tab.id}>{tab.label}</span>
                 );
             })}
         </div>
