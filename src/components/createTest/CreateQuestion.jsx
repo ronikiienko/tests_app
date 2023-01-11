@@ -2,37 +2,23 @@ import React from 'react';
 import CreateAnswers from './CreateAnswers.jsx';
 
 
-export default function CreateQuestion({questionIndex, setQuestions, saveSignal, editSignal, testConfigObject}) {
-    const [answers, setAnswers] = React.useState([]);
-    const [questionGeneral, setQuestionGeneral] = React.useState({question: '', answersType: '', maxChecked: 3});
+export default function CreateQuestion({
+                                           questionIndex,
+                                           questionData,
+                                           addQuestionAnswer,
+                                           updateQuestionAnswerProperty,
+                                           updateQuestionProperty,
+                                       }) {
 
-    function deleteQuestion() {
-        setQuestions((prevQuestions) => {
-            let newQuestions = [...prevQuestions];
-            newQuestions.splice(questionIndex, 1);
-            return (
-                newQuestions
-            );
-        });
-    }
-
-    React.useEffect(() => {
-        setQuestions(prevQuestions => {
-            let newQuestions = [...prevQuestions];
-            newQuestions[questionIndex] = {
-                ...questionGeneral,
-                answers: [...answers],
-            };
-            return newQuestions;
-        });
-    }, [saveSignal]);
-
-    /*React.useEffect(() => {
-        if (testConfigObject.general) {
-            setAnswers(testConfigObject.questions[questionIndex].answers)
-            setQuestionGeneral(testConfigObject.general.results)
-        }
-    }, [editSignal])*/
+    // function deleteQuestion() {
+    //     setQuestions((prevQuestions) => {
+    //         let newQuestions = [...prevQuestions];
+    //         newQuestions.splice(questionIndex, 1);
+    //         return (
+    //             newQuestions
+    //         );
+    //     });
+    // }
 
     function addNewAnswer() {
         setAnswers((prevAnswers) => {
@@ -140,7 +126,7 @@ export default function CreateQuestion({questionIndex, setQuestions, saveSignal,
                 <input type="number" name="maxChecked" placeholder="Max checked" value={questionGeneral.maxChecked}
                        onChange={(event) => handleChange(event)}/>}
             {questionGeneral.answersType && <button onClick={addNewAnswer}>Add new answer</button>}
-            <button onClick={deleteQuestion}>Delete question</button>
+            {/*<button onClick={deleteQuestion}>Delete question</button>*/}
             <CreateAnswers answers={answers} answersType={questionGeneral.answersType} setAnswers={setAnswers}/>
         </>
 
