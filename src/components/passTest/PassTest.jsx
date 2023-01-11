@@ -13,21 +13,21 @@ import {Button} from '../../StyledElements/Button/Button.jsx';
 import {getItemFromStorage, parseJSON, setItemToStorage, validateTest} from '../../utils.js';
 
 import './PassTest.css';
-import {Question} from './Question.jsx';
+import {QuestionMemoized} from './Question.jsx';
 import {Results} from './Results.jsx';
 
 
 export default function PassTest() {
+    const [passTab, setPassTab] = React.useState(getItemFromStorage(PASS_TAB_KEY) || PASS_TABS_MAP.passInProcess);
+    const [testConfigs, setTestConfigs] = React.useState(getItemFromStorage(TEST_IN_PROCESS_CONFIGS_KEY, true) || {...defaultTestConfigs});
     const {
         answers,
         setAnswers,
         updateAnswer,
-    } = usePassTest(getItemFromStorage(TEST_IN_PROCESS_ANSWERS_KEY) || []);
-    const [passTab, setPassTab] = React.useState(getItemFromStorage(PASS_TAB_KEY) || PASS_TABS_MAP.passInProcess);
-    const [testConfigs, setTestConfigs] = React.useState(getItemFromStorage(TEST_IN_PROCESS_CONFIGS_KEY, true) || {...defaultTestConfigs});
-    const questionElements = testConfigs.questions.map((question, index) => {
+    } = usePassTest(getItemFromStorage(TEST_IN_PROCESS_ANSWERS_KEY) || [], testConfigs);
+    const questionElements = testConfigs[TEST_KEYS.questions].map((question, index) => {
         return (
-            <Question
+            <QuestionMemoized
                 key={index}
                 questionData={question}
                 questionIndex={index}

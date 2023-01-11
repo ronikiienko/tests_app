@@ -1,64 +1,66 @@
-import React, {useReducer} from 'react';
-import {TEST_QUESTION_ANSWER_TYPE_MAP} from '../consts.js';
+import React from 'react';
+import {useImmerReducer} from 'use-immer';
+import {TEST_KEYS, TEST_QUESTION_ANSWER_TYPE_MAP, TEST_QUESTION_KEYS} from '../consts.js';
 
 
 const dispatchCommands = {
     setAnswers: 'setAnswers',
 };
 
-const reducer = (answersState, action) => {
-    const newAnswer = action.answerData?.newAnswer;
-    const questionIndex = action.answerData?.questionIndex;
-    const checkboxIndex = action.answerData?.checkboxIndex;
+const reducer = (draft, action) => {
+    const newAnswer = action.payload?.newAnswer;
+    const questionIndex = action.payload?.questionIndex;
+    const checkboxIndex = action.payload?.checkboxIndex;
 
     switch (action.type) {
         case TEST_QUESTION_ANSWER_TYPE_MAP.number:
         case TEST_QUESTION_ANSWER_TYPE_MAP.text:
         case TEST_QUESTION_ANSWER_TYPE_MAP.radio: {
-            let newAnswers = [...answersState];
             if (action.type === TEST_QUESTION_ANSWER_TYPE_MAP.number) {
-                newAnswers[questionIndex] = [Number(newAnswer)];
+                draft[questionIndex] = [Number(newAnswer)];
             } else {
-                newAnswers[questionIndex] = [newAnswer.toString()];
+                draft[questionIndex] = [newAnswer.toString()];
             }
-            return newAnswers;
         }
+            break;
         case TEST_QUESTION_ANSWER_TYPE_MAP.checkbox: {
-            let newAllAnswers = [...answersState];
-            // TODO destructure or not to destructure
-            let newQuestionAnswers = newAllAnswers[action.answerData.questionIndex];
-            // let newQuestionAnswers = [...newAllAnswers[action.answerData.questionIndex]];
             let answeredCount = 0;
-            if (newQuestionAnswers?.length) {
-                newQuestionAnswers.forEach(element => {
+            if (draft[questionIndex]?.length) {
+                draft[questionIndex].forEach(element => {
                     if (element) answeredCount++;
                 });
             }
-            if (answeredCount < action.answerData.maxChecked && newAnswer) {
-                if (!newQuestionAnswers?.length) newQuestionAnswers = [];
-                newQuestionAnswers[checkboxIndex] = newAnswer;
-                newAllAnswers[questionIndex] = newQuestionAnswers;
-                return newAllAnswers;
+            if (answeredCount < action.payload.maxChecked && newAnswer) {
+                if (!draft[questionIndex]?.length) draft[questionIndex] = [];
+                draft[questionIndex][checkboxIndex] = newAnswer;
             } else {
-                if (!newAnswer) newQuestionAnswers[checkboxIndex] = newAnswer;
-                return newAllAnswers;
+                if (!newAnswer) draft[questionIndex][checkboxIndex] = newAnswer;
             }
         }
+            break;
         case dispatchCommands.setAnswers: {
-            return action.newAnswers;
+            draft = action.newAnswers;
         }
     }
 };
-export const usePassTest = (defaultAnswers) => {
-    const [answers, dispatch] = useReducer(reducer, defaultAnswers);
+export const usePassTest = (defaultAnswers, testConfigs) => {
+    const [answers, dispatch] = useImmerReducer(reducer, defaultAnswers);
 
+    // TODO exit where can error occur
     const updateAnswer = React.useCallback((answerData) => {
-        dispatch({type: answerData.answerType, answerData});
-    }, []);
+        const payload = {...answerData};
+        const questionData = testConfigs?.[TEST_KEYS.questions]?.[payload.questionIndex];
+        const answersType = questionData?.[TEST_QUESTION_KEYS.answersType];
+        const maxChecked = questionData?.[TEST_QUESTION_KEYS.maxChecked] || 0;
+        payload.answersType = answersType;
+        payload.maxChecked = maxChecked;
+        payload.answersType = testConfigs[TEST_KEYS.questions][payload.questionIndex][TEST_QUESTION_KEYS.answersType];
+        dispatch({type: payload.answersType, payload});
+    }, [testConfigs, dispatch]);
 
     const setAnswers = React.useCallback((newAnswers) => {
         dispatch({type: dispatchCommands.setAnswers, newAnswers});
-    }, []);
+    }, [dispatch]);
 
     return {answers, setAnswers, updateAnswer};
 };
