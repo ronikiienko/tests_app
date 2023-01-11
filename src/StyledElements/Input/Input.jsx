@@ -1,13 +1,12 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 import './Input.css';
 
 
-export const Input = ({value, onChange, label, type, readOnly}) => {
+export const Input = ({value, onChange, label, type = 'text', readOnly = false}) => {
     return (
         <label className="text-input-label">
             {label}
-            <input readOnly={Boolean(readOnly)} type={type || 'text'} className="text-input" value={value}
+            <input readOnly={readOnly} type={type} className="text-input" value={value}
                    onChange={onChange}/>
         </label>
     );

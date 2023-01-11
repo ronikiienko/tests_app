@@ -7,7 +7,7 @@ const dispatchCommands = {
     setAnswers: 'setAnswers',
 };
 
-const reducer = (draft, action) => {
+const reducer = (answersDraft, action) => {
     const newAnswer = action.payload?.newAnswer;
     const questionIndex = action.payload?.questionIndex;
     const checkboxIndex = action.payload?.checkboxIndex;
@@ -17,29 +17,29 @@ const reducer = (draft, action) => {
         case TEST_QUESTION_ANSWER_TYPE_MAP.text:
         case TEST_QUESTION_ANSWER_TYPE_MAP.radio: {
             if (action.type === TEST_QUESTION_ANSWER_TYPE_MAP.number) {
-                draft[questionIndex] = [Number(newAnswer)];
+                answersDraft[questionIndex] = [Number(newAnswer)];
             } else {
-                draft[questionIndex] = [newAnswer.toString()];
+                answersDraft[questionIndex] = [newAnswer.toString()];
             }
         }
             break;
         case TEST_QUESTION_ANSWER_TYPE_MAP.checkbox: {
             let answeredCount = 0;
-            if (draft[questionIndex]?.length) {
-                draft[questionIndex].forEach(element => {
+            if (answersDraft[questionIndex]?.length) {
+                answersDraft[questionIndex].forEach(element => {
                     if (element) answeredCount++;
                 });
             }
             if (answeredCount < action.payload.maxChecked && newAnswer) {
-                if (!draft[questionIndex]?.length) draft[questionIndex] = [];
-                draft[questionIndex][checkboxIndex] = newAnswer;
+                if (!answersDraft[questionIndex]?.length) answersDraft[questionIndex] = [];
+                answersDraft[questionIndex][checkboxIndex] = newAnswer;
             } else {
-                if (!newAnswer) draft[questionIndex][checkboxIndex] = newAnswer;
+                if (!newAnswer) answersDraft[questionIndex][checkboxIndex] = newAnswer;
             }
         }
             break;
         case dispatchCommands.setAnswers: {
-            draft = action.newAnswers;
+            answersDraft = action.newAnswers;
         }
     }
 };
