@@ -17,6 +17,7 @@ import {Results} from './Results.jsx';
 
 
 export default function PassTest() {
+    // const {answers, setAnswers, updateAnswer, updateNumberAnswer, updateCheckboxAnswer} = usePassTest()
     const [answers, setAnswers] = React.useState(getItemFromStorage(TEST_IN_PROCESS_ANSWERS_KEY) || []);
     const [passTab, setPassTab] = React.useState(getItemFromStorage(PASS_TAB_KEY) || PASS_TABS_MAP.passInProcess);
     const [testConfigs, setTestConfigs] = React.useState(getItemFromStorage(TEST_IN_PROCESS_CONFIGS_KEY, true) || {...defaultTestConfigs});
