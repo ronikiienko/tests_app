@@ -17,7 +17,14 @@ function areQuestionPropsChanged(prevProps, newProps) {
     return true;
 }
 
-export function Question({questionData, questionIndex, answers, setAnswers}) {
+export function Question({
+                             questionData,
+                             questionIndex,
+                             answer,
+                             updateAnswer,
+                             updateNumberAnswer,
+                             updateCheckboxAnswer,
+                         }) {
     const answersType = questionData[TEST_QUESTION_KEYS.answersType];
     const answersData = questionData[TEST_QUESTION_KEYS.answers];
     let maxChecked;
@@ -27,27 +34,22 @@ export function Question({questionData, questionIndex, answers, setAnswers}) {
         maxChecked = questionData[TEST_QUESTION_KEYS.maxChecked];
     }
 
-    function handleChange(event, checkboxNumber) {
-        setAnswers(prevAnswers => {
-            const newAnswers = [...prevAnswers];
-            const newAnswer = newAnswers[questionIndex]?.length ? [...newAnswers[questionIndex]] : [];
-            if (answersType === 'checkbox') {
-                if (!event.target.checked) {
-                    newAnswer[checkboxNumber] = event.target.checked;
-                }
-                let answeredCount = 0;
-                newAnswer.forEach(element => {
-                    if (element) answeredCount++;
-                });
-                if (answeredCount < maxChecked && event.target.checked) newAnswer[checkboxNumber] = true;
+    function handleChange(event, checkboxIndex = 0) {
+        switch (answersType) {
+            case TEST_QUESTION_ANSWER_TYPE_MAP.checkbox: {
+                updateCheckboxAnswer(event.target.checked, questionIndex, checkboxIndex, maxChecked);
             }
-            if (answersType === 'radio' || answersType === 'number' || answersType === 'text') {
-                newAnswer[0] = event.target.value;
+                break;
+            case TEST_QUESTION_ANSWER_TYPE_MAP.number: {
+                updateNumberAnswer(event.target.value, questionIndex);
             }
-            newAnswers[questionIndex] = newAnswer;
-            return newAnswers;
-        });
+                break;
+            default: {
+                updateAnswer(event.target.value, questionIndex);
+            }
+        }
     }
+
     return (
         <div className="question-container">
             <h2 className="question-header">{questionIndex + 1}.) {questionData[TEST_QUESTION_KEYS.question]}</h2>
@@ -55,8 +57,8 @@ export function Question({questionData, questionIndex, answers, setAnswers}) {
                 <>
                     <Input
                         type={answersType}
-                        value={answers[questionIndex]?.[0] || ''}
-                        onChange={(event) => handleChange(event, 0)}
+                        value={answer?.[0] || ''}
+                        onChange={(event) => handleChange(event)}
                     />
                 </>
             )}
@@ -69,7 +71,7 @@ export function Question({questionData, questionIndex, answers, setAnswers}) {
                             <React.Fragment key={id}>
                                 <Checkbox
                                     id={id}
-                                    checked={answers[questionIndex]?.[index]}
+                                    checked={answer?.[index]}
                                     value={answerData.answer}
                                     onChange={(event) => handleChange(event, index)}
                                     label={answerData[TEST_QUESTION_ANSWER_KEYS.answer]}
@@ -90,7 +92,7 @@ export function Question({questionData, questionIndex, answers, setAnswers}) {
                                     id={id}
                                     name={questionIndex}
                                     label={answerData[TEST_QUESTION_ANSWER_KEYS.answer]}
-                                    checked={answers[questionIndex]?.[0] === answerData.answer.toString()}
+                                    checked={answer?.[0] === answerData.answer.toString()}
                                     onChange={(event) => handleChange(event, index)}
                                     value={answerData.answer}
                                 />

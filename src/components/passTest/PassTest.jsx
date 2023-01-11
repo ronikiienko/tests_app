@@ -8,23 +8,36 @@ import {
     TEST_KEYS,
 } from '../../consts.js';
 import defaultTestConfigs from '../../defaultTestConfigs.js';
+import {usePassTest} from '../../hooks/usePassTest.js';
 import {Button} from '../../StyledElements/Button/Button.jsx';
 import {getItemFromStorage, parseJSON, setItemToStorage, validateTest} from '../../utils.js';
 
 import './PassTest.css';
-import {QuestionMemoized} from './Question.jsx';
+import {Question} from './Question.jsx';
 import {Results} from './Results.jsx';
 
 
 export default function PassTest() {
-    // const {answers, setAnswers, updateAnswer, updateNumberAnswer, updateCheckboxAnswer} = usePassTest()
-    const [answers, setAnswers] = React.useState(getItemFromStorage(TEST_IN_PROCESS_ANSWERS_KEY) || []);
+    const {
+        answers,
+        setAnswers,
+        updateAnswer,
+        updateNumberAnswer,
+        updateCheckboxAnswer,
+    } = usePassTest(getItemFromStorage(TEST_IN_PROCESS_ANSWERS_KEY) || []);
     const [passTab, setPassTab] = React.useState(getItemFromStorage(PASS_TAB_KEY) || PASS_TABS_MAP.passInProcess);
     const [testConfigs, setTestConfigs] = React.useState(getItemFromStorage(TEST_IN_PROCESS_CONFIGS_KEY, true) || {...defaultTestConfigs});
     const questionElements = testConfigs.questions.map((question, index) => {
         return (
-            <QuestionMemoized key={index} questionData={question} questionIndex={index} answers={answers}
-                              setAnswers={setAnswers}/>
+            <Question
+                key={index}
+                questionData={question}
+                questionIndex={index}
+                answer={answers[index]}
+                updateAnswer={updateAnswer}
+                updateNumberAnswer={updateNumberAnswer}
+                updateCheckboxAnswer={updateCheckboxAnswer}
+            />
         );
     });
     React.useEffect(() => {

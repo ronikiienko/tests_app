@@ -8,9 +8,8 @@ const dispatchCommands = {
     setAnswers: 'setAnswers',
 };
 
-const initialAnswers = [];
-
 const reducer = (answersState, action) => {
+    console.log(action);
     switch (action.type) {
         case dispatchCommands.updateAnswer: {
             let newAnswers = [...answersState];
@@ -25,26 +24,36 @@ const reducer = (answersState, action) => {
         case dispatchCommands.updateCheckboxAnswer: {
             let newAnswers = [...answersState];
             let newAnswer = [...newAnswers[action.questionIndex]];
-            newAnswer[action.answerIndex] = action.newAnswer;
-            newAnswers[action.questionIndex] = newAnswer;
-            return newAnswers;
+            let answeredCount = 0;
+            if (newAnswer?.length) {
+                newAnswer.forEach(element => {
+                    if (element) answeredCount++;
+                });
+            }
+            if (answeredCount < action.maxChecked && action.newAnswer) {
+                newAnswer[action.checkboxIndex] = action.newAnswer;
+                newAnswers[action.questionIndex] = newAnswer;
+                return newAnswers;
+            } else {
+                return newAnswers;
+            }
         }
         case dispatchCommands.setAnswers: {
             return action.newAnswers;
         }
     }
 };
-export const usePassTest = () => {
-    const [answers, dispatch] = useReducer(reducer, initialAnswers);
+export const usePassTest = (defaultAnswers) => {
+    const [answers, dispatch] = useReducer(reducer, defaultAnswers);
 
     const updateAnswer = React.useCallback((newAnswer, questionIndex) => {
         dispatch({type: dispatchCommands.updateAnswer, newAnswer, questionIndex});
     }, []);
     const updateNumberAnswer = React.useCallback((newAnswer, questionIndex) => {
-        dispatch({type: dispatchCommands.updateAnswer, newAnswer, questionIndex});
+        dispatch({type: dispatchCommands.updateNumberAnswer, newAnswer, questionIndex});
     }, []);
-    const updateCheckboxAnswer = React.useCallback((newAnswer, questionIndex, answerIndex) => {
-        dispatch({type: dispatchCommands.updateAnswer, newAnswer, questionIndex, answerIndex});
+    const updateCheckboxAnswer = React.useCallback((newAnswer, questionIndex, checkboxIndex, maxChecked) => {
+        dispatch({type: dispatchCommands.updateCheckboxAnswer, newAnswer, questionIndex, checkboxIndex, maxChecked});
     }, []);
     const setAnswers = React.useCallback((newAnswers) => {
         dispatch({type: dispatchCommands.setAnswers, newAnswers});
