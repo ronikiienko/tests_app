@@ -1,41 +1,47 @@
 import React, {useReducer} from 'react';
+import {TEST_QUESTION_ANSWER_TYPE_MAP} from '../consts.js';
 
 
 const dispatchCommands = {
-    updateAnswer: 'updateQuestion',
-    updateCheckboxAnswer: 'updateCheckboxAnswer',
-    updateNumberAnswer: 'updateNumberAnswer',
     setAnswers: 'setAnswers',
 };
 
 const reducer = (answersState, action) => {
-    console.log(action);
+    const newAnswer = action.answerData?.newAnswer;
+    const questionIndex = action.answerData?.questionIndex;
+    const checkboxIndex = action.answerData?.checkboxIndex;
+
     switch (action.type) {
-        case dispatchCommands.updateAnswer: {
+        case TEST_QUESTION_ANSWER_TYPE_MAP.number:
+        case TEST_QUESTION_ANSWER_TYPE_MAP.text:
+        case TEST_QUESTION_ANSWER_TYPE_MAP.radio: {
             let newAnswers = [...answersState];
-            newAnswers[action.questionIndex] = [action.newAnswer.toString()];
+            if (action.type === TEST_QUESTION_ANSWER_TYPE_MAP.number) {
+                newAnswers[questionIndex] = [Number(newAnswer)];
+            } else {
+                newAnswers[questionIndex] = [newAnswer.toString()];
+            }
             return newAnswers;
         }
-        case dispatchCommands.updateNumberAnswer: {
-            let newAnswers = [...answersState];
-            newAnswers[action.questionIndex] = [Number(action.newAnswer)];
-            return newAnswers;
-        }
-        case dispatchCommands.updateCheckboxAnswer: {
-            let newAnswers = [...answersState];
-            let newAnswer = [...newAnswers[action.questionIndex]];
+        case TEST_QUESTION_ANSWER_TYPE_MAP.checkbox: {
+            let newAllAnswers = [...answersState];
+            // TODO destructure or not to destructure
+            let newQuestionAnswers = newAllAnswers[action.answerData.questionIndex];
+            // let newQuestionAnswers = [...newAllAnswers[action.answerData.questionIndex]];
             let answeredCount = 0;
-            if (newAnswer?.length) {
-                newAnswer.forEach(element => {
+            if (newQuestionAnswers?.length) {
+                newQuestionAnswers.forEach(element => {
                     if (element) answeredCount++;
                 });
             }
-            if (answeredCount < action.maxChecked && action.newAnswer) {
-                newAnswer[action.checkboxIndex] = action.newAnswer;
-                newAnswers[action.questionIndex] = newAnswer;
-                return newAnswers;
+            if (answeredCount < action.answerData.maxChecked && newAnswer) {
+                if (!newQuestionAnswers?.length) newQuestionAnswers = [];
+                newQuestionAnswers[checkboxIndex] = newAnswer;
+                newAllAnswers[questionIndex] = newQuestionAnswers;
+                return newAllAnswers;
             } else {
-                return newAnswers;
+                if (!newAnswer) newQuestionAnswers[checkboxIndex] = newAnswer;
+                return newAllAnswers;
             }
         }
         case dispatchCommands.setAnswers: {
@@ -46,17 +52,13 @@ const reducer = (answersState, action) => {
 export const usePassTest = (defaultAnswers) => {
     const [answers, dispatch] = useReducer(reducer, defaultAnswers);
 
-    const updateAnswer = React.useCallback((newAnswer, questionIndex) => {
-        dispatch({type: dispatchCommands.updateAnswer, newAnswer, questionIndex});
+    const updateAnswer = React.useCallback((answerData) => {
+        dispatch({type: answerData.answerType, answerData});
     }, []);
-    const updateNumberAnswer = React.useCallback((newAnswer, questionIndex) => {
-        dispatch({type: dispatchCommands.updateNumberAnswer, newAnswer, questionIndex});
-    }, []);
-    const updateCheckboxAnswer = React.useCallback((newAnswer, questionIndex, checkboxIndex, maxChecked) => {
-        dispatch({type: dispatchCommands.updateCheckboxAnswer, newAnswer, questionIndex, checkboxIndex, maxChecked});
-    }, []);
+
     const setAnswers = React.useCallback((newAnswers) => {
         dispatch({type: dispatchCommands.setAnswers, newAnswers});
     }, []);
-    return {answers, setAnswers, updateAnswer, updateCheckboxAnswer, updateNumberAnswer};
+
+    return {answers, setAnswers, updateAnswer};
 };

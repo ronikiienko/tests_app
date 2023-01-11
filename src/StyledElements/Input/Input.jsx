@@ -16,7 +16,7 @@ export const Input = ({value, onChange, label, type, readOnly}) => {
 Input.propTypes = {
     readOnly: PropTypes.bool,
     type: PropTypes.string,
-    value: PropTypes.string,
+    value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     onChange: PropTypes.func,
     label: PropTypes.string,
 };

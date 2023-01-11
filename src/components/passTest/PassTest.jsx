@@ -22,8 +22,6 @@ export default function PassTest() {
         answers,
         setAnswers,
         updateAnswer,
-        updateNumberAnswer,
-        updateCheckboxAnswer,
     } = usePassTest(getItemFromStorage(TEST_IN_PROCESS_ANSWERS_KEY) || []);
     const [passTab, setPassTab] = React.useState(getItemFromStorage(PASS_TAB_KEY) || PASS_TABS_MAP.passInProcess);
     const [testConfigs, setTestConfigs] = React.useState(getItemFromStorage(TEST_IN_PROCESS_CONFIGS_KEY, true) || {...defaultTestConfigs});
@@ -33,10 +31,8 @@ export default function PassTest() {
                 key={index}
                 questionData={question}
                 questionIndex={index}
-                answer={answers[index]}
+                answer={answers?.[index]}
                 updateAnswer={updateAnswer}
-                updateNumberAnswer={updateNumberAnswer}
-                updateCheckboxAnswer={updateCheckboxAnswer}
             />
         );
     });

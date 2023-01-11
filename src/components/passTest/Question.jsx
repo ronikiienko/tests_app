@@ -17,15 +17,8 @@ function areQuestionPropsChanged(prevProps, newProps) {
     return true;
 }
 
-export function Question({
-                             questionData,
-                             questionIndex,
-                             answer,
-                             updateAnswer,
-                             updateNumberAnswer,
-                             updateCheckboxAnswer,
-                         }) {
-    const answersType = questionData[TEST_QUESTION_KEYS.answersType];
+export function Question({questionData, questionIndex, answer, updateAnswer}) {
+    const answerType = questionData[TEST_QUESTION_KEYS.answersType];
     const answersData = questionData[TEST_QUESTION_KEYS.answers];
     let maxChecked;
     if (!questionData[TEST_QUESTION_KEYS.maxChecked]) {
@@ -35,17 +28,23 @@ export function Question({
     }
 
     function handleChange(event, checkboxIndex = 0) {
-        switch (answersType) {
+        switch (answerType) {
             case TEST_QUESTION_ANSWER_TYPE_MAP.checkbox: {
-                updateCheckboxAnswer(event.target.checked, questionIndex, checkboxIndex, maxChecked);
-            }
-                break;
-            case TEST_QUESTION_ANSWER_TYPE_MAP.number: {
-                updateNumberAnswer(event.target.value, questionIndex);
+                updateAnswer({
+                    answerType,
+                    questionIndex,
+                    newAnswer: event.target.checked,
+                    checkboxIndex,
+                    maxChecked,
+                });
             }
                 break;
             default: {
-                updateAnswer(event.target.value, questionIndex);
+                updateAnswer({
+                    answerType,
+                    questionIndex,
+                    newAnswer: event.target.value,
+                });
             }
         }
     }
@@ -53,16 +52,16 @@ export function Question({
     return (
         <div className="question-container">
             <h2 className="question-header">{questionIndex + 1}.) {questionData[TEST_QUESTION_KEYS.question]}</h2>
-            {(answersType === TEST_QUESTION_ANSWER_TYPE_MAP.number || answersType === TEST_QUESTION_ANSWER_TYPE_MAP.text) && (
+            {(answerType === TEST_QUESTION_ANSWER_TYPE_MAP.number || answerType === TEST_QUESTION_ANSWER_TYPE_MAP.text) && (
                 <>
                     <Input
-                        type={answersType}
+                        type={answerType}
                         value={answer?.[0] || ''}
                         onChange={(event) => handleChange(event)}
                     />
                 </>
             )}
-            {answersType === TEST_QUESTION_ANSWER_TYPE_MAP.checkbox && (
+            {answerType === TEST_QUESTION_ANSWER_TYPE_MAP.checkbox && (
                 <>
                     <p className="question-description">Choose maximum {maxChecked} answers</p>
                     {answersData.map((answerData, index) => {
@@ -82,7 +81,7 @@ export function Question({
                     }
                 </>
             )}
-            {answersType === TEST_QUESTION_ANSWER_TYPE_MAP.radio && (
+            {answerType === TEST_QUESTION_ANSWER_TYPE_MAP.radio && (
                 <>
                     {answersData.map((answerData, index) => {
                         const id = nanoid();
