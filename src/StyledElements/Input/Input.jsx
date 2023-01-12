@@ -6,7 +6,7 @@ export const Input = ({value, onChange, label, type = 'text', readOnly = false})
     return (
         <label className="text-input-label">
             {label}
-            <input readOnly={readOnly} type={type} className="text-input" value={value}
+            <input readOnly={readOnly} type={type} className="text-input" value={value || ''}
                    onChange={onChange}/>
         </label>
     );

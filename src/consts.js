@@ -12,18 +12,21 @@ export const TEST_GENERAL_RESULT_RANGE_KEYS = {
     max: 'max',
     resultName: 'resultName',
     resultDescription: 'resultDescription',
+    id: 'id',
 };
 export const TEST_QUESTION_KEYS = {
     question: 'question',
     answersType: 'answersType',
     answers: 'answers',
     maxChecked: 'maxChecked',
+    id: 'id',
 };
 export const TEST_QUESTION_ANSWER_KEYS = {
     answer: 'answer',
     mark: 'mark',
     min: 'min',
     max: 'max',
+    id: 'id',
 };
 export const TEST_QUESTION_ANSWER_TYPE_MAP = {
     number: 'number',

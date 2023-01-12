@@ -70,6 +70,7 @@ export function Question({questionData, questionIndex, answer, updateAnswer}) {
             {answersType === TEST_QUESTION_ANSWER_TYPE_MAP.radio && (
                 <>
                     {answersData.map((answerData, index) => {
+                        // TODO change this id to id created inside test
                         const id = nanoid();
                         return (
                             <React.Fragment key={id}>

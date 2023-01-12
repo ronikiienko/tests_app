@@ -1,22 +1,58 @@
+import {nanoid} from 'nanoid';
 import React from 'react';
 import {useImmerReducer} from 'use-immer';
-import {TEST_GENERAL_KEYS, TEST_KEYS, TEST_QUESTION_KEYS} from '../consts.js';
+import {
+    TEST_GENERAL_KEYS,
+    TEST_GENERAL_RESULT_RANGE_KEYS,
+    TEST_KEYS,
+    TEST_QUESTION_ANSWER_KEYS,
+    TEST_QUESTION_ANSWER_TYPE_MAP,
+    TEST_QUESTION_KEYS,
+} from '../consts.js';
 
 
 const dispatchCommands = {
     updateQuestionProperty: 'updateQuestion',
     updateGeneralProperty: 'updateGeneralProperty',
-    addQuestion: 'addQuestion',
+    toggleQuestion: 'toggleQuestion',
     setTestConfigs: 'setTestConfigs',
-    addResultRange: 'addResultRange',
+    toggleResultRange: 'toggleResultRange',
     updateResultRangeProperty: 'updateResultRangeProperty',
-    addQuestionAnswer: 'addQuestionAnswer',
+    toggleQuestionAnswer: 'toggleQuestionAnswer',
     updateQuestionAnswerProperty: 'updateQuestionAnswerProperty',
 };
 
 const initialTestConfigs = {
-    [TEST_KEYS.general]: {},
+    [TEST_KEYS.general]: {
+        [TEST_GENERAL_KEYS.testName]: '',
+        [TEST_GENERAL_KEYS.testDescription]: '',
+        [TEST_GENERAL_KEYS.results]: [],
+    },
     [TEST_KEYS.questions]: [],
+};
+
+const getInitialResultRangeConfigs = () => {
+    return {
+        [TEST_GENERAL_RESULT_RANGE_KEYS.resultName]: '',
+        [TEST_GENERAL_RESULT_RANGE_KEYS.resultDescription]: '',
+        [TEST_GENERAL_RESULT_RANGE_KEYS.min]: 0,
+        [TEST_GENERAL_RESULT_RANGE_KEYS.max]: 0,
+        [TEST_GENERAL_RESULT_RANGE_KEYS.id]: nanoid(),
+    };
+};
+const getInitialQuestionConfigs = () => {
+    return {
+        [TEST_QUESTION_KEYS.question]: '',
+        [TEST_QUESTION_KEYS.answersType]: TEST_QUESTION_ANSWER_TYPE_MAP.text,
+        [TEST_QUESTION_KEYS.answers]: [],
+        [TEST_QUESTION_KEYS.id]: nanoid(),
+    };
+};
+
+const getInitialQuestionAnswerConfigs = () => {
+    return {
+        [TEST_QUESTION_ANSWER_KEYS.id]: nanoid(),
+    };
 };
 
 const reducer = (testConfigDraft, action) => {
@@ -26,24 +62,39 @@ const reducer = (testConfigDraft, action) => {
             testConfigDraft[TEST_KEYS.general][payload.propertyName] = payload.newValue;
         }
             break;
-        case dispatchCommands.addResultRange: {
-            testConfigDraft[TEST_KEYS.general][TEST_GENERAL_KEYS.results].push({});
+        case dispatchCommands.toggleResultRange: {
+            if (typeof payload.resultRangeIndex === 'number') {
+                testConfigDraft[TEST_KEYS.general][TEST_GENERAL_KEYS.results].splice(payload.resultRangeIndex, 1);
+            } else {
+                testConfigDraft[TEST_KEYS.general][TEST_GENERAL_KEYS.results].push(getInitialResultRangeConfigs());
+            }
         }
             break;
         case dispatchCommands.updateResultRangeProperty: {
             testConfigDraft[TEST_KEYS.general][TEST_GENERAL_KEYS.results][payload.resultRangeIndex][payload.propertyName] = payload.newValue;
         }
             break;
-        case dispatchCommands.addQuestion: {
-            testConfigDraft[TEST_KEYS.questions].push({});
+        case dispatchCommands.toggleQuestion: {
+            console.log(payload, 'hihihi');
+
+            if (typeof payload.questionIndex === 'number') {
+                testConfigDraft[TEST_KEYS.questions].splice(payload.questionIndex, 1);
+            } else {
+                testConfigDraft[TEST_KEYS.questions].push(getInitialQuestionConfigs());
+            }
         }
             break;
         case dispatchCommands.updateQuestionProperty: {
             testConfigDraft[TEST_KEYS.questions][payload.questionIndex][payload.propertyName] = payload.newValue;
         }
             break;
-        case dispatchCommands.addQuestionAnswer: {
-            testConfigDraft[TEST_KEYS.questions][payload.questionIndex][TEST_QUESTION_KEYS.answers].push({});
+        case dispatchCommands.toggleQuestionAnswer: {
+
+            if (typeof payload.questionIndex === 'number' && typeof payload.answerIndex === 'number') {
+                testConfigDraft[TEST_KEYS.questions][payload.questionIndex][TEST_QUESTION_KEYS.answers].splice(payload.answerIndex, 1);
+            } else {
+                testConfigDraft[TEST_KEYS.questions][payload.questionIndex][TEST_QUESTION_KEYS.answers].push(getInitialQuestionAnswerConfigs());
+            }
         }
             break;
         case dispatchCommands.updateQuestionAnswerProperty: {
@@ -62,8 +113,8 @@ export const useCreateTest = () => {
         dispatch({type: dispatchCommands.updateGeneralProperty, payload: {propertyName, newValue}});
     }, [dispatch]);
 
-    const addResultRange = React.useCallback(() => {
-        dispatch({type: dispatchCommands.addResultRange});
+    const toggleResultRange = React.useCallback(({resultRangeIndex = false}) => {
+        dispatch({type: dispatchCommands.toggleResultRange, payload: {resultRangeIndex}});
     }, [dispatch]);
 
     const updateResultRangeProperty = React.useCallback(({propertyName, newValue, resultRangeIndex}) => {
@@ -73,16 +124,17 @@ export const useCreateTest = () => {
         });
     }, [dispatch]);
 
-    const addQuestion = React.useCallback(() => {
-        dispatch({type: dispatchCommands.addQuestion});
+    const toggleQuestion = React.useCallback(({questionIndex = false}) => {
+        dispatch({type: dispatchCommands.toggleQuestion, payload: {questionIndex}});
     }, [dispatch]);
 
     const updateQuestionProperty = React.useCallback(({propertyName, newValue, questionIndex}) => {
+        console.log('hi', questionIndex);
         dispatch({type: dispatchCommands.updateQuestionProperty, payload: {propertyName, newValue, questionIndex}});
     }, [dispatch]);
 
-    const addQuestionAnswer = React.useCallback(() => {
-        dispatch({type: dispatchCommands.addQuestionAnswer});
+    const toggleQuestionAnswer = React.useCallback(({questionIndex = false, answerIndex = false}) => {
+        dispatch({type: dispatchCommands.toggleQuestionAnswer, payload: {questionIndex, answerIndex}});
     }, [dispatch]);
 
     const updateQuestionAnswerProperty = React.useCallback(({propertyName, newValue, questionIndex, answerIndex}) => {
@@ -99,11 +151,11 @@ export const useCreateTest = () => {
         testConfigs,
         setTestConfigs,
         updateGeneralProperty,
-        addResultRange,
+        toggleResultRange,
         updateResultRangeProperty,
-        addQuestion,
+        toggleQuestion,
         updateQuestionProperty,
-        addQuestionAnswer,
+        toggleQuestionAnswer,
         updateQuestionAnswerProperty,
     };
 };

@@ -6,10 +6,20 @@ import './Radio.css';
 export const Radio = ({value, onChange, id, checked, name, label, disabled, readOnly}) => {
     return (
         <div className="radio-container">
-            <input readOnly={Boolean(readOnly)} value={value} disabled={disabled} id={id} className="radio-input"
-                   type="radio" checked={checked}
-                   onChange={onChange} name={name.toString()}/>
-            <label className="radio-label" htmlFor={id}>{label}</label>
+            <input
+                readOnly={Boolean(readOnly)}
+                value={value}
+                disabled={disabled}
+                id={id}
+                className="radio-input"
+                type="radio" checked={checked}
+                onChange={onChange}
+                name={name?.toString()}/>
+            <label
+                className="radio-label"
+                htmlFor={id}>
+                {label}
+            </label>
         </div>
     );
 };
