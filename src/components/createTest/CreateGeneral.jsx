@@ -2,6 +2,7 @@ import React from 'react';
 import {TEST_GENERAL_KEYS, TEST_GENERAL_RESULT_RANGE_KEYS} from '../../consts.js';
 import {Button} from '../../StyledElements/Button/Button.jsx';
 import {Input} from '../../StyledElements/Input/Input.jsx';
+import './CreateGeneral.css';
 
 
 export const CreateGeneral = ({
@@ -11,7 +12,8 @@ export const CreateGeneral = ({
                                   toggleResultRange,
                               }) => {
     return (
-        <div>
+        <div className="create-general-container">
+            <h2>General test configs:</h2>
             <span>Test name: </span>
             <Input
                 value={testGeneralData[TEST_GENERAL_KEYS.testName]}

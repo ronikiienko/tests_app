@@ -2,13 +2,16 @@ import {nanoid} from 'nanoid';
 import React from 'react';
 import {useImmerReducer} from 'use-immer';
 import {
+    CREATE_TEST_IN_PROCESS_KEY,
     TEST_GENERAL_KEYS,
     TEST_GENERAL_RESULT_RANGE_KEYS,
     TEST_KEYS,
     TEST_QUESTION_ANSWER_KEYS,
     TEST_QUESTION_ANSWER_TYPE_MAP,
     TEST_QUESTION_KEYS,
+    USER_ID_KEY,
 } from '../consts.js';
+import {getItemFromStorage, setItemToStorage} from '../utils.js';
 
 
 const dispatchCommands = {
@@ -22,21 +25,24 @@ const dispatchCommands = {
     updateQuestionAnswerProperty: 'updateQuestionAnswerProperty',
 };
 
-const initialTestConfigs = {
-    [TEST_KEYS.general]: {
-        [TEST_GENERAL_KEYS.testName]: '',
-        [TEST_GENERAL_KEYS.testDescription]: '',
-        [TEST_GENERAL_KEYS.results]: [],
-    },
-    [TEST_KEYS.questions]: [],
+const getInitialTestConfigs = () => {
+    return {
+        [TEST_KEYS.general]: {
+            [TEST_GENERAL_KEYS.creatorId]: getItemFromStorage(USER_ID_KEY) || 'unknownuser',
+            [TEST_GENERAL_KEYS.testName]: '',
+            [TEST_GENERAL_KEYS.testDescription]: '',
+            [TEST_GENERAL_KEYS.results]: [],
+        },
+        [TEST_KEYS.questions]: [],
+    };
 };
 
 const getInitialResultRangeConfigs = () => {
     return {
         [TEST_GENERAL_RESULT_RANGE_KEYS.resultName]: '',
         [TEST_GENERAL_RESULT_RANGE_KEYS.resultDescription]: '',
-        [TEST_GENERAL_RESULT_RANGE_KEYS.min]: 0,
-        [TEST_GENERAL_RESULT_RANGE_KEYS.max]: 0,
+        [TEST_GENERAL_RESULT_RANGE_KEYS.min]: '',
+        [TEST_GENERAL_RESULT_RANGE_KEYS.max]: '',
         [TEST_GENERAL_RESULT_RANGE_KEYS.id]: nanoid(),
     };
 };
@@ -75,7 +81,6 @@ const reducer = (testConfigDraft, action) => {
         }
             break;
         case dispatchCommands.toggleQuestion: {
-            console.log(payload, 'hihihi');
 
             if (typeof payload.questionIndex === 'number') {
                 testConfigDraft[TEST_KEYS.questions].splice(payload.questionIndex, 1);
@@ -107,7 +112,17 @@ const reducer = (testConfigDraft, action) => {
     }
 };
 export const useCreateTest = () => {
-    const [testConfigs, dispatch] = useImmerReducer(reducer, initialTestConfigs);
+    const [testConfigs, dispatch] = useImmerReducer(reducer, null, getInitialTestConfigs);
+
+    React.useEffect(() => {
+        dispatch({
+            type: dispatchCommands.setTestConfigs,
+            payload: {newTestConfigs: getItemFromStorage(CREATE_TEST_IN_PROCESS_KEY) || getInitialTestConfigs()},
+        });
+    }, [dispatch]);
+    React.useEffect(() => {
+        setItemToStorage(CREATE_TEST_IN_PROCESS_KEY, testConfigs);
+    }, [testConfigs]);
 
     const updateGeneralProperty = React.useCallback(({propertyName, newValue}) => {
         dispatch({type: dispatchCommands.updateGeneralProperty, payload: {propertyName, newValue}});
@@ -129,7 +144,6 @@ export const useCreateTest = () => {
     }, [dispatch]);
 
     const updateQuestionProperty = React.useCallback(({propertyName, newValue, questionIndex}) => {
-        console.log('hi', questionIndex);
         dispatch({type: dispatchCommands.updateQuestionProperty, payload: {propertyName, newValue, questionIndex}});
     }, [dispatch]);
 

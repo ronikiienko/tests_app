@@ -1,0 +1,10 @@
+.create-test-container {
+    max-width: 95%;
+    width: fit-content;
+    margin-inline: auto;
+    min-width: 600px;
+    background: var(--bg-secondary);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}

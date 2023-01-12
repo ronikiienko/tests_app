@@ -89,7 +89,7 @@ export default function PassTest() {
             )
             }
             <Button
-                style={{width: '100%'}}
+                style={{display: 'block', margin: 'auto', width: '100%'}}
                 onClick={passTab === PASS_TABS_MAP.passInProcess ? finishTest : startTest}>{passTab === PASS_TABS_MAP.passInProcess ? 'Finish test' : 'Restart test'}
             </Button>
         </div>

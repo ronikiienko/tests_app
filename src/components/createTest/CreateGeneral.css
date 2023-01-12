@@ -1,0 +1,5 @@
+.create-general-container {
+    margin-top: 10px;
+    text-align: center;
+    border-block: 2px solid var(--bg-color);
+}

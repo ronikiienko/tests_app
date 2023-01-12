@@ -1,11 +1,12 @@
 import {saveAs} from 'file-saver';
 import React from 'react';
-import {TEST_GENERAL_KEYS, TEST_KEYS} from '../../consts.js';
+import {TEST_GENERAL_KEYS, TEST_KEYS, USER_ID_KEY} from '../../consts.js';
 import {useCreateTest} from '../../hooks/useCreateTest.js';
 import {Button} from '../../StyledElements/Button/Button.jsx';
-import {stringifyJSON} from '../../utils.js';
+import {getItemFromStorage, parseJSON, stringifyJSON, validateTest} from '../../utils.js';
 import {CreateGeneral} from './CreateGeneral.jsx';
 import {CreateQuestions} from './CreateQuestions.jsx';
+import './CreateTest.css';
 
 
 export default function CreateTest() {
@@ -16,22 +17,45 @@ export default function CreateTest() {
         updateQuestionAnswerProperty,
         toggleQuestionAnswer,
         updateQuestionProperty,
-        setTestConfigs,
         toggleQuestion,
         testConfigs,
+        setTestConfigs,
     } = useCreateTest();
 
     console.log(testConfigs);
+
     function exportTest() {
-        console.log();
+        let isTestValid = validateTest(testConfigs);
+        if (!isTestValid) return alert('Some field is not filled :(');
         let blob = new Blob([stringifyJSON(testConfigs, true)], {type: 'text/plain;charset=utf-8'});
         saveAs(blob, `${testConfigs[TEST_KEYS.general][TEST_GENERAL_KEYS.testName]}.txt`);
     }
 
+    async function openTestToEdit() {
+        try {
+            let [fileHandle] = await window.showOpenFilePicker();
+            let fileData = await fileHandle.getFile();
+            let text = await fileData.text();
+            let testConfigObject = parseJSON(text, true);
+            if (!testConfigObject) return alert('Invalid test file :(');
+            const isTestValid = validateTest(testConfigObject);
+            if (testConfigObject[TEST_KEYS.general]?.[TEST_GENERAL_KEYS.creatorId] !== getItemFromStorage(USER_ID_KEY)) {
+                return alert('Only test creator can edit test :(');
+            }
+            if (!isTestValid) return alert('Invalid test file :(');
+            setTestConfigs(testConfigObject);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
     return (
         <div className="create-test-container">
+            <Button onClick={openTestToEdit} style={{width: '100%', display: 'block', margin: 'auto'}}>Edit existing
+                test</Button>
+            <h1 className="main-header">Test creation</h1>
             <CreateGeneral
-                testGeneralData={testConfigs[TEST_KEYS.general]}
+                testGeneralData={testConfigs?.[TEST_KEYS.general]}
                 toggleResultRange={toggleResultRange}
                 updateGeneralProperty={updateGeneralProperty}
                 updateResultRangeProperty={updateResultRangeProperty}
@@ -43,8 +67,12 @@ export default function CreateTest() {
                 toggleQuestionAnswer={toggleQuestionAnswer}
                 updateQuestionProperty={updateQuestionProperty}
             />
-            <Button onClick={toggleQuestion}>Create question</Button>
-            <Button onClick={exportTest}>Export test</Button>
+            <Button
+                style={{width: '100%', display: 'block', margin: 'auto'}}
+                onClick={exportTest}
+            >
+                Export test
+            </Button>
         </div>
 
     );

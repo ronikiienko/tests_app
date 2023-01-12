@@ -3,6 +3,7 @@ export const TEST_KEYS = {
     questions: 'questions',
 };
 export const TEST_GENERAL_KEYS = {
+    creatorId: 'creatorId',
     testName: 'testName',
     testDescription: 'testDescription',
     results: 'results',
@@ -45,6 +46,10 @@ export const PASS_TABS_MAP = {
 };
 export const TEST_IN_PROCESS_ANSWERS_KEY = 'testInProcessAnswers';
 export const TEST_IN_PROCESS_CONFIGS_KEY = 'testInProcessConfigs';
+
+export const CREATE_TEST_IN_PROCESS_KEY = 'createTestInProcessConfigs';
+
+export const USER_ID_KEY = 'userId';
 
 export const MAIN_TAB_KEY = 'mainTab';
 

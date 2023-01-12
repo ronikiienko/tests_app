@@ -11,6 +11,7 @@ import {
 const defaultTestConfigs =
     {
         [TEST_KEYS.general]: {
+            [TEST_GENERAL_KEYS.creatorId]: 'uid',
             [TEST_GENERAL_KEYS.testName]: 'Default test',
             [TEST_GENERAL_KEYS.testDescription]: 'It\'s default test. You can create new in \'Create test\' tab or import text file, exported from \'Create test\' tab by pressing \'Import new test\' button',
             [TEST_GENERAL_KEYS.results]:
