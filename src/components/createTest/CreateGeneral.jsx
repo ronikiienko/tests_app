@@ -103,6 +103,7 @@ export const CreateGeneral = ({
                 style={{
                     minWidth: '60%',
                     width: 'fit-content',
+                    marginTop: '20px',
                     marginInline: 'auto',
                     paddingInline: '10px',
                 }}

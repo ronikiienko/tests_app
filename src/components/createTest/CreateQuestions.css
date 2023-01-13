@@ -3,7 +3,7 @@
     margin-block: 20px;
     margin-inline: 30px;
     text-align: center;
-    padding: 5px;
+    padding: 20px;
     border-radius: 15px;
 }
 
@@ -16,4 +16,11 @@
     width: fit-content;
     margin-inline: auto;
     border-radius: 10px;
+}
+
+.create-answer-container {
+    background-color: var(--bg4);
+    border-radius: 15px;
+    padding: 10px;
+    margin-block: 10px;
 }

@@ -52,7 +52,7 @@ export const CreateQuestions = ({
                         <br/>
                         {questionData[TEST_QUESTION_KEYS.answers]?.map((answer, answerIndex) => {
                             return (
-                                <div className="create-question-container" key={answer[TEST_QUESTION_ANSWER_KEYS.id]}>
+                                <div className="create-answer-container" key={answer[TEST_QUESTION_ANSWER_KEYS.id]}>
                                     {questionData[TEST_QUESTION_KEYS.answersType] === TEST_QUESTION_ANSWER_TYPE_MAP.number && <>
                                         <Input
                                             className="input-small"
