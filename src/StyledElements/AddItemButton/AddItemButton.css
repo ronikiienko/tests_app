@@ -21,6 +21,8 @@
 }
 
 .custom-additem-button:active {
+    transform: scale(101%);
+    transition: transform 150ms;
     color: var(--bg-color);
     border-color: transparent;
     background-color: var(--additem-button-active);
