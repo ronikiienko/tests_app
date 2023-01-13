@@ -96,6 +96,8 @@ export const CreateGeneral = ({
                             </div>
                             <CloseButton
                                 style={{
+                                    fontSize: '30px',
+                                    width: '50px',
                                     position: 'absolute',
                                     right: 0,
                                     top: 0,
@@ -105,7 +107,7 @@ export const CreateGeneral = ({
                                 }}
                                 onClick={() => toggleResultRange({resultRangeIndex: index})}
                             >
-                                Rm
+                                -
                             </CloseButton>
                         </div>
                     </CSSTransition>
