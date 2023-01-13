@@ -2,13 +2,12 @@
     background-color: var(--bg4);
     margin-block: 20px;
     margin-inline: 30px;
-    text-align: center;
     padding: 20px;
     border-radius: 15px;
 }
 
 .create-question-container {
-    min-width: 60%;
+    min-width: 80%;
     max-width: 95%;
     background-color: var(--bg3);
     padding: 10px;
@@ -33,19 +32,25 @@
 .create-question-answer-appear-enter-active {
     transform: translate(0px, 0px);
     opacity: 1;
-    transition: all 200ms ease-out;
+    transition-property: opacity, transform;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
 }
 
 .create-question-answer-appear-exit {
     transform: translate(0px, 0px);
     opacity: 1;
-    transition: all 200ms ease-out;
+    transition-property: opacity, transform;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
 }
 
 .create-question-answer-appear-exit-active {
     transform: translate(20px, 0px);
     opacity: 0;
-    transition: all 200ms ease-out;
+    transition-property: opacity, transform;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
 }
 
 .create-question-appear-enter {
@@ -56,17 +61,23 @@
 .create-question-appear-enter-active {
     transform: translate(0px, 0px);
     opacity: 1;
-    transition: all 200ms ease-out;
+    transition-property: opacity, transform;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
 }
 
 .create-question-appear-exit {
     transform: translate(0px, 0px);
     opacity: 1;
-    transition: all 200ms ease-out;
+    transition-property: opacity, transform;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
 }
 
 .create-question-appear-exit-active {
     transform: translate(20px, 0px);
     opacity: 0;
-    transition: all 200ms ease-out;
+    transition-property: opacity, transform;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
 }

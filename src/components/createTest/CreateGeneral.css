@@ -2,13 +2,12 @@
     background-color: var(--bg4);
     margin-block: 20px;
     margin-inline: 30px;
-    text-align: center;
     padding: 20px;
     border-radius: 15px;
 }
 
 .create-result-range-container {
-    min-width: 60%;
+    min-width: 80%;
     background-color: var(--bg3);
     padding: 10px;
     margin-block: 20px;
@@ -25,17 +24,20 @@
 .create-result-range-appear-enter-active {
     transform: translate(0px, 0px);
     opacity: 1;
-    transition: all 200ms ease-out;
+    transition-property: opacity, transform;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
 }
 
 .create-result-range-appear-exit {
     transform: translate(0px, 0px);
     opacity: 1;
-    transition: all 200ms ease-out;
 }
 
 .create-result-range-appear-exit-active {
     transform: translate(20px, 0px);
     opacity: 0;
-    transition: all 200ms ease-out;
+    transition-property: opacity, transform;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
 }

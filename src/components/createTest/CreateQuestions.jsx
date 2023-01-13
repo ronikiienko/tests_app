@@ -105,7 +105,6 @@ export const CreateQuestions = ({
                                                     </>}
                                                     <br/>
                                                     <Input
-                                                        className="input-small"
                                                         label="Mark:"
                                                         type="number"
                                                         value={answer[TEST_QUESTION_ANSWER_KEYS.mark]}
@@ -131,7 +130,8 @@ export const CreateQuestions = ({
                                 <AddItemButton
                                     onClick={() => toggleQuestionAnswer({questionIndex})}
                                     style={{
-                                        width: '80%',
+                                        margin: 'auto',
+                                        width: '90%',
                                         height: '40px',
                                     }}
                                 >
@@ -144,10 +144,11 @@ export const CreateQuestions = ({
             </TransitionGroup>
             <AddItemButton
                 style={{
-                    minWidth: '60%',
+                    minWidth: '80%',
                     width: 'fit-content',
                     marginInline: 'auto',
                     paddingInline: '10px',
+                    fontSize: '30px',
                 }}
                 onClick={toggleQuestion}
             >

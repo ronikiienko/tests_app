@@ -1,5 +1,5 @@
 .custom-additem-button {
-    display: inline-block;
+    display: block;
     cursor: pointer;
     font-weight: bold;
     padding-inline: 20px;
@@ -21,7 +21,7 @@
 }
 
 .custom-additem-button:active {
-    color: var(--button-active);
-    border-color: var(--button-active);
-    background-color: var(--button-background-active);
+    color: var(--bg-color);
+    border-color: transparent;
+    background-color: var(--additem-button-active);
 }

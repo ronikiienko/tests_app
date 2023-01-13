@@ -101,11 +101,12 @@ export const CreateGeneral = ({
             </TransitionGroup>
             <AddItemButton
                 style={{
-                    minWidth: '60%',
+                    minWidth: '80%',
                     width: 'fit-content',
                     marginTop: '20px',
                     marginInline: 'auto',
                     paddingInline: '10px',
+                    fontSize: '30px',
                 }}
                 onClick={toggleResultRange}
             >

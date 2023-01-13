@@ -23,6 +23,7 @@ const dispatchCommands = {
     updateResultRangeProperty: 'updateResultRangeProperty',
     toggleQuestionAnswer: 'toggleQuestionAnswer',
     updateQuestionAnswerProperty: 'updateQuestionAnswerProperty',
+    resetTestConfigs: 'resetTestConfigs',
 };
 
 const getInitialTestConfigs = () => {
@@ -106,6 +107,9 @@ const reducer = (testConfigDraft, action) => {
             testConfigDraft[TEST_KEYS.questions][payload.questionIndex][TEST_QUESTION_KEYS.answers][payload.answerIndex][payload.propertyName] = payload.newValue;
         }
             break;
+        case dispatchCommands.resetTestConfigs: {
+            return getInitialTestConfigs();
+        }
         case dispatchCommands.setTestConfigs: {
             return action.payload.newTestConfigs;
         }
@@ -158,6 +162,10 @@ export const useCreateTest = () => {
         });
     }, [dispatch]);
 
+    const resetTestConfigs = React.useCallback(() => {
+        dispatch({type: dispatchCommands.resetTestConfigs});
+    }, [dispatch]);
+
     const setTestConfigs = React.useCallback((newTestConfigs) => {
         dispatch({type: dispatchCommands.setTestConfigs, payload: {newTestConfigs}});
     }, [dispatch]);
@@ -171,5 +179,6 @@ export const useCreateTest = () => {
         updateQuestionProperty,
         toggleQuestionAnswer,
         updateQuestionAnswerProperty,
+        resetTestConfigs,
     };
 };

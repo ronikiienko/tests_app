@@ -32,7 +32,7 @@
     --checked-answer-result: #494902;
     --bg3: #2a2a2a;
     --bg4: #1d1b1e;
-    --additem-button: rgba(255, 255, 255, 0.4);
-    --additem-button-hover: rgba(255, 255, 255, 0.5);
-    --additem-button-active: rgba(255, 231, 231, 0.5)
+    --additem-button: rgba(231, 255, 226, 0.4);
+    --additem-button-hover: rgba(211, 255, 204, 0.5);
+    --additem-button-active: rgba(124, 255, 99, 0.7)
 }

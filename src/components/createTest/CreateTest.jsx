@@ -20,6 +20,7 @@ export default function CreateTest() {
         toggleQuestion,
         testConfigs,
         setTestConfigs,
+        resetTestConfigs,
     } = useCreateTest();
 
     console.log(testConfigs);
@@ -51,8 +52,18 @@ export default function CreateTest() {
 
     return (
         <div className="create-test-container">
-            <Button onClick={openTestToEdit} style={{width: '100%', display: 'block', margin: 'auto'}}>Edit existing
-                test</Button>
+            <Button
+                onClick={() => confirm('Are you sure? All current test data will be lost.') && openTestToEdit()}
+                style={{width: '100%', display: 'block', margin: 'auto'}}
+            >
+                Edit existing test
+            </Button>
+            <Button
+                style={{width: '100%', display: 'block', marginInline: 'auto', marginTop: '20px'}}
+                onClick={() => confirm('Are you sure? All current test data will be lost.') && resetTestConfigs()}
+            >
+                Reset test configs
+            </Button>
             <CreateGeneral
                 testGeneralData={testConfigs?.[TEST_KEYS.general]}
                 toggleResultRange={toggleResultRange}
@@ -73,6 +84,5 @@ export default function CreateTest() {
                 Export test
             </Button>
         </div>
-
     );
 }
