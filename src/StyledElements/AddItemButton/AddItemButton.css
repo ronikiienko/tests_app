@@ -9,8 +9,8 @@
     border-radius: 0.5rem;
     color: var(--additem-button);
     border: 1px solid var(--additem-button);
-    background: transparent;
-    transition: all 0.2s;
+    background: var(--additem-button-default-background);
+    transition: color 0.2s, background-color 0.2s, border 0.2s;
     margin: 5px;
 }
 
@@ -21,8 +21,6 @@
 }
 
 .custom-additem-button:active {
-    transform: scale(101%);
-    transition: transform 150ms;
     color: var(--bg-color);
     border-color: transparent;
     background-color: var(--additem-button-active);

@@ -10,7 +10,7 @@
     color: var(--button-default);
     border: 1px solid var(--button-default);
     background: transparent;
-    transition: all 0.2s;
+    transition: color 0.2s, background-color 0.2s, border 0.2s;;
     margin: 5px;
 }
 
