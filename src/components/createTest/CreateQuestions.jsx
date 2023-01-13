@@ -3,6 +3,7 @@ import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import {TEST_QUESTION_ANSWER_KEYS, TEST_QUESTION_ANSWER_TYPE_MAP, TEST_QUESTION_KEYS} from '../../consts.js';
 import {AddItemButton} from '../../StyledElements/AddItemButton/AddItemButton.jsx';
 import {Button} from '../../StyledElements/Button/Button.jsx';
+import {CloseButton} from '../../StyledElements/CloseButton/CloseButton.jsx';
 import {Input} from '../../StyledElements/Input/Input.jsx';
 import {Radio} from '../../StyledElements/Radio/Radio.jsx';
 import './CreateQuestions.css';
@@ -116,11 +117,13 @@ export const CreateQuestions = ({
                                                         })}
                                                     />
                                                     <br/>
-                                                    <Button onClick={() => toggleQuestionAnswer({
+                                                    <CloseButton onClick={() => toggleQuestionAnswer({
                                                         questionIndex,
                                                         answerIndex,
-                                                    })}>Remove
-                                                        answer</Button>
+                                                    })}
+                                                    >
+                                                        Remove answer
+                                                    </CloseButton>
                                                 </div>
                                             </CSSTransition>
                                         );

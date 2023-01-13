@@ -34,5 +34,8 @@
     --bg4: #1d1b1e;
     --additem-button: rgba(231, 255, 226, 0.4);
     --additem-button-hover: rgba(211, 255, 204, 0.5);
-    --additem-button-active: rgba(124, 255, 99, 0.7)
+    --additem-button-active: rgba(124, 255, 99, 0.7);
+    --close-button: rgba(255, 85, 85, 0.6);
+    --close-button-hover: rgba(255, 34, 34, 0.75);
+    --close-button-active: rgba(255, 0, 0, 0.89)
 }

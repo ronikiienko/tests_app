@@ -1,0 +1,27 @@
+.custom-close-button {
+    display: block;
+    cursor: pointer;
+    font-weight: bold;
+    padding-inline: 20px;
+    font-size: 1rem;
+    height: 2rem;
+    min-width: fit-content;
+    border-radius: 0.5rem;
+    color: var(--close-button);
+    border: 1px solid var(--close-button);
+    background: transparent;
+    transition: all 0.2s;
+    margin: 5px;
+}
+
+.custom-close-button:hover {
+    color: var(--bg-color);
+    border-color: transparent;
+    background-color: var(--close-button-hover);
+}
+
+.custom-close-button:active {
+    color: var(--bg-color);
+    border-color: transparent;
+    background-color: var(--close-button-active);
+}

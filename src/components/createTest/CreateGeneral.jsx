@@ -2,7 +2,7 @@ import React from 'react';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import {TEST_GENERAL_KEYS, TEST_GENERAL_RESULT_RANGE_KEYS} from '../../consts.js';
 import {AddItemButton} from '../../StyledElements/AddItemButton/AddItemButton.jsx';
-import {Button} from '../../StyledElements/Button/Button.jsx';
+import {CloseButton} from '../../StyledElements/CloseButton/CloseButton.jsx';
 import {Input} from '../../StyledElements/Input/Input.jsx';
 import './CreateGeneral.css';
 
@@ -90,11 +90,11 @@ export const CreateGeneral = ({
                                     label="Result description:"
                                 />
                             </div>
-                            <Button
+                            <CloseButton
                                 onClick={() => toggleResultRange({resultRangeIndex: index})}
                             >
                                 Remove result range
-                            </Button>
+                            </CloseButton>
                         </div>
                     </CSSTransition>
                 ))}

@@ -1,5 +1,5 @@
 .custom-button {
-    display: inline-block;
+    display: block;
     cursor: pointer;
     font-weight: bold;
     padding-inline: 20px;
