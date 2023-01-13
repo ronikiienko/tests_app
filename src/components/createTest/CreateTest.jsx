@@ -53,7 +53,6 @@ export default function CreateTest() {
         <div className="create-test-container">
             <Button onClick={openTestToEdit} style={{width: '100%', display: 'block', margin: 'auto'}}>Edit existing
                 test</Button>
-            <h1 className="main-header">Test creation</h1>
             <CreateGeneral
                 testGeneralData={testConfigs?.[TEST_KEYS.general]}
                 toggleResultRange={toggleResultRange}

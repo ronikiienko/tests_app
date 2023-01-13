@@ -8,3 +8,7 @@
     border-radius: 10px;
     margin-bottom: 20px;
 }
+
+.input-small input {
+    width: 35px;
+}

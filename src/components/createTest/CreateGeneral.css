@@ -1,5 +1,25 @@
 .create-general-container {
-    margin-top: 10px;
+    background-color: var(--bg4);
+    margin-block: 20px;
+    margin-inline: 30px;
     text-align: center;
-    border-block: 2px solid var(--bg-color);
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.create-result-range-container {
+    background-color: var(--bg3);
+    padding: 10px;
+    margin-block: 20px;
+    width: fit-content;
+    margin-inline: auto;
+    border-radius: 10px;
+}
+
+.create-result-range-minmax {
+
+}
+
+.create-result-range-name-desc {
+
 }

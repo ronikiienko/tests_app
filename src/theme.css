@@ -30,5 +30,6 @@
     --link-visited: rgb(204, 81, 177);
     --link-visited-hover: rgb(217, 124, 197);
     --checked-answer-result: #494902;
-    --bg3: #2a2a2a
+    --bg3: #2a2a2a;
+    --bg4: #1c1c17;
 }

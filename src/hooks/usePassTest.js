@@ -11,16 +11,11 @@ const reducer = (answersDraft, action) => {
     const newAnswer = action.payload?.newAnswer;
     const questionIndex = action.payload?.questionIndex;
     const checkboxIndex = action.payload?.checkboxIndex;
-
     switch (action.type) {
         case TEST_QUESTION_ANSWER_TYPE_MAP.number:
         case TEST_QUESTION_ANSWER_TYPE_MAP.text:
         case TEST_QUESTION_ANSWER_TYPE_MAP.radio: {
-            if (action.type === TEST_QUESTION_ANSWER_TYPE_MAP.number) {
-                answersDraft[questionIndex] = [Number(newAnswer)];
-            } else {
-                answersDraft[questionIndex] = [newAnswer.toString()];
-            }
+            answersDraft[questionIndex] = [newAnswer];
         }
             break;
         case TEST_QUESTION_ANSWER_TYPE_MAP.checkbox: {

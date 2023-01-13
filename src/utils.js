@@ -123,9 +123,9 @@ export const checkQuestion = (userQuestionAnswers, question) => {
         case TEST_QUESTION_ANSWER_TYPE_MAP.number: {
             const userAnswer = userQuestionAnswers[0];
             for (const answer of questionAnswers) {
-                if (answer[TEST_QUESTION_ANSWER_KEYS.min] <= userAnswer && answer[TEST_QUESTION_ANSWER_KEYS.max] >= userAnswer) {
+                if (Number(answer[TEST_QUESTION_ANSWER_KEYS.min]) <= Number(userAnswer) && Number(answer[TEST_QUESTION_ANSWER_KEYS.max]) >= Number(userAnswer)) {
                     checkedArray.push(true);
-                    questionMark = questionMark + answer[TEST_QUESTION_ANSWER_KEYS.mark];
+                    questionMark = questionMark + Number(answer[TEST_QUESTION_ANSWER_KEYS.mark]);
                     break;
                 }
                 checkedArray.push(false);
@@ -137,7 +137,7 @@ export const checkQuestion = (userQuestionAnswers, question) => {
             for (const answer of questionAnswers) {
                 if (answer[TEST_QUESTION_ANSWER_KEYS.answer].toLowerCase().replace(/\s/g, '') === userAnswer.toLowerCase().replace(/\s/g, '')) {
                     checkedArray.push(true);
-                    questionMark = questionMark + answer[TEST_QUESTION_ANSWER_KEYS.mark];
+                    questionMark = questionMark + Number(answer[TEST_QUESTION_ANSWER_KEYS.mark]);
                     break;
                 }
                 checkedArray.push(false);
@@ -147,9 +147,9 @@ export const checkQuestion = (userQuestionAnswers, question) => {
         case TEST_QUESTION_ANSWER_TYPE_MAP.radio: {
             const userAnswer = userQuestionAnswers[0];
             for (const answer of questionAnswers) {
-                if (answer[TEST_QUESTION_ANSWER_KEYS.answer].toString() === userAnswer.toString()) {
+                if (answer[TEST_QUESTION_ANSWER_KEYS.answer] === userAnswer) {
                     checkedArray.push(true);
-                    questionMark = questionMark + answer[TEST_QUESTION_ANSWER_KEYS.mark];
+                    questionMark = questionMark + Number(answer[TEST_QUESTION_ANSWER_KEYS.mark]);
                     break;
                 }
                 checkedArray.push(false);
@@ -161,7 +161,7 @@ export const checkQuestion = (userQuestionAnswers, question) => {
             questionAnswers.forEach((answer, index) => {
                 if (userAnswers[index]) {
                     checkedArray.push(true);
-                    questionMark = questionMark + answer[TEST_QUESTION_ANSWER_KEYS.mark];
+                    questionMark = questionMark + Number(answer[TEST_QUESTION_ANSWER_KEYS.mark]);
                 } else {
                     checkedArray.push(false);
                 }
@@ -182,7 +182,7 @@ export const checkTest = (answers, testConfigs) => {
     let resultName;
     let resultDescription;
     testConfigs[TEST_KEYS.general][TEST_GENERAL_KEYS.results].forEach(result => {
-        if (result[TEST_GENERAL_RESULT_RANGE_KEYS.min] <= overallMark && result[TEST_GENERAL_RESULT_RANGE_KEYS.max] >= overallMark) {
+        if (Number(result[TEST_GENERAL_RESULT_RANGE_KEYS.min]) <= overallMark && Number(result[TEST_GENERAL_RESULT_RANGE_KEYS.max]) >= overallMark) {
             resultName = result[TEST_GENERAL_RESULT_RANGE_KEYS.resultName];
             resultDescription = result[TEST_GENERAL_RESULT_RANGE_KEYS.resultDescription];
         }

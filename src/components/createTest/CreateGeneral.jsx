@@ -37,45 +37,52 @@ export const CreateGeneral = ({
             <Button onClick={toggleResultRange}>Add result range</Button>
             {testGeneralData[TEST_GENERAL_KEYS.results]?.map((resultRange, index) => {
                 return (
-                    <div key={resultRange[TEST_GENERAL_RESULT_RANGE_KEYS.id]}>
-                        <Input
-                            type="number"
-                            onChange={(event) => updateResultRangeProperty({
-                                propertyName: TEST_GENERAL_RESULT_RANGE_KEYS.min,
-                                newValue: event.target.value,
-                                resultRangeIndex: index,
-                            })}
-                            value={resultRange[TEST_GENERAL_RESULT_RANGE_KEYS.min]}
-                            label="Min:"
-                        />
-                        <Input
-                            type="number"
-                            onChange={(event) => updateResultRangeProperty({
-                                propertyName: TEST_GENERAL_RESULT_RANGE_KEYS.max,
-                                newValue: event.target.value,
-                                resultRangeIndex: index,
-                            })}
-                            value={resultRange[TEST_GENERAL_RESULT_RANGE_KEYS.max]}
-                            label="Max:"
-                        />
-                        <Input
-                            onChange={(event) => updateResultRangeProperty({
-                                propertyName: TEST_GENERAL_RESULT_RANGE_KEYS.resultName,
-                                newValue: event.target.value,
-                                resultRangeIndex: index,
-                            })}
-                            value={resultRange[TEST_GENERAL_RESULT_RANGE_KEYS.resultName]}
-                            label="Result name:"
-                        />
-                        <Input
-                            onChange={(event) => updateResultRangeProperty({
-                                propertyName: TEST_GENERAL_RESULT_RANGE_KEYS.resultDescription,
-                                newValue: event.target.value,
-                                resultRangeIndex: index,
-                            })}
-                            value={resultRange[TEST_GENERAL_RESULT_RANGE_KEYS.resultDescription]}
-                            label="Result description:"
-                        />
+                    <div className="create-result-range-container" key={resultRange[TEST_GENERAL_RESULT_RANGE_KEYS.id]}>
+                        <div className="create-result-range-minmax">
+                            <Input
+                                className="input-small"
+                                type="number"
+                                onChange={(event) => updateResultRangeProperty({
+                                    propertyName: TEST_GENERAL_RESULT_RANGE_KEYS.min,
+                                    newValue: event.target.value,
+                                    resultRangeIndex: index,
+                                })}
+                                value={resultRange[TEST_GENERAL_RESULT_RANGE_KEYS.min]}
+                                label="Min:"
+                            />
+                            <Input
+                                className="input-small"
+                                type="number"
+                                onChange={(event) => updateResultRangeProperty({
+                                    propertyName: TEST_GENERAL_RESULT_RANGE_KEYS.max,
+                                    newValue: event.target.value,
+                                    resultRangeIndex: index,
+                                })}
+                                value={resultRange[TEST_GENERAL_RESULT_RANGE_KEYS.max]}
+                                label="Max:"
+                            />
+                        </div>
+                        <div className="create-result-range-name-desc">
+                            <Input
+                                onChange={(event) => updateResultRangeProperty({
+                                    propertyName: TEST_GENERAL_RESULT_RANGE_KEYS.resultName,
+                                    newValue: event.target.value,
+                                    resultRangeIndex: index,
+                                })}
+                                value={resultRange[TEST_GENERAL_RESULT_RANGE_KEYS.resultName]}
+                                label="Result name:"
+                            />
+                            <br/>
+                            <Input
+                                onChange={(event) => updateResultRangeProperty({
+                                    propertyName: TEST_GENERAL_RESULT_RANGE_KEYS.resultDescription,
+                                    newValue: event.target.value,
+                                    resultRangeIndex: index,
+                                })}
+                                value={resultRange[TEST_GENERAL_RESULT_RANGE_KEYS.resultDescription]}
+                                label="Result description:"
+                            />
+                        </div>
                         <Button onClick={() => toggleResultRange({resultRangeIndex: index})}>Remove result
                             range</Button>
                     </div>

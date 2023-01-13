@@ -13,7 +13,7 @@ import {Button} from '../../StyledElements/Button/Button.jsx';
 import {getItemFromStorage, parseJSON, setItemToStorage, validateTest} from '../../utils.js';
 
 import './PassTest.css';
-import {QuestionMemoized} from './Question.jsx';
+import {Question} from './Question.jsx';
 import {Results} from './Results.jsx';
 
 
@@ -26,8 +26,9 @@ export default function PassTest() {
         updateAnswer,
     } = usePassTest(getItemFromStorage(TEST_IN_PROCESS_ANSWERS_KEY) || [], testConfigs);
     const questionElements = testConfigs[TEST_KEYS.questions].map((question, index) => {
+        // TODO add memo on question as well as on CreateQuestion
         return (
-            <QuestionMemoized
+            <Question
                 key={index}
                 questionData={question}
                 questionIndex={index}

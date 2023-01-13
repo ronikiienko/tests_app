@@ -51,10 +51,11 @@ export const CreateQuestions = ({
                         <br/>
                         <Button onClick={() => toggleQuestionAnswer({questionIndex})}>Add answer</Button>
                         {questionData[TEST_QUESTION_KEYS.answers]?.map((answer, answerIndex) => {
-                            if (questionData[TEST_QUESTION_KEYS.answersType] === TEST_QUESTION_ANSWER_TYPE_MAP.number) {
-                                return (
-                                    <React.Fragment key={answer[TEST_QUESTION_ANSWER_KEYS.id]}>
+                            return (
+                                <React.Fragment key={answer[TEST_QUESTION_ANSWER_KEYS.id]}>
+                                    {questionData[TEST_QUESTION_KEYS.answersType] === TEST_QUESTION_ANSWER_TYPE_MAP.number && <>
                                         <Input
+                                            className="input-small"
                                             label="Min:"
                                             type="number"
                                             value={answer[TEST_QUESTION_ANSWER_KEYS.min]}
@@ -66,6 +67,7 @@ export const CreateQuestions = ({
                                             })}
                                         />
                                         <Input
+                                            className="input-small"
                                             label="Max:"
                                             type="number"
                                             value={answer[TEST_QUESTION_ANSWER_KEYS.max]}
@@ -76,24 +78,8 @@ export const CreateQuestions = ({
                                                 answerIndex,
                                             })}
                                         />
-                                        <Input
-                                            label="Mark:"
-                                            type="number"
-                                            value={answer[TEST_QUESTION_ANSWER_KEYS.mark]}
-                                            onChange={(event) => updateQuestionAnswerProperty({
-                                                propertyName: TEST_QUESTION_ANSWER_KEYS.mark,
-                                                newValue: event.target.value,
-                                                questionIndex,
-                                                answerIndex,
-                                            })}
-                                        />
-                                        <Button onClick={() => toggleQuestionAnswer({questionIndex, answerIndex})}>Remove
-                                            answer</Button>
-                                    </React.Fragment>
-                                );
-                            } else {
-                                return (
-                                    <React.Fragment key={answer[TEST_QUESTION_ANSWER_KEYS.id]}>
+                                    </>}
+                                    {questionData[TEST_QUESTION_KEYS.answersType] !== TEST_QUESTION_ANSWER_TYPE_MAP.number && <>
                                         <Input
                                             label="Answer:"
                                             value={answer[TEST_QUESTION_ANSWER_KEYS.answer]}
@@ -104,22 +90,23 @@ export const CreateQuestions = ({
                                                 answerIndex,
                                             })}
                                         />
-                                        <Input
-                                            label="Mark:"
-                                            type="number"
-                                            value={answer[TEST_QUESTION_ANSWER_KEYS.mark]}
-                                            onChange={(event) => updateQuestionAnswerProperty({
-                                                propertyName: TEST_QUESTION_ANSWER_KEYS.mark,
-                                                newValue: event.target.value,
-                                                questionIndex,
-                                                answerIndex,
-                                            })}
-                                        />
-                                        <Button onClick={() => toggleQuestionAnswer({questionIndex, answerIndex})}>Remove
-                                            answer</Button>
-                                    </React.Fragment>
-                                );
-                            }
+                                    </>}
+                                    <Input
+                                        className="input-small"
+                                        label="Mark:"
+                                        type="number"
+                                        value={answer[TEST_QUESTION_ANSWER_KEYS.mark]}
+                                        onChange={(event) => updateQuestionAnswerProperty({
+                                            propertyName: TEST_QUESTION_ANSWER_KEYS.mark,
+                                            newValue: event.target.value,
+                                            questionIndex,
+                                            answerIndex,
+                                        })}
+                                    />
+                                    <Button onClick={() => toggleQuestionAnswer({questionIndex, answerIndex})}>Remove
+                                        answer</Button>
+                                </React.Fragment>
+                            )
                         })}
                     </div>
                 );
