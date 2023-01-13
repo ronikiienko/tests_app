@@ -17,10 +17,25 @@
     border-radius: 10px;
 }
 
-.create-result-range-minmax {
-
+.create-result-range-appear-enter {
+    transform: translate(0px, -10px);
+    opacity: 0;
 }
 
-.create-result-range-name-desc {
+.create-result-range-appear-enter-active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 200ms ease-out;
+}
 
+.create-result-range-appear-exit {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    transition: all 200ms ease-out;
+}
+
+.create-result-range-appear-exit-active {
+    transform: translate(0px, 10px);
+    opacity: 0;
+    transition: all 200ms ease-out;
 }
