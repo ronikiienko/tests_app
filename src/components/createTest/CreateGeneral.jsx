@@ -99,7 +99,6 @@ export const CreateGeneral = ({
                     </CSSTransition>
                 ))}
             </TransitionGroup>
-
             <AddItemButton
                 style={{
                     minWidth: '60%',

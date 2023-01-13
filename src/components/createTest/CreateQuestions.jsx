@@ -1,5 +1,6 @@
 import React from 'react';
 import {TEST_QUESTION_ANSWER_KEYS, TEST_QUESTION_ANSWER_TYPE_MAP, TEST_QUESTION_KEYS} from '../../consts.js';
+import {AddItemButton} from '../../StyledElements/AddItemButton/AddItemButton.jsx';
 import {Button} from '../../StyledElements/Button/Button.jsx';
 import {Input} from '../../StyledElements/Input/Input.jsx';
 import {Radio} from '../../StyledElements/Radio/Radio.jsx';
@@ -16,7 +17,7 @@ export const CreateQuestions = ({
     return (
         <div className="create-questions-container">
             <h2>Questions and answers configs:</h2>
-            <Button onClick={toggleQuestion}>Add question</Button>
+            {/*<Button onClick={toggleQuestion}>Add question</Button>*/}
             {testQuestionsData.map((questionData, questionIndex) => {
                 return (
                     <div className="create-question-container" key={questionData[TEST_QUESTION_KEYS.id]}>
@@ -49,10 +50,9 @@ export const CreateQuestions = ({
                             />;
                         })}
                         <br/>
-                        <Button onClick={() => toggleQuestionAnswer({questionIndex})}>Add answer</Button>
                         {questionData[TEST_QUESTION_KEYS.answers]?.map((answer, answerIndex) => {
                             return (
-                                <React.Fragment key={answer[TEST_QUESTION_ANSWER_KEYS.id]}>
+                                <div className="create-question-container" key={answer[TEST_QUESTION_ANSWER_KEYS.id]}>
                                     {questionData[TEST_QUESTION_KEYS.answersType] === TEST_QUESTION_ANSWER_TYPE_MAP.number && <>
                                         <Input
                                             className="input-small"
@@ -91,6 +91,7 @@ export const CreateQuestions = ({
                                             })}
                                         />
                                     </>}
+                                    <br/>
                                     <Input
                                         className="input-small"
                                         label="Mark:"
@@ -103,14 +104,35 @@ export const CreateQuestions = ({
                                             answerIndex,
                                         })}
                                     />
+                                    <br/>
                                     <Button onClick={() => toggleQuestionAnswer({questionIndex, answerIndex})}>Remove
                                         answer</Button>
-                                </React.Fragment>
+                                </div>
                             )
                         })}
+                        <AddItemButton
+                            onClick={() => toggleQuestionAnswer({questionIndex})}
+                            style={{
+                                width: '80%',
+                                height: '40px',
+                            }}
+                        >
+                            Add answer
+                        </AddItemButton>
                     </div>
                 );
             })}
+            <AddItemButton
+                style={{
+                    minWidth: '60%',
+                    width: 'fit-content',
+                    marginInline: 'auto',
+                    paddingInline: '10px',
+                }}
+                onClick={toggleQuestion}
+            >
+                Add question
+            </AddItemButton>
         </div>
     );
 };

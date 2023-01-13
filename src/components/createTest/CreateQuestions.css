@@ -1,8 +1,19 @@
-/*.create-questions-container {*/
-/*    background-color: var(--bg4);*/
-/*    margin-block: 20px;*/
-/*    margin-inline: 30px;*/
-/*    text-align: center;*/
-/*    padding: 5px;*/
-/*    border-radius: 15px;*/
-/*}*/
+.create-questions-container {
+    background-color: var(--bg4);
+    margin-block: 20px;
+    margin-inline: 30px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.create-question-container {
+    min-width: 60%;
+    max-width: 95%;
+    background-color: var(--bg3);
+    padding: 10px;
+    margin-block: 20px;
+    width: fit-content;
+    margin-inline: auto;
+    border-radius: 10px;
+}
