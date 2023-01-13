@@ -11,6 +11,7 @@
     border: 1px solid var(--close-button);
     background-color: var(--close-button-default-background);
     transition: color 0.2s, background-color 0.2s, border 0.2s;
+    user-select: none;
     /*margin: 5px;*/
 }
 

@@ -6,6 +6,10 @@
     border-radius: 15px;
 }
 
+.create-general-header {
+    text-align: center;
+}
+
 .create-result-range-container {
     position: relative;
     min-width: 80%;

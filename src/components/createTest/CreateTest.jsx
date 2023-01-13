@@ -8,7 +8,8 @@ import {CreateGeneral} from './CreateGeneral.jsx';
 import {CreateQuestions} from './CreateQuestions.jsx';
 import './CreateTest.css';
 
-
+// TODO show total maximum mark in creategeneral
+// TODO check if when finished passing test resultName and description are right
 export default function CreateTest() {
     const {
         updateResultRangeProperty,

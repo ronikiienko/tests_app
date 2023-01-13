@@ -15,7 +15,7 @@ export const CreateGeneral = ({
                               }) => {
     return (
         <div className="create-general-container">
-            <h2>General test configs:</h2>
+            <h1 className="create-general-header">General test configs:</h1>
             <span>Test name: </span>
             <Input
                 value={testGeneralData[TEST_GENERAL_KEYS.testName]}
@@ -47,52 +47,50 @@ export const CreateGeneral = ({
                             className="create-result-range-container"
                             key={resultRange[TEST_GENERAL_RESULT_RANGE_KEYS.id]}
                         >
-                            <div>
-                                <div className="create-result-range-minmax">
-                                    <Input
-                                        className="input-small"
-                                        type="number"
-                                        onChange={(event) => updateResultRangeProperty({
-                                            propertyName: TEST_GENERAL_RESULT_RANGE_KEYS.min,
-                                            newValue: event.target.value,
-                                            resultRangeIndex: index,
-                                        })}
-                                        value={resultRange[TEST_GENERAL_RESULT_RANGE_KEYS.min]}
-                                        label="Min:"
-                                    />
-                                    <Input
-                                        className="input-small"
-                                        type="number"
-                                        onChange={(event) => updateResultRangeProperty({
-                                            propertyName: TEST_GENERAL_RESULT_RANGE_KEYS.max,
-                                            newValue: event.target.value,
-                                            resultRangeIndex: index,
-                                        })}
-                                        value={resultRange[TEST_GENERAL_RESULT_RANGE_KEYS.max]}
-                                        label="Max:"
-                                    />
-                                </div>
-                                <div className="create-result-range-name-desc">
-                                    <Input
-                                        onChange={(event) => updateResultRangeProperty({
-                                            propertyName: TEST_GENERAL_RESULT_RANGE_KEYS.resultName,
-                                            newValue: event.target.value,
-                                            resultRangeIndex: index,
-                                        })}
-                                        value={resultRange[TEST_GENERAL_RESULT_RANGE_KEYS.resultName]}
-                                        label="Result name:"
-                                    />
-                                    <br/>
-                                    <Input
-                                        onChange={(event) => updateResultRangeProperty({
-                                            propertyName: TEST_GENERAL_RESULT_RANGE_KEYS.resultDescription,
-                                            newValue: event.target.value,
-                                            resultRangeIndex: index,
-                                        })}
-                                        value={resultRange[TEST_GENERAL_RESULT_RANGE_KEYS.resultDescription]}
-                                        label="Result description:"
-                                    />
-                                </div>
+                            <div className="create-result-range-minmax">
+                                <Input
+                                    className="input-small"
+                                    type="number"
+                                    onChange={(event) => updateResultRangeProperty({
+                                        propertyName: TEST_GENERAL_RESULT_RANGE_KEYS.min,
+                                        newValue: event.target.value,
+                                        resultRangeIndex: index,
+                                    })}
+                                    value={resultRange[TEST_GENERAL_RESULT_RANGE_KEYS.min]}
+                                    label="Min:"
+                                />
+                                <Input
+                                    className="input-small"
+                                    type="number"
+                                    onChange={(event) => updateResultRangeProperty({
+                                        propertyName: TEST_GENERAL_RESULT_RANGE_KEYS.max,
+                                        newValue: event.target.value,
+                                        resultRangeIndex: index,
+                                    })}
+                                    value={resultRange[TEST_GENERAL_RESULT_RANGE_KEYS.max]}
+                                    label="Max:"
+                                />
+                            </div>
+                            <div className="create-result-range-name-desc">
+                                <Input
+                                    onChange={(event) => updateResultRangeProperty({
+                                        propertyName: TEST_GENERAL_RESULT_RANGE_KEYS.resultName,
+                                        newValue: event.target.value,
+                                        resultRangeIndex: index,
+                                    })}
+                                    value={resultRange[TEST_GENERAL_RESULT_RANGE_KEYS.resultName]}
+                                    label="Result name:"
+                                />
+                                <br/>
+                                <Input
+                                    onChange={(event) => updateResultRangeProperty({
+                                        propertyName: TEST_GENERAL_RESULT_RANGE_KEYS.resultDescription,
+                                        newValue: event.target.value,
+                                        resultRangeIndex: index,
+                                    })}
+                                    value={resultRange[TEST_GENERAL_RESULT_RANGE_KEYS.resultDescription]}
+                                    label="Result description:"
+                                />
                             </div>
                             <CloseButton
                                 style={{

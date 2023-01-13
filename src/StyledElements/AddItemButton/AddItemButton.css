@@ -12,6 +12,7 @@
     background: var(--additem-button-default-background);
     transition: color 0.2s, background-color 0.2s, border 0.2s;
     margin: 5px;
+    user-select: none;
 }
 
 .custom-additem-button:hover {

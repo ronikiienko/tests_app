@@ -2,7 +2,6 @@ import React from 'react';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import {TEST_QUESTION_ANSWER_KEYS, TEST_QUESTION_ANSWER_TYPE_MAP, TEST_QUESTION_KEYS} from '../../consts.js';
 import {AddItemButton} from '../../StyledElements/AddItemButton/AddItemButton.jsx';
-import {Button} from '../../StyledElements/Button/Button.jsx';
 import {CloseButton} from '../../StyledElements/CloseButton/CloseButton.jsx';
 import {Input} from '../../StyledElements/Input/Input.jsx';
 import {Radio} from '../../StyledElements/Radio/Radio.jsx';
@@ -18,7 +17,7 @@ export const CreateQuestions = ({
                                 }) => {
     return (
         <div className="create-questions-container">
-            <h2>Questions and answers configs:</h2>
+            <h1 className="create-questions-header">Questions and answers configs</h1>
             <TransitionGroup component="div">
                 {testQuestionsData.map((questionData, questionIndex) => {
                     return (
@@ -28,7 +27,22 @@ export const CreateQuestions = ({
                             classNames="create-question-appear"
                         >
                             <div className="create-question-container">
-                                <Button onClick={() => toggleQuestion({questionIndex})}>Remove question</Button>
+                                <CloseButton
+                                    onClick={() => toggleQuestion({questionIndex})}
+                                    style={{
+                                        fontSize: '30px',
+                                        width: '80px',
+                                        position: 'absolute',
+                                        right: 0,
+                                        top: 0,
+                                        height: '80px',
+                                        borderBottomLeftRadius: 0,
+                                        borderTopLeftRadius: 0,
+                                        borderBottomRightRadius: 0,
+                                    }}
+                                >
+                                    -
+                                </CloseButton>
                                 <p>{questionIndex + 1}.)</p>
                                 <Input
                                     label="Question:"
@@ -117,12 +131,23 @@ export const CreateQuestions = ({
                                                         })}
                                                     />
                                                     <br/>
-                                                    <CloseButton onClick={() => toggleQuestionAnswer({
-                                                        questionIndex,
-                                                        answerIndex,
-                                                    })}
+                                                    <CloseButton
+                                                        onClick={() => toggleQuestionAnswer({
+                                                            questionIndex,
+                                                            answerIndex,
+                                                        })}
+                                                        style={{
+                                                            fontSize: '30px',
+                                                            width: '50px',
+                                                            position: 'absolute',
+                                                            right: 0,
+                                                            top: 0,
+                                                            height: '100%',
+                                                            borderBottomLeftRadius: 0,
+                                                            borderTopLeftRadius: 0,
+                                                        }}
                                                     >
-                                                        Remove answer
+                                                        -
                                                     </CloseButton>
                                                 </div>
                                             </CSSTransition>
@@ -133,7 +158,8 @@ export const CreateQuestions = ({
                                 <AddItemButton
                                     onClick={() => toggleQuestionAnswer({questionIndex})}
                                     style={{
-                                        margin: 'auto',
+                                        marginTop: '20px',
+                                        marginInline: 'auto',
                                         width: '90%',
                                         height: '40px',
                                     }}
