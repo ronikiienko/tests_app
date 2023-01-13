@@ -35,6 +35,7 @@
     --additem-button: rgba(231, 255, 226, 0.4);
     --additem-button-hover: rgba(173, 255, 159, 0.53);
     --additem-button-active: rgba(106, 255, 76, 0.73);
+    --close-button-default-background: rgba(73, 24, 24, 0.42);
     --close-button: rgba(255, 85, 85, 0.6);
     --close-button-hover: rgba(255, 41, 41, 0.68);
     --close-button-active: rgba(255, 0, 0, 0.89)

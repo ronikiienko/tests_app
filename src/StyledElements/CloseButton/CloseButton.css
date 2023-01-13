@@ -2,16 +2,16 @@
     display: block;
     cursor: pointer;
     font-weight: bold;
-    padding-inline: 20px;
+    padding-inline: 10px;
     font-size: 1rem;
     height: 2rem;
     min-width: fit-content;
     border-radius: 0.5rem;
     color: var(--close-button);
     border: 1px solid var(--close-button);
-    background: transparent;
+    background-color: var(--close-button-default-background);
     transition: all 0.2s;
-    margin: 5px;
+    /*margin: 5px;*/
 }
 
 .custom-close-button:hover {

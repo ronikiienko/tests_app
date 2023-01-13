@@ -95,9 +95,17 @@ export const CreateGeneral = ({
                                 </div>
                             </div>
                             <CloseButton
+                                style={{
+                                    position: 'absolute',
+                                    right: 0,
+                                    top: 0,
+                                    height: '100%',
+                                    borderBottomLeftRadius: 0,
+                                    borderTopLeftRadius: 0,
+                                }}
                                 onClick={() => toggleResultRange({resultRangeIndex: index})}
                             >
-                                Remove result range
+                                Rm
                             </CloseButton>
                         </div>
                     </CSSTransition>

@@ -7,6 +7,7 @@
 }
 
 .create-result-range-container {
+    position: relative;
     min-width: 80%;
     background-color: var(--bg3);
     padding: 10px;
