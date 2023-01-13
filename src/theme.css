@@ -31,5 +31,8 @@
     --link-visited-hover: rgb(217, 124, 197);
     --checked-answer-result: #494902;
     --bg3: #2a2a2a;
-    --bg4: #1c1c17;
+    --bg4: #1d1b1e;
+    --additem-button: rgba(255, 255, 255, 0.4);
+    --additem-button-hover: rgba(255, 255, 255, 0.5);
+    --additem-button-active: rgba(255, 231, 231, 0.5)
 }

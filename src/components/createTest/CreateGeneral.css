@@ -3,11 +3,12 @@
     margin-block: 20px;
     margin-inline: 30px;
     text-align: center;
-    padding: 5px;
+    padding: 20px;
     border-radius: 15px;
 }
 
 .create-result-range-container {
+    min-width: 60%;
     background-color: var(--bg3);
     padding: 10px;
     margin-block: 20px;

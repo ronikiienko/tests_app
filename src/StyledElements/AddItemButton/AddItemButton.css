@@ -1,0 +1,27 @@
+.custom-additem-button {
+    display: inline-block;
+    cursor: pointer;
+    font-weight: bold;
+    padding-inline: 20px;
+    font-size: 1rem;
+    height: 7rem;
+    min-width: fit-content;
+    border-radius: 0.5rem;
+    color: var(--additem-button);
+    border: 1px solid var(--additem-button);
+    background: transparent;
+    transition: all 0.2s;
+    margin: 5px;
+}
+
+.custom-additem-button:hover {
+    color: var(--bg-color);
+    border-color: transparent;
+    background-color: var(--additem-button-hover);
+}
+
+.custom-additem-button:active {
+    color: var(--button-active);
+    border-color: var(--button-active);
+    background-color: var(--button-background-active);
+}

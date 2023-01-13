@@ -14,7 +14,7 @@ export const CreateQuestions = ({
                                     updateQuestionAnswerProperty,
                                 }) => {
     return (
-        <div>
+        <div className="create-questions-container">
             <h2>Questions and answers configs:</h2>
             <Button onClick={toggleQuestion}>Add question</Button>
             {testQuestionsData.map((questionData, questionIndex) => {

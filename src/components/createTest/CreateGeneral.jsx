@@ -1,5 +1,6 @@
 import React from 'react';
 import {TEST_GENERAL_KEYS, TEST_GENERAL_RESULT_RANGE_KEYS} from '../../consts.js';
+import {AddItemButton} from '../../StyledElements/AddItemButton/AddItemButton.jsx';
 import {Button} from '../../StyledElements/Button/Button.jsx';
 import {Input} from '../../StyledElements/Input/Input.jsx';
 import './CreateGeneral.css';
@@ -34,7 +35,6 @@ export const CreateGeneral = ({
                 }}
             />
             <br/>
-            <Button onClick={toggleResultRange}>Add result range</Button>
             {testGeneralData[TEST_GENERAL_KEYS.results]?.map((resultRange, index) => {
                 return (
                     <div className="create-result-range-container" key={resultRange[TEST_GENERAL_RESULT_RANGE_KEYS.id]}>
@@ -83,11 +83,25 @@ export const CreateGeneral = ({
                                 label="Result description:"
                             />
                         </div>
-                        <Button onClick={() => toggleResultRange({resultRangeIndex: index})}>Remove result
-                            range</Button>
+                        <Button
+                            onClick={() => toggleResultRange({resultRangeIndex: index})}
+                        >
+                            Remove result range
+                        </Button>
                     </div>
                 );
             })}
+            <AddItemButton
+                style={{
+                    minWidth: '60%',
+                    width: 'fit-content',
+                    marginInline: 'auto',
+                    paddingInline: '10px',
+                }}
+                onClick={toggleResultRange}
+            >
+                Add result range
+            </AddItemButton>
         </div>
     );
 };
