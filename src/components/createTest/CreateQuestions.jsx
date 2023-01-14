@@ -43,7 +43,7 @@ export const CreateQuestions = ({
                                 >
                                     -
                                 </CloseButton>
-                                <p>{questionIndex + 1}.)</p>
+                                <p className="create-question-index">{questionIndex + 1}</p>
                                 <Input
                                     label="Question:"
                                     value={questionData[TEST_QUESTION_KEYS.question]}
@@ -68,7 +68,7 @@ export const CreateQuestions = ({
                                             });
                                         }}
                                     />}
-                                <p>Select question answers type:</p>
+                                <p className="create-select-type-label">Select question answers type:</p>
                                 {Object.values(TEST_QUESTION_ANSWER_TYPE_MAP).map((answersType) => {
                                     return <Radio
                                         key={answersType}
