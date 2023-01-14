@@ -59,10 +59,11 @@ export default function PassTest() {
     }
 
     if (!testConfigs) return null;
-    async function handleUserFile() {
+    async function handleUserFile(event) {
         try {
-            let [fileHandle] = await window.showOpenFilePicker();
-            let fileData = await fileHandle.getFile();
+            // let [fileHandle] = await window.showOpenFilePicker();
+            // let fileData = await fileHandle.getFile();
+            let fileData = event.target.files[0];
             let text = await fileData.text();
             let testConfigObject = parseJSON(text, true);
             if (!testConfigObject) return alert('Invalid test file :(');
@@ -79,7 +80,7 @@ export default function PassTest() {
 
     return (
         <div className="pass-test-container">
-            <input type={'file'} accept="text/plain"/>
+            <input type={'file'} accept="text/plain" onChange={handleUserFile}/>
             <Button style={{display: 'block', margin: 'auto', width: '70%'}} onClick={handleUserFile}>Import new
                 test</Button>
             <header className="test-header">
