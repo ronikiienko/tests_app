@@ -82,9 +82,8 @@ export default function PassTest() {
     return (
         <div className="pass-test-container">
             <FileButton
-                id="import-new-test-button"
                 style={{display: 'block', margin: 'auto', width: '70%'}}
-                onChange={() => confirm('Are you sure? All current test data will be lost.') && handleUserFile()}
+                onChange={handleUserFile}
             >
                 Import new test
             </FileButton>

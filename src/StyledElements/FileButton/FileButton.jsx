@@ -3,12 +3,14 @@ import React from 'react';
 import './FileButton.css';
 
 
-export const FileButton = ({onChange, style, title, id, children}) => {
+export const FileButton = ({onChange, style, title, children}) => {
     return (
         <>
-            <input accept="text/plain" type="file" id={id} className="custom-file-button-hidden-input"
-                   onChange={onChange}/>
-            <label style={style} className="custom-file-button" title={title} htmlFor={id}>{children}</label>
+            <label style={style} className="custom-file-button" title={title}>
+                {children}
+                <input accept="text/plain" type="file" className="custom-file-button-hidden-input"
+                       onChange={onChange}/>
+            </label>
         </>
 
     );
@@ -18,5 +20,4 @@ FileButton.propTypes = {
     onChange: PropTypes.func,
     style: PropTypes.object,
     title: PropTypes.string,
-    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };

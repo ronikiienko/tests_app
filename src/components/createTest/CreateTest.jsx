@@ -54,8 +54,7 @@ export default function CreateTest() {
     return (
         <div className="create-test-container">
             <FileButton
-                id="edit-new-test-button"
-                onChange={() => confirm('Are you sure? All current test data will be lost.') && openTestToEdit()}
+                onChange={openTestToEdit}
                 style={{width: '100%', display: 'block', margin: 'auto'}}
             >
                 Edit existing test
