@@ -4,6 +4,7 @@ import {TEST_GENERAL_KEYS, TEST_KEYS, USER_ID_KEY} from '../../consts.js';
 import {useCreateTest} from '../../hooks/useCreateTest.js';
 import {Button} from '../../StyledElements/Button/Button.jsx';
 import {CloseButton} from '../../StyledElements/CloseButton/CloseButton.jsx';
+import {FileButton} from '../../StyledElements/FileButton/FileButton.jsx';
 import {getItemFromStorage, parseJSON, stringifyJSON, validateTest} from '../../utils.js';
 import {CreateGeneral} from './CreateGeneral.jsx';
 import {CreateQuestions} from './CreateQuestions.jsx';
@@ -52,12 +53,13 @@ export default function CreateTest() {
 
     return (
         <div className="create-test-container">
-            <Button
-                onClick={() => confirm('Are you sure? All current test data will be lost.') && openTestToEdit()}
+            <FileButton
+                id="edit-new-test-button"
+                onChange={() => confirm('Are you sure? All current test data will be lost.') && openTestToEdit()}
                 style={{width: '100%', display: 'block', margin: 'auto'}}
             >
                 Edit existing test
-            </Button>
+            </FileButton>
             <CloseButton
                 style={{width: '100%', display: 'block', marginInline: 'auto', marginTop: '20px'}}
                 onClick={() => confirm('Are you sure? All current test data will be lost.') && resetTestConfigs()}
