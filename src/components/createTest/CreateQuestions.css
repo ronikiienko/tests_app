@@ -26,8 +26,9 @@
     font-size: 30px;
     margin-top: 2px;
     margin-bottom: 6px;
-    text-align: center;
+    /*text-align: center;*/
     font-weight: bold;
+    margin-left: 5px;
 }
 
 .create-select-type-label {
