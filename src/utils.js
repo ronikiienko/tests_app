@@ -125,7 +125,7 @@ export const checkQuestion = (userQuestionAnswers, question) => {
             for (const answer of questionAnswers) {
                 if (Number(answer[TEST_QUESTION_ANSWER_KEYS.min]) <= Number(userAnswer) && Number(answer[TEST_QUESTION_ANSWER_KEYS.max]) >= Number(userAnswer)) {
                     checkedArray.push(true);
-                    questionMark = questionMark + Number(answer[TEST_QUESTION_ANSWER_KEYS.mark]);
+                    questionMark = questionMark + Number(answer[TEST_QUESTION_ANSWER_KEYS.mark] || 0);
                     break;
                 }
                 checkedArray.push(false);
@@ -137,7 +137,7 @@ export const checkQuestion = (userQuestionAnswers, question) => {
             for (const answer of questionAnswers) {
                 if (answer[TEST_QUESTION_ANSWER_KEYS.answer].toLowerCase().replace(/\s/g, '') === userAnswer.toLowerCase().replace(/\s/g, '')) {
                     checkedArray.push(true);
-                    questionMark = questionMark + Number(answer[TEST_QUESTION_ANSWER_KEYS.mark]);
+                    questionMark = questionMark + Number(answer[TEST_QUESTION_ANSWER_KEYS.mark] || 0);
                     break;
                 }
                 checkedArray.push(false);
@@ -149,7 +149,7 @@ export const checkQuestion = (userQuestionAnswers, question) => {
             for (const answer of questionAnswers) {
                 if (answer[TEST_QUESTION_ANSWER_KEYS.answer] === userAnswer) {
                     checkedArray.push(true);
-                    questionMark = questionMark + Number(answer[TEST_QUESTION_ANSWER_KEYS.mark]);
+                    questionMark = questionMark + Number(answer[TEST_QUESTION_ANSWER_KEYS.mark] || 0);
                     break;
                 }
                 checkedArray.push(false);
@@ -161,7 +161,7 @@ export const checkQuestion = (userQuestionAnswers, question) => {
             questionAnswers.forEach((answer, index) => {
                 if (userAnswers[index]) {
                     checkedArray.push(true);
-                    questionMark = questionMark + Number(answer[TEST_QUESTION_ANSWER_KEYS.mark]);
+                    questionMark = questionMark + Number(answer[TEST_QUESTION_ANSWER_KEYS.mark] || 0);
                 } else {
                     checkedArray.push(false);
                 }
@@ -213,14 +213,16 @@ export const validateTest = (test) => {
         // console.log(result);
     }
     // console.log('hi4');
-    // TODO check maxchecked field also
-    // TODO check if number inputs have valid numbers
+
     for (const question of questions) {
         if (
             !question[TEST_QUESTION_KEYS.question] ||
             !question[TEST_QUESTION_KEYS.answersType] ||
             !question[TEST_QUESTION_KEYS.answers]?.length
         ) return false;
+        if (question[TEST_QUESTION_KEYS.answersType] === TEST_QUESTION_ANSWER_TYPE_MAP.checkbox) {
+            if (!question[TEST_QUESTION_KEYS.maxChecked]) return false;
+        }
         // console.log('hi5');
         for (const answer of question[TEST_QUESTION_KEYS.answers]) {
             if (question[TEST_QUESTION_KEYS.answersType] === TEST_QUESTION_ANSWER_TYPE_MAP.number) {
