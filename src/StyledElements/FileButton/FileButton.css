@@ -1,0 +1,36 @@
+.custom-file-button {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    padding-inline: 20px;
+    font-size: 1rem;
+    height: 2rem;
+    min-width: fit-content;
+    border-radius: 0.5rem;
+    color: var(--button-default);
+    border: 1px solid var(--button-default);
+    background: transparent;
+    transition: color 0.2s, background-color 0.2s, border 0.2s;;
+    margin: 5px;
+    user-select: none;
+}
+
+.custom-file-button:hover {
+    color: var(--button-hover);
+    border-color: var(--button-hover);
+    background-color: var(--button-background-hover);
+}
+
+.custom-file-button:active {
+    color: var(--button-active);
+    border-color: var(--button-active);
+    background-color: var(--button-background-active);
+}
+
+.custom-file-button-hidden-input {
+    position: absolute;
+    filter: alpha(opacity=0);
+    opacity: 0;
+}

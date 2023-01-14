@@ -10,6 +10,7 @@ import {
 import defaultTestConfigs from '../../defaultTestConfigs.js';
 import {usePassTest} from '../../hooks/usePassTest.js';
 import {Button} from '../../StyledElements/Button/Button.jsx';
+import {FileButton} from '../../StyledElements/FileButton/FileButton.jsx';
 import {getItemFromStorage, parseJSON, setItemToStorage, validateTest} from '../../utils.js';
 
 import './PassTest.css';
@@ -80,9 +81,8 @@ export default function PassTest() {
 
     return (
         <div className="pass-test-container">
-            <input type={'file'} accept="text/plain" onChange={handleUserFile}/>
-            <Button style={{display: 'block', margin: 'auto', width: '70%'}} onClick={handleUserFile}>Import new
-                test</Button>
+            <FileButton id="import-new-test-button" style={{display: 'block', margin: 'auto', width: '70%'}}
+                        onChange={handleUserFile}>Import new test</FileButton>
             <header className="test-header">
                 <h1 className="test-name">{testConfigs[TEST_KEYS.general]?.[TEST_GENERAL_KEYS.testName]}</h1>
                 <p className="test-description">{testConfigs[TEST_KEYS.general]?.[TEST_GENERAL_KEYS.testDescription]}</p>
