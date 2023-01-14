@@ -3,6 +3,7 @@ import React from 'react';
 import {TEST_GENERAL_KEYS, TEST_KEYS, USER_ID_KEY} from '../../consts.js';
 import {useCreateTest} from '../../hooks/useCreateTest.js';
 import {Button} from '../../StyledElements/Button/Button.jsx';
+import {CloseButton} from '../../StyledElements/CloseButton/CloseButton.jsx';
 import {getItemFromStorage, parseJSON, stringifyJSON, validateTest} from '../../utils.js';
 import {CreateGeneral} from './CreateGeneral.jsx';
 import {CreateQuestions} from './CreateQuestions.jsx';
@@ -59,12 +60,12 @@ export default function CreateTest() {
             >
                 Edit existing test
             </Button>
-            <Button
+            <CloseButton
                 style={{width: '100%', display: 'block', marginInline: 'auto', marginTop: '20px'}}
                 onClick={() => confirm('Are you sure? All current test data will be lost.') && resetTestConfigs()}
             >
                 Reset test configs
-            </Button>
+            </CloseButton>
             <CreateGeneral
                 testGeneralData={testConfigs?.[TEST_KEYS.general]}
                 toggleResultRange={toggleResultRange}
