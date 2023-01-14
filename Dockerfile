@@ -2,7 +2,7 @@
 FROM node:16-slim
 WORKDIR /project
 COPY . .
-RUN npm ci --only=production
+RUN npm install
 RUN npm run build
 
 FROM socialengine/nginx-spa:latest
