@@ -1,6 +1,6 @@
 import React from 'react';
 import {useImmerReducer} from 'use-immer';
-import {TEST_KEYS, TEST_QUESTION_ANSWER_TYPE_MAP, TEST_QUESTION_KEYS} from '../consts.js';
+import {DEFAULT_MAX_CHECKED, TEST_KEYS, TEST_QUESTION_ANSWER_TYPE_MAP, TEST_QUESTION_KEYS} from '../consts.js';
 
 
 const dispatchCommands = {
@@ -46,7 +46,7 @@ export const usePassTest = (defaultAnswers, testConfigs) => {
         const payload = {...answerData};
         const questionData = testConfigs?.[TEST_KEYS.questions]?.[payload.questionIndex];
         const answersType = questionData?.[TEST_QUESTION_KEYS.answersType];
-        const maxChecked = questionData?.[TEST_QUESTION_KEYS.maxChecked] || 0;
+        const maxChecked = questionData?.[TEST_QUESTION_KEYS.maxChecked] || DEFAULT_MAX_CHECKED;
         payload.answersType = answersType;
         payload.maxChecked = maxChecked;
         payload.answersType = testConfigs[TEST_KEYS.questions][payload.questionIndex][TEST_QUESTION_KEYS.answersType];

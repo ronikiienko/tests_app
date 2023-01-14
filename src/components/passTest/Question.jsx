@@ -1,6 +1,11 @@
 import {nanoid} from 'nanoid';
 import React from 'react';
-import {TEST_QUESTION_ANSWER_KEYS, TEST_QUESTION_ANSWER_TYPE_MAP, TEST_QUESTION_KEYS} from '../../consts.js';
+import {
+    DEFAULT_MAX_CHECKED,
+    TEST_QUESTION_ANSWER_KEYS,
+    TEST_QUESTION_ANSWER_TYPE_MAP,
+    TEST_QUESTION_KEYS,
+} from '../../consts.js';
 import {Checkbox} from '../../StyledElements/Checkbox/Checkbox.jsx';
 import {Input} from '../../StyledElements/Input/Input.jsx';
 import {Radio} from '../../StyledElements/Radio/Radio.jsx';
@@ -22,7 +27,7 @@ export function Question({questionData, questionIndex, answer, updateAnswer}) {
     const answersData = questionData[TEST_QUESTION_KEYS.answers];
     let maxChecked;
     if (!questionData[TEST_QUESTION_KEYS.maxChecked]) {
-        maxChecked = 3;
+        maxChecked = DEFAULT_MAX_CHECKED;
     } else {
         maxChecked = questionData[TEST_QUESTION_KEYS.maxChecked];
     }

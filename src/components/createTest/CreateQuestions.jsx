@@ -55,6 +55,19 @@ export const CreateQuestions = ({
                                         });
                                     }}
                                 />
+                                <br/>
+                                {questionData[TEST_QUESTION_KEYS.answersType] === TEST_QUESTION_ANSWER_TYPE_MAP.checkbox &&
+                                    <Input
+                                        label="Max checked answers:"
+                                        value={questionData[TEST_QUESTION_KEYS.maxChecked]}
+                                        onChange={(event) => {
+                                            updateQuestionProperty({
+                                                propertyName: TEST_QUESTION_KEYS.maxChecked,
+                                                newValue: event.target.value,
+                                                questionIndex,
+                                            });
+                                        }}
+                                    />}
                                 <p>Select question answers type:</p>
                                 {Object.values(TEST_QUESTION_ANSWER_TYPE_MAP).map((answersType) => {
                                     return <Radio

@@ -54,3 +54,5 @@ export const USER_ID_KEY = 'userId';
 export const MAIN_TAB_KEY = 'mainTab';
 
 export const PASS_TAB_KEY = 'passTab';
+
+export const DEFAULT_MAX_CHECKED = 3;
