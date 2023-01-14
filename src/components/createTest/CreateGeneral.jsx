@@ -16,26 +16,27 @@ export const CreateGeneral = ({
     return (
         <div className="create-general-container">
             <h1 className="create-general-header">General test configs:</h1>
-            <span>Test name: </span>
-            <Input
-                value={testGeneralData[TEST_GENERAL_KEYS.testName]}
-                onChange={(event) => {
-                    updateGeneralProperty({propertyName: TEST_GENERAL_KEYS.testName, newValue: event.target.value});
-                }}
-            />
-            <br/>
-            <span>Test description: </span>
-            <br/>
-            <Input
-                value={testGeneralData[TEST_GENERAL_KEYS.testDescription]}
-                onChange={(event) => {
-                    updateGeneralProperty({
-                        propertyName: TEST_GENERAL_KEYS.testDescription,
-                        newValue: event.target.value,
-                    });
-                }}
-            />
-            <br/>
+            <div className="create-name-desc-container">
+                <span>Test name: </span>
+                <Input
+                    value={testGeneralData[TEST_GENERAL_KEYS.testName]}
+                    onChange={(event) => {
+                        updateGeneralProperty({propertyName: TEST_GENERAL_KEYS.testName, newValue: event.target.value});
+                    }}
+                />
+                <br/>
+                <span>Test description: </span>
+                <Input
+                    value={testGeneralData[TEST_GENERAL_KEYS.testDescription]}
+                    onChange={(event) => {
+                        updateGeneralProperty({
+                            propertyName: TEST_GENERAL_KEYS.testDescription,
+                            newValue: event.target.value,
+                        });
+                    }}
+                />
+                <br/>
+            </div>
             <TransitionGroup component="div">
                 {testGeneralData[TEST_GENERAL_KEYS.results]?.map((resultRange, index) => (
                     <CSSTransition

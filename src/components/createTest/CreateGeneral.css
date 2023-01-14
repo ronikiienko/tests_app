@@ -6,6 +6,18 @@
     border-radius: 15px;
 }
 
+.create-name-desc-container {
+    position: relative;
+    min-width: 80%;
+    background-color: var(--bg5);
+    padding: 10px;
+    margin-block: 20px;
+    width: fit-content;
+    margin-inline: auto;
+    margin-bottom: 60px;
+    border-radius: 10px;
+}
+
 .create-general-header {
     text-align: center;
 }
