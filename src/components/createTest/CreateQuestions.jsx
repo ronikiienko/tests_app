@@ -43,7 +43,7 @@ export const CreateQuestions = ({
                                 >
                                     -
                                 </CloseButton>
-                                <p className="create-question-index">{questionIndex + 1}</p>
+                                <p className="create-question-index">{questionIndex + 1}).</p>
                                 <Input
                                     label="Question:"
                                     value={questionData[TEST_QUESTION_KEYS.question]}

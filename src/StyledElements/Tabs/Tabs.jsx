@@ -9,6 +9,7 @@ export const Tabs = ({
                          tabsArray = [{id: 'default', label: 'default tab'}],
                      }) => {
     const handleClick = (event) => {
+        if (!event.target.classList.contains('tab-button')) return;
         setOpenedTab(event.target.id);
     };
     // TODO when click on most bottom point, event.target is undefined

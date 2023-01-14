@@ -25,8 +25,6 @@ export default function CreateTest() {
         resetTestConfigs,
     } = useCreateTest();
 
-    console.log(testConfigs);
-
     function exportTest() {
         let isTestValid = validateTest(testConfigs);
         if (!isTestValid) return alert('Some field is not filled :(');

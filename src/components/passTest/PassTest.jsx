@@ -42,7 +42,6 @@ export default function PassTest() {
     }, [testConfigs]);
 
     React.useEffect(() => {
-        console.log('answers changed');
         setItemToStorage(TEST_IN_PROCESS_ANSWERS_KEY, answers);
     }, [answers]);
 
