@@ -79,6 +79,7 @@ export default function PassTest() {
 
     return (
         <div className="pass-test-container">
+            <input type={'file'} accept="text/plain"/>
             <Button style={{display: 'block', margin: 'auto', width: '70%'}} onClick={handleUserFile}>Import new
                 test</Button>
             <header className="test-header">
