@@ -42,6 +42,7 @@ export default function PassTest() {
     }, [testConfigs]);
 
     React.useEffect(() => {
+        console.log('answers changed');
         setItemToStorage(TEST_IN_PROCESS_ANSWERS_KEY, answers);
     }, [answers]);
 
@@ -69,6 +70,7 @@ export default function PassTest() {
             const isTestValid = validateTest(testConfigObject);
             if (!isTestValid) return alert('Invalid test file :(');
             setTestConfigs(testConfigObject);
+            console.log('set answers to []');
             setAnswers([]);
             setPassTab(PASS_TABS_MAP.passInProcess);
         } catch (e) {

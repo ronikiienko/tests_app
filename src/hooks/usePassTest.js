@@ -34,7 +34,7 @@ const reducer = (answersDraft, action) => {
         }
             break;
         case dispatchCommands.setAnswers: {
-            answersDraft = action.newAnswers;
+            return action.newAnswers;
         }
     }
 };

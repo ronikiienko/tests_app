@@ -193,16 +193,16 @@ export const checkTest = (answers, testConfigs) => {
 export const validateTest = (test) => {
     const general = test?.[TEST_KEYS.general];
     const questions = test?.[TEST_KEYS.questions];
-    console.log('hi1', general, questions);
+    // console.log('hi1', general, questions);
     if (!general || !questions) return false;
-    console.log('hi2');
+    // console.log('hi2');
     if (
         !general[TEST_GENERAL_KEYS.creatorId] ||
         !general[TEST_GENERAL_KEYS.testName] ||
         !general[TEST_GENERAL_KEYS.testDescription] ||
         !general[TEST_GENERAL_KEYS.results]?.length
     ) return false;
-    console.log('hi3');
+    // console.log('hi3');
     for (const result of general[TEST_GENERAL_KEYS.results]) {
         if (
             !result[TEST_GENERAL_RESULT_RANGE_KEYS.min] ||
@@ -212,14 +212,14 @@ export const validateTest = (test) => {
         ) return false;
         // console.log(result);
     }
-    console.log('hi4');
+    // console.log('hi4');
     for (const question of questions) {
         if (
             !question[TEST_QUESTION_KEYS.question] ||
             !question[TEST_QUESTION_KEYS.answersType] ||
             !question[TEST_QUESTION_KEYS.answers]?.length
         ) return false;
-        console.log('hi5');
+        // console.log('hi5');
         for (const answer of question[TEST_QUESTION_KEYS.answers]) {
             if (question[TEST_QUESTION_KEYS.answersType] === TEST_QUESTION_ANSWER_TYPE_MAP.number) {
                 if (!answer[TEST_QUESTION_ANSWER_KEYS.min] ||
@@ -232,8 +232,8 @@ export const validateTest = (test) => {
                 ) return false;
             }
         }
-        console.log('hi6');
+        // console.log('hi6');
     }
-    console.log('hi finish!');
+    // console.log('hi finish!');
     return true;
 };
