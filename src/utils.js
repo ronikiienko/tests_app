@@ -213,6 +213,8 @@ export const validateTest = (test) => {
         // console.log(result);
     }
     // console.log('hi4');
+    // TODO check maxchecked field also
+    // TODO check if number inputs have valid numbers
     for (const question of questions) {
         if (
             !question[TEST_QUESTION_KEYS.question] ||
