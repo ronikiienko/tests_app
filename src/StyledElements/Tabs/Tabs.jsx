@@ -12,7 +12,7 @@ export const Tabs = ({
         if (!event.target.classList.contains('tab-button')) return;
         setOpenedTab(event.target.id);
     };
-    // TODO when click on most bottom point, event.target is undefined
+
     return (
         <div className="tabs-buttons-container" onClick={handleClick}>
             {tabsArray.map(tab => {
