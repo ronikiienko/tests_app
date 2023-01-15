@@ -41,7 +41,6 @@ const reducer = (answersDraft, action) => {
 export const usePassTest = (defaultAnswers, testConfigs) => {
     const [answers, dispatch] = useImmerReducer(reducer, defaultAnswers);
 
-    // TODO exit where can error occur
     const updateAnswer = React.useCallback((answerData) => {
         const payload = {...answerData};
         const questionData = testConfigs?.[TEST_KEYS.questions]?.[payload.questionIndex];
