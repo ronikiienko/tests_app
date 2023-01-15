@@ -1,6 +1,6 @@
 # tests_app
 
-This is an app for creating and passing tests.
+This is an app for creating and passing tests. You can try it here: https://tests.rost.pp.ua/ . All your changes and test create drafts WILL NOT be lost after page reload/browser closing.
 
 ----
 
