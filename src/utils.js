@@ -210,7 +210,7 @@ export const validateTest = (test) => {
             !result[TEST_GENERAL_RESULT_RANGE_KEYS.resultName] ||
             !result[TEST_GENERAL_RESULT_RANGE_KEYS.resultDescription]
         ) return false;
-        // console.log(result);
+        console.log(result);
     }
     // console.log('hi4');
 
@@ -236,7 +236,7 @@ export const validateTest = (test) => {
                 ) return false;
             }
         }
-        // console.log('hi6');
+        // console.log('hi6', question);
     }
     // console.log('hi finish!');
     return true;

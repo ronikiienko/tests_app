@@ -33,10 +33,9 @@ export default function CreateTest() {
         saveAs(blob, `${testConfigs[TEST_KEYS.general][TEST_GENERAL_KEYS.testName]}.txt`);
     }
 
-    async function openTestToEdit() {
+    async function openTestToEdit(event) {
         try {
-            let [fileHandle] = await window.showOpenFilePicker();
-            let fileData = await fileHandle.getFile();
+            let fileData = event.target.files[0];
             let text = await fileData.text();
             let testConfigObject = parseJSON(text, true);
             if (!testConfigObject) return alert('Invalid test file :(');

@@ -61,13 +61,12 @@ export default function PassTest() {
 
     if (!testConfigs) return null;
     async function handleUserFile(event) {
-        console.log('he');
         try {
             // let [fileHandle] = await window.showOpenFilePicker();
             // let fileData = await fileHandle.getFile();
             let fileData = event.target.files[0];
             let text = await fileData.text();
-            let testConfigObject = parseJSON(text, false);
+            let testConfigObject = parseJSON(text, true);
             if (!testConfigObject) return alert('Invalid test file :(');
             const isTestValid = validateTest(testConfigObject);
             if (!isTestValid) return alert('Invalid test file :(');
